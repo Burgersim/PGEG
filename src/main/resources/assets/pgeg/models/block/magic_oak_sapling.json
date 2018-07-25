@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "pgeg:block/magic_oak_sapling"
+    }
+}
