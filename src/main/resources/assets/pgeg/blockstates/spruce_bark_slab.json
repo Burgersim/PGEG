@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "pgeg:block/spruce_bark_slab" },
+        "type=top": { "model": "pgeg:block/spruce_bark_slab_top" },
+        "type=double": { "model": "block/spruce_wood" }
+    }
+}

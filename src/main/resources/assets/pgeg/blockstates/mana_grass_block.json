@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "snowy=false": [
+            { "model": "pgeg:block/mana_grass_block" },
+            { "model": "pgeg:block/mana_grass_block", "y": 90 },
+            { "model": "pgeg:block/mana_grass_block", "y": 180 },
+            { "model": "pgeg:block/mana_grass_block", "y": 270 }
+        ],
+        "snowy=true":  { "model": "block/grass_block_snow" }
+    }
+}

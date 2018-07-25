@@ -1,11 +1,12 @@
 {
-  "id": "halflogs",
-  "name": "Half Logs",
+  "id": "pgeg",
+  "name": "Pupsigacksieinhornglitzer",
   "authors": [
-    "Runemoro",
-    "CaptainKyros"
+    "Burgersim"
   ],
   "listeners": [
-    "org.dimdev.halflogs.HalfLogs"
+    "org.burgersim.pgeg.AddSlabs",
+    "org.burgersim.pgeg.ManaBlock",
+    "org.burgersim.pgeg.ManaGrass"
   ]
 }

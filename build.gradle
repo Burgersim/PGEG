@@ -12,9 +12,9 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.tweaker-client'
 apply plugin: 'java'
 
-group 'org.dimdev.halflogs'
-version '1.0.1'
-archivesBaseName = 'HalfLogs'
+group 'org.burgersim.pgeg'
+version '1.0'
+archivesBaseName = 'PupsiGacksiEinhornGlitzer'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
