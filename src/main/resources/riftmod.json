@@ -5,8 +5,7 @@
     "Burgersim"
   ],
   "listeners": [
-    "org.burgersim.pgeg.AddSlabs",
-    "org.burgersim.pgeg.ManaBlock",
-    "org.burgersim.pgeg.ManaGrass"
+    "org.burgersim.pgeg.Listener",
+    "org.burgersim.pgeg.AddSlabs"
   ]
 }

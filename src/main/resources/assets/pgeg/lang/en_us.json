@@ -13,5 +13,8 @@
   "block.pgeg.stripped_dark_oak_bark_slab": "Stripped Dark Oak Wood Slab",
   "block.pgeg.mana_crystal_ore": "Mana Crystal Ore",
   "item.pgeg.mana_crystal_dust": "Mana Crystal Dust",
-  "block.pgeg.mana_grass_block": "Magic Grass"
+  "block.pgeg.mana_grass_block": "Magic Grass",
+  "block.pgeg.magic_oak_log": "Magic Oak Log",
+  "block.pgeg.magic_oak_leaves": "Magic Oak Leaves",
+  "block.pgeg.magic_oak_planks": "Magic Oak Planks"
 }

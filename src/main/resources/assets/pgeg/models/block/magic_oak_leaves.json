@@ -1,3 +1,6 @@
 {
-    "parent": "pgeg:block/magic_oak_leaves"
+    "parent": "block/leaves",
+    "textures": {
+        "all": "pgeg:block/magic_oak_leaves"
+    }
 }

@@ -1,4 +1,9 @@
+/*
 package org.burgersim.pgeg;
 
-public class MagicBiome {
+import net.minecraft.world.biome.ForestBiome;
+
+public class MagicBiome extends ForestBiome {
 }
+
+*/
