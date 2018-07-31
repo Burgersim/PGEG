@@ -1,4 +1,4 @@
-package org.burgersim.pgeg;
+package org.burgersim.pgeg.listener;
 
 import net.minecraft.block.*;
 import net.minecraft.item.Item;
@@ -11,6 +11,7 @@ import org.dimdev.rift.listener.BiomeAdder;
 import org.dimdev.rift.listener.BlockAdder;
 import org.dimdev.rift.listener.ItemAdder;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 public class Listener implements BlockAdder, ItemAdder, BiomeAdder {
@@ -81,6 +82,6 @@ public class Listener implements BlockAdder, ItemAdder, BiomeAdder {
 
     @Override
     public Collection<Biome> getOverworldBiomes() {
-        return null;
+        return Arrays.asList(MAGIC_FOREST_BIOME);
     }
 }

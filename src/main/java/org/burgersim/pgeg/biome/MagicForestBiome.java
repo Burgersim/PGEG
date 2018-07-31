@@ -16,7 +16,7 @@ import net.minecraft.world.gen.feature.structure.StrongholdConfig;
 import net.minecraft.world.gen.placement.*;
 import net.minecraft.world.gen.surfacebuilders.CompositeSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
-import org.burgersim.pgeg.Listener;
+import org.burgersim.pgeg.listener.Listener;
 
 public class MagicForestBiome extends Biome {
     public MagicForestBiome() {
