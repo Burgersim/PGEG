@@ -10,8 +10,8 @@ public class BlockModFenceGate extends BlockFenceGate {
 
     public BlockModFenceGate(String name) {
         super(Builder.create(new BlockModFenceGate(name)));
-        Block.registerBlock(new ResourceLocation("pgeg", name), this);
-        Item.registerItemBlock(this, ItemGroup.REDSTONE);
+ //       Block.registerBlock(new ResourceLocation("pgeg", name), this);
+  //      Item.registerItemBlock(this, ItemGroup.REDSTONE);
     }
 
 }

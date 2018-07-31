@@ -10,8 +10,8 @@ public class BlockModButtonWood extends BlockButtonWood {
 
     public BlockModButtonWood(String name) {
         super(Builder.create(new BlockModButtonWood(name)));
-        Block.registerBlock(new ResourceLocation("pgeg", name), this);
-        Item.registerItemBlock(this, ItemGroup.REDSTONE);
+ //       Block.registerBlock(new ResourceLocation("pgeg", name), this);
+ //       Item.registerItemBlock(this, ItemGroup.REDSTONE);
     }
 
 }

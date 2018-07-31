@@ -11,8 +11,8 @@ public class BlockModTrapDoor extends BlockTrapDoor {
 
     public BlockModTrapDoor(String name) {
         super(BlockTrapDoor.Builder.create(new BlockModTrapDoor(name)));
-        Block.registerBlock(new ResourceLocation("pgeg", name), this);
-        Item.registerItemBlock(this, ItemGroup.REDSTONE);
+  //      Block.registerBlock(new ResourceLocation("pgeg", name), this);
+   //     Item.registerItemBlock(this, ItemGroup.REDSTONE);
     }
 
 }

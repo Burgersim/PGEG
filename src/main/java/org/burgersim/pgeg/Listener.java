@@ -26,6 +26,7 @@ public class Listener implements BlockAdder, ItemAdder {
     public static BlockModFence MAGIC_OAK_FENCE;
     public static BlockModFenceGate MAGIC_OAK_FENCE_GATE;
     public static BlockModButtonWood MAGIC_OAK_BUTTON;
+    public static BlockModSlab MAGIC_OAK_SLAB;
 
 
     Item MANA_CRYSTAL_DUST = new Item(new Item.Builder().group(ItemGroup.MISC));
@@ -37,6 +38,15 @@ public class Listener implements BlockAdder, ItemAdder {
         Block.registerBlock(new ResourceLocation("pgeg:magic_oak_planks"), MAGIC_OAK_PLANKS);
         Block.registerBlock(new ResourceLocation("pgeg:magic_oak_leaves"), MAGIC_OAK_LEAVES);
         Block.registerBlock(new ResourceLocation("pgeg:mana_crystal_ore"), MANA_CRYSTAL_ORE);
+        Block.registerBlock(new ResourceLocation("pgeg:magic_oak_stairs"), MAGIC_OAK_STAIRS);
+        Block.registerBlock(new ResourceLocation("pgeg:magic_oak_trapdoor"), MAGIC_OAK_TRAPDOOR);
+        Block.registerBlock(new ResourceLocation("pgeg:magic_oak_door"), MAGIC_OAK_DOOR);
+        Block.registerBlock(new ResourceLocation("pgeg:magic_oak_pressure_plate"), MAGIC_OAK_PRESSURE_PLATE);
+        Block.registerBlock(new ResourceLocation("pgeg:magic_oak_fence"), MAGIC_OAK_FENCE);
+        Block.registerBlock(new ResourceLocation("pgeg:magic_oak_fence_gate"), MAGIC_OAK_FENCE_GATE);
+        Block.registerBlock(new ResourceLocation("pgeg:magic_oak_button"), MAGIC_OAK_BUTTON);
+        Block.registerBlock(new ResourceLocation("pgeg:magic_oak_slab"), MAGIC_OAK_SLAB);
+
 
     }
 
@@ -48,6 +58,13 @@ public class Listener implements BlockAdder, ItemAdder {
         Item.registerItemBlock(MAGIC_OAK_LEAVES, ItemGroup.DECORATIONS);
         Item.registerItemBlock(MANA_CRYSTAL_ORE, ItemGroup.BUILDING_BLOCKS);
 
+        Item.registerItemBlock(MAGIC_OAK_STAIRS, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(MAGIC_OAK_TRAPDOOR, ItemGroup.REDSTONE);
+        Item.registerItemBlock(MAGIC_OAK_DOOR, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(MAGIC_OAK_PRESSURE_PLATE, ItemGroup.REDSTONE);
+        Item.registerItemBlock(MAGIC_OAK_FENCE, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(MAGIC_OAK_FENCE_GATE, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(MAGIC_OAK_SLAB, ItemGroup.BUILDING_BLOCKS);
         Item.registerItem("pgeg:mana_crystal_dust", MANA_CRYSTAL_DUST);
     }
 }

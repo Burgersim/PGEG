@@ -11,8 +11,8 @@ public class BlockModPressurePlate extends BlockPressurePlate {
 
     public BlockModPressurePlate(String name) {
         super(BlockPressurePlate.Sensitivity.EVERYTHING, Builder.create(new BlockModPressurePlate(name)));
-        Block.registerBlock(new ResourceLocation("pgeg", name), this);
-        Item.registerItemBlock(this, ItemGroup.REDSTONE);
+  //      Block.registerBlock(new ResourceLocation("pgeg", name), this);
+   //     Item.registerItemBlock(this, ItemGroup.REDSTONE);
     }
 
 }
