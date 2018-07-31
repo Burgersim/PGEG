@@ -1,0 +1,6 @@
+{
+    "parent": "block/button_inventory",
+    "textures": {
+        "texture": "pgeg:block/magic_oak_planks"
+    }
+}

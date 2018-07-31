@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "pgeg:block/magic_oak_sapling"
+    }
+}

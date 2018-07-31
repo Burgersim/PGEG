@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "pgeg:block/magic_oak_door_bottom",
+        "top": "pgeg:block/magic_oak_door_top"
+    }
+}

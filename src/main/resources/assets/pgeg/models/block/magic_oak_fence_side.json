@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_side",
+    "textures": {
+        "texture": "pgeg:block/magic_oak_planks"
+    }
+}

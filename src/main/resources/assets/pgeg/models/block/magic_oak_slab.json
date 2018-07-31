@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "pgeg:block/magic_oak_planks",
+        "top": "pgeg:block/magic_oak_planks",
+        "side": "pgeg:block/magic_oak_planks"
+    }
+}

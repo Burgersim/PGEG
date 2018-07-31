@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "pgeg:block/magic_oak_slab" },
+        "type=top": { "model": "pgeg:block/magic_oak_slab_top" },
+        "type=double": { "model": "pgeg:block/magic_oak_planks" }
+    }
+}

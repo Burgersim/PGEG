@@ -16,5 +16,13 @@
   "block.pgeg.mana_grass_block": "Magic Grass",
   "block.pgeg.magic_oak_log": "Magic Oak Log",
   "block.pgeg.magic_oak_leaves": "Magic Oak Leaves",
-  "block.pgeg.magic_oak_planks": "Magic Oak Planks"
+  "block.pgeg.magic_oak_planks": "Magic Oak Planks",
+  "block.pgeg.magic_oak_button": "Magic Oak Button",
+  "block.pgeg.magic_oak_pressure_plate": "Magic Oak Pressure Plate",
+  "block.pgeg.magic_oak_sapling": "Magic Oak Sapling",
+  "block.pgeg.magic_oak_slab": "Magic Oak Slab",
+  "block.pgeg.magic_oak_stairs": "Magic Oak Stairs",
+  "block.pgeg.magic_oak_trapdoor": "Magic Oak Trapdoor",
+  "block.pgeg.magic_oak_door": "Magic Oak Door",
+  "block.pgeg.magic_oak_bark_slab": "Magic Oak Wood Slab"
 }

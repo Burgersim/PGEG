@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y": { "model": "pgeg:block/magic_oak_wood" },
+        "axis=z": { "model": "pgeg:block/magic_oak_wood", "x": 90 },
+        "axis=x": { "model": "pgeg:block/magic_oak_wood", "x": 90, "y": 90 }
+    }
+}
