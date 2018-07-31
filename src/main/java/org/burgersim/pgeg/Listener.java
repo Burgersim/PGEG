@@ -55,12 +55,12 @@ public class Listener implements BlockAdder, ItemAdder {
         Item.registerItemBlock(MAGIC_OAK_PLANKS, ItemGroup.BUILDING_BLOCKS);
         Item.registerItemBlock(MAGIC_OAK_LEAVES, ItemGroup.DECORATIONS);
         Item.registerItemBlock(MANA_CRYSTAL_ORE, ItemGroup.BUILDING_BLOCKS);
-        Item.registerItemBlock(MAGIC_OAK_STAIRS, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(MAGIC_OAK_STAIRS, ItemGroup.BUILDING_BLOCKS);
         Item.registerItemBlock(MAGIC_OAK_TRAPDOOR, ItemGroup.REDSTONE);
-        Item.registerItemBlock(MAGIC_OAK_DOOR, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(MAGIC_OAK_DOOR, ItemGroup.REDSTONE);
         Item.registerItemBlock(MAGIC_OAK_PRESSURE_PLATE, ItemGroup.REDSTONE);
         Item.registerItemBlock(MAGIC_OAK_FENCE, ItemGroup.DECORATIONS);
-        Item.registerItemBlock(MAGIC_OAK_FENCE_GATE, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(MAGIC_OAK_FENCE_GATE, ItemGroup.REDSTONE);
         Item.registerItemBlock(MAGIC_OAK_BUTTON, ItemGroup.REDSTONE);
         Item.registerItemBlock(MAGIC_OAK_SLAB, ItemGroup.BUILDING_BLOCKS);
 

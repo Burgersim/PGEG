@@ -24,5 +24,7 @@
   "block.pgeg.magic_oak_stairs": "Magic Oak Stairs",
   "block.pgeg.magic_oak_trapdoor": "Magic Oak Trapdoor",
   "block.pgeg.magic_oak_door": "Magic Oak Door",
-  "block.pgeg.magic_oak_bark_slab": "Magic Oak Wood Slab"
+  "block.pgeg.magic_oak_bark_slab": "Magic Oak Wood Slab",
+  "block.pgeg.magic_oak_fence": "Magic Oak Fence",
+  "block.pgeg.magic_oak_fence_gate": "Magic Oak Fence Gate"
 }
