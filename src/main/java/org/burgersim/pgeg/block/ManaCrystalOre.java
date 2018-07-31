@@ -1,4 +1,4 @@
-package org.burgersim.pgeg;
+package org.burgersim.pgeg.block;
 
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.SoundType;
