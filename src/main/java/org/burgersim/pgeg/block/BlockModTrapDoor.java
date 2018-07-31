@@ -1,4 +1,4 @@
-package org.burgersim.pgeg;
+package org.burgersim.pgeg.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -9,10 +9,8 @@ import net.minecraft.util.ResourceLocation;
 
 public class BlockModTrapDoor extends BlockTrapDoor {
 
-    public BlockModTrapDoor(String name) {
-        super(BlockTrapDoor.Builder.create(new BlockModTrapDoor(name)));
-  //      Block.registerBlock(new ResourceLocation("pgeg", name), this);
-   //     Item.registerItemBlock(this, ItemGroup.REDSTONE);
+    public BlockModTrapDoor(Builder builder) {
+        super(builder);
     }
 
 }

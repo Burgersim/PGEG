@@ -1,4 +1,4 @@
-package org.burgersim.pgeg;
+package org.burgersim.pgeg.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
@@ -8,9 +8,8 @@ import net.minecraft.util.ResourceLocation;
 
 public class BlockModSlab extends BlockSlab {
 
-    public BlockModSlab(String name) {
-        super(Builder.create(new BlockModSlab(name)));
- //       Block.registerBlock(new ResourceLocation("pgeg", name), this);
+    public BlockModSlab(Builder builder) {
+        super(builder);
     }
 
 }

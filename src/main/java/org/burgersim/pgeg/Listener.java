@@ -1,15 +1,12 @@
 package org.burgersim.pgeg;
 
 import net.minecraft.block.*;
-import net.minecraft.block.material.MapColor;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
+import org.burgersim.pgeg.block.*;
 import org.dimdev.rift.listener.BlockAdder;
 import org.dimdev.rift.listener.ItemAdder;
-import net.minecraft.block.Block.Builder;
-import org.burgersim.pgeg.BlockModStair;
 
 public class Listener implements BlockAdder, ItemAdder {
     ManaGrass MANA_GRASS = new ManaGrass();
@@ -19,14 +16,15 @@ public class Listener implements BlockAdder, ItemAdder {
     ManaCrystalOre MANA_CRYSTAL_ORE = new ManaCrystalOre();
 //    MagicOakSapling MAGIC_OAK_SAPLING = new MagicOakSapling();
 
-    public static BlockModStair MAGIC_OAK_STAIRS;
-    public static BlockModTrapDoor MAGIC_OAK_TRAPDOOR;
-    public static BlockModDoor MAGIC_OAK_DOOR;
-    public static BlockModPressurePlate MAGIC_OAK_PRESSURE_PLATE;
-    public static BlockModFence MAGIC_OAK_FENCE;
-    public static BlockModFenceGate MAGIC_OAK_FENCE_GATE;
-    public static BlockModButtonWood MAGIC_OAK_BUTTON;
-    public static BlockModSlab MAGIC_OAK_SLAB;
+    BlockModStair MAGIC_OAK_STAIRS = new BlockModStair(MAGIC_OAK_PLANKS, BlockStairs.Builder.create(MAGIC_OAK_PLANKS));
+    BlockModTrapDoor MAGIC_OAK_TRAPDOOR = new BlockModTrapDoor(BlockTrapDoor.Builder.create(MAGIC_OAK_PLANKS));
+    BlockModDoor MAGIC_OAK_DOOR = new BlockModDoor(BlockDoor.Builder.create(MAGIC_OAK_PLANKS));
+    BlockModPressurePlate MAGIC_OAK_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING,
+            BlockPressurePlate.Builder.create(MAGIC_OAK_PLANKS));
+    BlockModFence MAGIC_OAK_FENCE = new BlockModFence(BlockFence.Builder.create(MAGIC_OAK_PLANKS));
+    BlockModFenceGate MAGIC_OAK_FENCE_GATE = new BlockModFenceGate(BlockFenceGate.Builder.create(MAGIC_OAK_PLANKS));
+    BlockModButtonWood MAGIC_OAK_BUTTON = new BlockModButtonWood(BlockButtonWood.Builder.create(MAGIC_OAK_PLANKS));
+    BlockModSlab MAGIC_OAK_SLAB = new BlockModSlab(BlockSlab.Builder.create(MAGIC_OAK_PLANKS));
 
 
     Item MANA_CRYSTAL_DUST = new Item(new Item.Builder().group(ItemGroup.MISC));
@@ -63,6 +61,7 @@ public class Listener implements BlockAdder, ItemAdder {
         Item.registerItemBlock(MAGIC_OAK_PRESSURE_PLATE, ItemGroup.REDSTONE);
         Item.registerItemBlock(MAGIC_OAK_FENCE, ItemGroup.DECORATIONS);
         Item.registerItemBlock(MAGIC_OAK_FENCE_GATE, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(MAGIC_OAK_BUTTON, ItemGroup.REDSTONE);
         Item.registerItemBlock(MAGIC_OAK_SLAB, ItemGroup.BUILDING_BLOCKS);
 
         Item.registerItem("pgeg:mana_crystal_dust", MANA_CRYSTAL_DUST);
