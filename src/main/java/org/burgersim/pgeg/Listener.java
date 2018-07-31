@@ -4,16 +4,21 @@ import net.minecraft.block.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
+import org.burgersim.pgeg.biome.MagicForestBiome;
 import org.burgersim.pgeg.block.*;
+import org.dimdev.rift.listener.BiomeAdder;
 import org.dimdev.rift.listener.BlockAdder;
 import org.dimdev.rift.listener.ItemAdder;
 
-public class Listener implements BlockAdder, ItemAdder {
-    ManaGrass MANA_GRASS = new ManaGrass();
+import java.util.Collection;
+
+public class Listener implements BlockAdder, ItemAdder, BiomeAdder {
+    public static ManaGrass MANA_GRASS = new ManaGrass();
     MagicOakLog MAGIC_OAK_LOG = new MagicOakLog();
     MagicOakPlanks MAGIC_OAK_PLANKS = new MagicOakPlanks();
     MagicOakLeaves MAGIC_OAK_LEAVES = new MagicOakLeaves();
-    ManaCrystalOre MANA_CRYSTAL_ORE = new ManaCrystalOre();
+    public static ManaCrystalOre MANA_CRYSTAL_ORE = new ManaCrystalOre();
 //    MagicOakSapling MAGIC_OAK_SAPLING = new MagicOakSapling();
 
     BlockModStair MAGIC_OAK_STAIRS = new BlockModStair(MAGIC_OAK_PLANKS, BlockStairs.Builder.create(MAGIC_OAK_PLANKS));
@@ -28,6 +33,8 @@ public class Listener implements BlockAdder, ItemAdder {
 
 
     Item MANA_CRYSTAL_DUST = new Item(new Item.Builder().group(ItemGroup.MISC));
+
+    MagicForestBiome MAGIC_FOREST_BIOME = new MagicForestBiome();
 
     @Override
     public void registerBlocks() {
@@ -65,5 +72,15 @@ public class Listener implements BlockAdder, ItemAdder {
         Item.registerItemBlock(MAGIC_OAK_SLAB, ItemGroup.BUILDING_BLOCKS);
 
         Item.registerItem("pgeg:mana_crystal_dust", MANA_CRYSTAL_DUST);
+    }
+
+    @Override
+    public void registerBiomes() {
+        Biome.registerBiome(Biome.REGISTRY.getKeys().size()+1, "magic_forest", MAGIC_FOREST_BIOME);
+    }
+
+    @Override
+    public Collection<Biome> getOverworldBiomes() {
+        return null;
     }
 }
