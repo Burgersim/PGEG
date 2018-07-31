@@ -8,7 +8,8 @@ import net.minecraft.block.material.Material;
 public class MagicOakLog extends BlockLog {
 
     private static Builder getBuilder(){
-        Builder l = BlockLog.Builder.create(Material.WOOD, MapColor.BLUE);
+        Builder l = BlockLog.Builder.create(Material.WOOD, MapColor.BLUE)
+                .hardnessAndResistance(2.0F, 2.0F);
         l.soundType(SoundType.WOOD);
         return l;
     }
