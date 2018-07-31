@@ -1,12 +1,15 @@
 package org.burgersim.pgeg.listener;
 
 import net.minecraft.block.*;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import org.burgersim.pgeg.biome.MagicForestBiome;
 import org.burgersim.pgeg.block.*;
+import org.burgersim.pgeg.block.tree.MagicOakTree;
 import org.dimdev.rift.listener.BiomeAdder;
 import org.dimdev.rift.listener.BlockAdder;
 import org.dimdev.rift.listener.ItemAdder;
@@ -16,11 +19,12 @@ import java.util.Collection;
 
 public class Listener implements BlockAdder, ItemAdder, BiomeAdder {
     public static ManaGrass MANA_GRASS = new ManaGrass();
-    MagicOakLog MAGIC_OAK_LOG = new MagicOakLog();
+    public static MagicOakLog MAGIC_OAK_LOG = new MagicOakLog();
     MagicOakPlanks MAGIC_OAK_PLANKS = new MagicOakPlanks();
-    MagicOakLeaves MAGIC_OAK_LEAVES = new MagicOakLeaves();
+    public static MagicOakLeaves MAGIC_OAK_LEAVES = new MagicOakLeaves();
     public static ManaCrystalOre MANA_CRYSTAL_ORE = new ManaCrystalOre();
-//    MagicOakSapling MAGIC_OAK_SAPLING = new MagicOakSapling();
+    public static BlockModSapling MAGIC_OAK_SAPLING = new BlockModSapling(new MagicOakTree(),
+            BlockSapling.Builder.create(Material.PLANTS, MapColor.LIGHT_BLUE).needsRandomTick());
 
     BlockModStair MAGIC_OAK_STAIRS = new BlockModStair(MAGIC_OAK_PLANKS, BlockStairs.Builder.create(MAGIC_OAK_PLANKS));
     BlockModTrapDoor MAGIC_OAK_TRAPDOOR = new BlockModTrapDoor(BlockTrapDoor.Builder.create(MAGIC_OAK_PLANKS));
@@ -52,6 +56,7 @@ public class Listener implements BlockAdder, ItemAdder, BiomeAdder {
         Block.registerBlock(new ResourceLocation("pgeg:magic_oak_fence_gate"), MAGIC_OAK_FENCE_GATE);
         Block.registerBlock(new ResourceLocation("pgeg:magic_oak_button"), MAGIC_OAK_BUTTON);
         Block.registerBlock(new ResourceLocation("pgeg:magic_oak_slab"), MAGIC_OAK_SLAB);
+        Block.registerBlock(new ResourceLocation("pgeg:magic_oak_sapling"), MAGIC_OAK_SAPLING);
 
 
     }
@@ -71,13 +76,14 @@ public class Listener implements BlockAdder, ItemAdder, BiomeAdder {
         Item.registerItemBlock(MAGIC_OAK_FENCE_GATE, ItemGroup.DECORATIONS);
         Item.registerItemBlock(MAGIC_OAK_BUTTON, ItemGroup.REDSTONE);
         Item.registerItemBlock(MAGIC_OAK_SLAB, ItemGroup.BUILDING_BLOCKS);
+        Item.registerItemBlock(MAGIC_OAK_SAPLING, ItemGroup.DECORATIONS);
 
         Item.registerItem("pgeg:mana_crystal_dust", MANA_CRYSTAL_DUST);
     }
 
     @Override
     public void registerBiomes() {
-        Biome.registerBiome(Biome.REGISTRY.getKeys().size()+1, "magic_forest", MAGIC_FOREST_BIOME);
+        Biome.registerBiome(Biome.REGISTRY.getKeys().size() + 1, "magic_forest", MAGIC_FOREST_BIOME);
     }
 
     @Override
