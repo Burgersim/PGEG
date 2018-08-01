@@ -8,6 +8,6 @@ public class InitListener implements InitializationListener {
     @Override
     public void onInitialization() {
         MixinBootstrap.init();
-        Mixins.addConfiguration("mixins.pgeg.animal.json");
+        Mixins.addConfiguration("mixins.pgeg.json");
     }
 }
