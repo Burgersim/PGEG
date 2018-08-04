@@ -25,5 +25,10 @@
   "block.pgeg.magic_oak_trapdoor": "Magic Oak Trapdoor",
   "block.pgeg.magic_oak_door": "Magic Oak Door",
   "block.pgeg.magic_oak_bark_slab": "Magic Oak Wood Slab",
+<<<<<<< HEAD
   "biome.pgeg.magic_forest": "Magic Forest"
+=======
+  "block.pgeg.magic_oak_fence": "Magic Oak Fence",
+  "block.pgeg.magic_oak_fence_gate": "Magic Oak Fence Gate"
+>>>>>>> 8c568be40aadd72fbd75f1a06037da80a4b66aa9
 }
