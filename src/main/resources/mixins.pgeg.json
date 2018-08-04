@@ -6,7 +6,8 @@
   "package": "org.burgersim.pgeg.mixin",
   "refmap": "mixins.pgeg.refmap.json",
   "mixins": [
-    "MixinEntityAnimal"
+    "MixinEntityAnimal",
+    "MixinManaHandler"
   ],
   "client": []
 }
