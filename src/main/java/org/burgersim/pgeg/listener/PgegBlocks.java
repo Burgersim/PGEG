@@ -3,25 +3,14 @@ package org.burgersim.pgeg.listener;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.biome.Biome;
-import org.burgersim.pgeg.biome.MagicForestBiome;
 import org.burgersim.pgeg.block.*;
 import org.burgersim.pgeg.block.tree.MagicOakTree;
-import org.dimdev.rift.listener.BiomeAdder;
 import org.dimdev.rift.listener.BlockAdder;
-import org.dimdev.rift.listener.ItemAdder;
 
-import java.util.Arrays;
-import java.util.Collection;
+import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
-public class Listener implements BlockAdder, ItemAdder, BiomeAdder {
-    public static final String MOD_ID = "pgeg";
-
-    public static Item MANA_CRYSTAL_DUST = new Item(new Item.Builder().group(ItemGroup.MISC));
-
+public class PgegBlocks implements BlockAdder {
     public static Block MANA_GRASS = new BlockModGrass(BlockGrass.Builder.create(Material.GRASS, MapColor.LIGHT_BLUE)
             .hardnessAndResistance(0.6f,1).soundType(SoundType.GROUND));
     public static Block MAGIC_OAK_LOG = new BockModLog(BlockLog.Builder.create(Material.WOOD, MapColor.BLUE)
@@ -46,10 +35,7 @@ public class Listener implements BlockAdder, ItemAdder, BiomeAdder {
     public static Block MAGIC_OAK_SLAB = new BlockModSlab(BlockSlab.Builder.create(MAGIC_OAK_PLANKS));
     public static Block MANA_CRYSTAL_ORE = new BlockModOre(BlockOre.Builder.create(Material.ROCK, MapColor.STONE)
             .hardnessAndResistance(3.0f,4)
-            .soundType(SoundType.STONE), MANA_CRYSTAL_DUST, 3, 7);
-
-    public static Biome MAGIC_FOREST_BIOME = new MagicForestBiome();
-
+            .soundType(SoundType.STONE), PgegItems.MANA_CRYSTAL_DUST, 3, 7);
     @Override
     public void registerBlocks() {
         Block.registerBlock(new ResourceLocation(MOD_ID, "mana_grass_block"), MANA_GRASS);
@@ -66,39 +52,5 @@ public class Listener implements BlockAdder, ItemAdder, BiomeAdder {
         Block.registerBlock(new ResourceLocation(MOD_ID, "magic_oak_button"), MAGIC_OAK_BUTTON);
         Block.registerBlock(new ResourceLocation(MOD_ID, "magic_oak_slab"), MAGIC_OAK_SLAB);
         Block.registerBlock(new ResourceLocation(MOD_ID, "magic_oak_sapling"), MAGIC_OAK_SAPLING);
-
-
-    }
-
-    @Override
-    public void registerItems() {
-        Item.registerItemBlock(MANA_GRASS, ItemGroup.BUILDING_BLOCKS);
-        Item.registerItemBlock(MAGIC_OAK_LOG, ItemGroup.BUILDING_BLOCKS);
-        Item.registerItemBlock(MAGIC_OAK_PLANKS, ItemGroup.BUILDING_BLOCKS);
-        Item.registerItemBlock(MAGIC_OAK_LEAVES, ItemGroup.DECORATIONS);
-        Item.registerItemBlock(MANA_CRYSTAL_ORE, ItemGroup.BUILDING_BLOCKS);
-        Item.registerItemBlock(MAGIC_OAK_STAIRS, ItemGroup.DECORATIONS);
-        Item.registerItemBlock(MAGIC_OAK_TRAPDOOR, ItemGroup.REDSTONE);
-        Item.registerItemBlock(MAGIC_OAK_DOOR, ItemGroup.DECORATIONS);
-        Item.registerItemBlock(MAGIC_OAK_PRESSURE_PLATE, ItemGroup.REDSTONE);
-        Item.registerItemBlock(MAGIC_OAK_FENCE, ItemGroup.DECORATIONS);
-        Item.registerItemBlock(MAGIC_OAK_FENCE_GATE, ItemGroup.DECORATIONS);
-        Item.registerItemBlock(MAGIC_OAK_BUTTON, ItemGroup.REDSTONE);
-        Item.registerItemBlock(MAGIC_OAK_SLAB, ItemGroup.BUILDING_BLOCKS);
-        Item.registerItemBlock(MAGIC_OAK_SAPLING, ItemGroup.DECORATIONS);
-
-        Item.registerItem(new ResourceLocation(MOD_ID, "mana_crystal_dust"), MANA_CRYSTAL_DUST);
-    }
-
-    @Override
-    public void registerBiomes() {
-        Biome.registerBiome(Biome.REGISTRY.getKeys().size() + 1,
-                MOD_ID + ":magic_forest",
-                MAGIC_FOREST_BIOME);
-    }
-
-    @Override
-    public Collection<Biome> getOverworldBiomes() {
-        return Arrays.asList(MAGIC_FOREST_BIOME);
     }
 }

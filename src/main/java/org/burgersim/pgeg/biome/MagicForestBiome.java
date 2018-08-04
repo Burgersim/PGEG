@@ -7,7 +7,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Fluids;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.*;
@@ -18,7 +17,7 @@ import net.minecraft.world.gen.placement.*;
 import net.minecraft.world.gen.surfacebuilders.CompositeSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import org.burgersim.pgeg.feature.MagicOakTreeFeature;
-import org.burgersim.pgeg.listener.Listener;
+import org.burgersim.pgeg.listener.PgegBlocks;
 
 public class MagicForestBiome extends Biome {
     public MagicForestBiome() {
@@ -27,7 +26,7 @@ public class MagicForestBiome extends Biome {
                 .surfaceBuilder(
                         new CompositeSurfaceBuilder(DEFAULT_SURFACE_BUILDER,
                             new SurfaceBuilderConfig(
-                                    Listener.MANA_GRASS.getDefaultState(),
+                                    PgegBlocks.MANA_GRASS.getDefaultState(),
                                     DIRT,
                                     STONE)
                         )
@@ -52,7 +51,7 @@ public class MagicForestBiome extends Biome {
 
         //OREGEN
         //MANA CRYSTAL ORE
-        this.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, createCompositeFeature(Feature.MINABLE, new MinableConfig(MinableConfig.IS_ROCK, Listener.MANA_CRYSTAL_ORE.getDefaultState(), 9), COUNT_RANGE, new CountRangeConfig(20, 0, 0, 64)));
+        this.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, createCompositeFeature(Feature.MINABLE, new MinableConfig(MinableConfig.IS_ROCK, PgegBlocks.MANA_CRYSTAL_ORE.getDefaultState(), 9), COUNT_RANGE, new CountRangeConfig(20, 0, 0, 64)));
         //VANILLA ORES
         this.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, createCompositeFeature(Feature.MINABLE, new MinableConfig(MinableConfig.IS_ROCK, Blocks.DIRT.getDefaultState(), 33), COUNT_RANGE, new CountRangeConfig(10, 0, 0, 256)));
         this.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, createCompositeFeature(Feature.MINABLE, new MinableConfig(MinableConfig.IS_ROCK, Blocks.GRAVEL.getDefaultState(), 33), COUNT_RANGE, new CountRangeConfig(8, 0, 0, 256)));

@@ -5,8 +5,9 @@
     "Burgersim"
   ],
   "listeners": [
-    "org.burgersim.pgeg.listener.Listener",
-    "org.burgersim.pgeg.AddSlabs",
-    "org.burgersim.pgeg.listener.InitListener"
+    "org.burgersim.pgeg.listener.PgegInit",
+    "org.burgersim.pgeg.listener.PgegItems",
+    "org.burgersim.pgeg.listener.PgegBlocks",
+    "org.burgersim.pgeg.listener.PgegBiomes"
   ]
 }
