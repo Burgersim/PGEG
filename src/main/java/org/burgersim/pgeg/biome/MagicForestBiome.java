@@ -39,8 +39,8 @@ public class MagicForestBiome extends Biome {
                 .scale(0.2F)
                 .temperature(0.7F)
                 .downfall(0.8F)
-                .waterColor(4159204)
-                .waterFogColor(329011)
+                .waterColor(0x32BAFF)
+                .waterFogColor(0x2895CC)
                 .parent(null));
         this.setCarverForStage(GenerationStage.Carving.AIR, createWorldCarverWrapper(CAVE_WORLD_CARVER, new ProbabilityConfig(0.14285715F)));
         this.setCarverForStage(GenerationStage.Carving.AIR, createWorldCarverWrapper(CANYON_WORLD_CARVER, new ProbabilityConfig(0.02F)));
@@ -82,6 +82,8 @@ public class MagicForestBiome extends Biome {
         this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(new MagicOakTreeFeature(), IFeatureConfig.NO_FEATURE_CONFIG, AT_SURFACE_WITH_EXTRA, new AtSurfaceWithExtraConfig(3, 0.2F, 2)));
         this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(Feature.LIQUIDS, new LiquidsConfig(Fluids.WATER), HEIGHT_BIASED_RANGE, new CountRangeConfig(50, 8, 8, 256)));
         this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(Feature.LIQUIDS, new LiquidsConfig(Fluids.LAVA), HEIGHT_VERY_BIASED_RANGE, new CountRangeConfig(20, 8, 16, 256)));
+        this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(Feature.TALL_GRASS, new TallGrassConfig(PgegBlocks.MANA_FERN.getDefaultState()), TWICE_SURFACE, new FrequencyConfig(2)));
+        this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(Feature.TALL_GRASS, new TallGrassConfig(PgegBlocks.MANA_TALLGRASS.getDefaultState()), TWICE_SURFACE, new FrequencyConfig(2)));
     }
 
     @Override

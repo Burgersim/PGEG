@@ -38,6 +38,8 @@ public class PgegBlocks implements BlockAdder {
             .soundType(SoundType.STONE), PgegItems.MANA_CRYSTAL_DUST, 3, 7);
 
     public static Block QUARTZ_PILLAR = new BlockQuartzPillar();
+    public static Block MANA_FERN = new BlockModFern(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().soundType(SoundType.PLANT));
+    public static Block MANA_TALLGRASS = new BlockModFern(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().soundType(SoundType.PLANT));
     @Override
     public void registerBlocks() {
         Block.registerBlock(new ResourceLocation(MOD_ID, "mana_grass_block"), MANA_GRASS);
@@ -55,5 +57,7 @@ public class PgegBlocks implements BlockAdder {
         Block.registerBlock(new ResourceLocation(MOD_ID, "magic_oak_slab"), MAGIC_OAK_SLAB);
         Block.registerBlock(new ResourceLocation(MOD_ID, "magic_oak_sapling"), MAGIC_OAK_SAPLING);
         Block.registerBlock(new ResourceLocation(MOD_ID, "quartz_stand"), QUARTZ_PILLAR);
+        Block.registerBlock(new ResourceLocation(MOD_ID, "mana_fern"), MANA_FERN);
+        Block.registerBlock(new ResourceLocation(MOD_ID, "mana_tallgrass"), MANA_TALLGRASS);
     }
 }
