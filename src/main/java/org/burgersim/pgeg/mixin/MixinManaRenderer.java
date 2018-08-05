@@ -59,11 +59,11 @@ public abstract class MixinManaRenderer extends Gui {
                     if (MathHelper.ceil(mana) <= 2 * manaPerStar) {
                         drawY += this.rand.nextInt(2);
                     }
-                    this.drawTexturedModalRect(drawX, drawY, 17, 0, 9, 9);
+                    this.drawTexturedModalRect(drawX, drawY, 0, 0, 9, 9);
                     if (x * manaPerStar + 1 < mana) {
-                        this.drawTexturedModalRect(drawX, drawY, 35, 0, 9, 9);
+                        this.drawTexturedModalRect(drawX, drawY, 9, 0, 9, 9);
                     } else if (x * manaPerStar + 1 == mana) {
-                        this.drawTexturedModalRect(drawX, drawY, 44, 0, 9, 9);
+                        this.drawTexturedModalRect(drawX, drawY, 18, 0, 9, 9);
                     }
                 }
             }
