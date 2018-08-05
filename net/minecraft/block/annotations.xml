@@ -1,5 +1,0 @@
-<root>
-    <item name='net.minecraft.block.BlockDoor'>
-        <annotation name='java.lang.Deprecated'/>
-    </item>
-</root>
