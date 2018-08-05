@@ -3,6 +3,7 @@ package org.burgersim.pgeg.mixin;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiIngame;
+import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -44,12 +45,14 @@ public abstract class MixinManaRenderer extends Gui {
                 int barX = this.field_194811_H / 2 - 91;
                 int barY = this.field_194812_I - 39;
                 int manaPerStar = (int) handler.getMaxMana() / 10;
-
+                int maxHealth = MathHelper.ceil((player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getAttributeValue()
+                        + player.getAbsorptionAmount()) / 2.0F / 10.0F);
                 this.mc.getTextureManager().bindTexture(MANA_ICONS);
                 int x;
+
                 for (x = 9; x >= 0; --x) {
                     int drawX = barX + x * 8;
-                    int drawY = barY - playerHealth / 20 * 9;
+                    int drawY = barY - (maxHealth - 1) * Math.max(10 - (maxHealth - 2), 3) - 10;
                     if (player.getTotalArmorValue() > 0) {
                         drawY -= 10;
                     }
