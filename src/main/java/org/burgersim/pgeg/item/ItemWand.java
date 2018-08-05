@@ -12,6 +12,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.burgersim.pgeg.listener.PgegItems;
 import org.burgersim.pgeg.mana.IManaHandler;
 
 public class ItemWand extends Item {
@@ -40,7 +41,7 @@ public class ItemWand extends Item {
                     double zOffset = (double)(itemRand.nextFloat() * 0.5F) + 0.25D;
                     EntityItem item = new EntityItem(world, blockPos.getX() + xOffset
                             ,blockPos.getY() + yOffset,blockPos.getZ() + zOffset ,
-                            new ItemStack(Items.BOOK, 1));
+                            new ItemStack(PgegItems.SPELL_BOOK, 1));
                     item.setNoDespawn();
                     item.setDefaultPickupDelay();
                     if(!world.isRemote())
