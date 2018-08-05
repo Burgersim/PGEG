@@ -13,7 +13,7 @@ import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 public class PgegBlocks implements BlockAdder {
     public static Block MANA_GRASS = new BlockModGrass(BlockGrass.Builder.create(Material.GRASS, MapColor.LIGHT_BLUE)
             .hardnessAndResistance(0.6f,1).soundType(SoundType.GROUND));
-    public static Block MAGIC_OAK_LOG = new BockModLog(BlockLog.Builder.create(Material.WOOD, MapColor.BLUE)
+    public static Block MAGIC_OAK_LOG = new BlockModLog(BlockLog.Builder.create(Material.WOOD, MapColor.BLUE)
             .hardnessAndResistance(2.0F, 2.0F)
             .soundType(SoundType.WOOD), MapColor.BLUE);
     public static Block MAGIC_OAK_PLANKS = new BlockModPlanks(Block.Builder.create(Material.WOOD, MapColor.LIGHT_BLUE)
