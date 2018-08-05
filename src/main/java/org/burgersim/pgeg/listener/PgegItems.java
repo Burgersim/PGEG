@@ -4,6 +4,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import org.burgersim.pgeg.item.ManaDebugItem;
+import org.burgersim.pgeg.item.ManaFood;
 import org.dimdev.rift.listener.ItemAdder;
 
 import static org.burgersim.pgeg.listener.PgegBlocks.*;
@@ -11,6 +12,8 @@ import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class PgegItems implements ItemAdder {
     public static Item MANA_CRYSTAL_DUST = new Item(new Item.Builder().group(ItemGroup.MISC));
+    public static Item MANA_CAKE = new ManaFood(1,0.2F, 20.0F , false
+            ,new Item.Builder().group(ItemGroup.FOOD));
     private static Item MANA_DEBUG = new ManaDebugItem();
 
     @Override
@@ -31,6 +34,7 @@ public class PgegItems implements ItemAdder {
         Item.registerItemBlock(MAGIC_OAK_SAPLING, ItemGroup.DECORATIONS);
 
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_crystal_dust"), MANA_CRYSTAL_DUST);
+        Item.registerItem(new ResourceLocation(MOD_ID, "mana_cake"), MANA_CAKE);
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_debug"), MANA_DEBUG);
     }
 }

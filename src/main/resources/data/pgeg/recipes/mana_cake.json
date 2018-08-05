@@ -1,0 +1,27 @@
+{
+  "type": "crafting_shaped",
+  "group": "pgeg",
+  "pattern": [
+    " # ",
+    "MEM",
+    "WWW"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:milk_bucket"
+    },
+    "M": {
+      "item": "pgeg:mana_crystal_dust"
+    },
+    "E":{
+      "item":"minecraft:egg"
+    },
+    "W":{
+      "item":"minecraft:wheat"
+    }
+  },
+  "result": {
+    "item": "pgeg:mana_cake",
+    "count": 1
+  }
+}

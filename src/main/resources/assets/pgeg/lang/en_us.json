@@ -12,7 +12,6 @@
   "block.pgeg.stripped_acacia_bark_slab": "Stripped Acacia Wood Slab",
   "block.pgeg.stripped_dark_oak_bark_slab": "Stripped Dark Oak Wood Slab",
   "block.pgeg.mana_crystal_ore": "Mana Crystal Ore",
-  "item.pgeg.mana_crystal_dust": "Mana Crystal Dust",
   "block.pgeg.mana_grass_block": "Magic Grass",
   "block.pgeg.magic_oak_log": "Magic Oak Log",
   "block.pgeg.magic_oak_leaves": "Magic Oak Leaves",
@@ -25,7 +24,9 @@
   "block.pgeg.magic_oak_trapdoor": "Magic Oak Trapdoor",
   "block.pgeg.magic_oak_door": "Magic Oak Door",
   "block.pgeg.magic_oak_bark_slab": "Magic Oak Wood Slab",
-  "biome.pgeg.magic_forest": "Magic Forest",
   "block.pgeg.magic_oak_fence": "Magic Oak Fence",
-  "block.pgeg.magic_oak_fence_gate": "Magic Oak Fence Gate"
+  "block.pgeg.magic_oak_fence_gate": "Magic Oak Fence Gate",
+  "item.pgeg.mana_crystal_dust": "Mana Crystal Dust",
+  "item.pgeg.mana_cake": "Mana Cake",
+  "biome.pgeg.magic_forest": "Magic Forest"
 }
