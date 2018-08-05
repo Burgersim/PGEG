@@ -36,6 +36,8 @@ public class PgegBlocks implements BlockAdder {
     public static Block MANA_CRYSTAL_ORE = new BlockModOre(BlockOre.Builder.create(Material.ROCK, MapColor.STONE)
             .hardnessAndResistance(3.0f,4)
             .soundType(SoundType.STONE), PgegItems.MANA_CRYSTAL_DUST, 3, 7);
+
+    public static Block QUARTZ_PILLAR = new BlockQuartzPillar();
     @Override
     public void registerBlocks() {
         Block.registerBlock(new ResourceLocation(MOD_ID, "mana_grass_block"), MANA_GRASS);
@@ -52,5 +54,6 @@ public class PgegBlocks implements BlockAdder {
         Block.registerBlock(new ResourceLocation(MOD_ID, "magic_oak_button"), MAGIC_OAK_BUTTON);
         Block.registerBlock(new ResourceLocation(MOD_ID, "magic_oak_slab"), MAGIC_OAK_SLAB);
         Block.registerBlock(new ResourceLocation(MOD_ID, "magic_oak_sapling"), MAGIC_OAK_SAPLING);
+        Block.registerBlock(new ResourceLocation(MOD_ID, "quartz_stand"), QUARTZ_PILLAR);
     }
 }

@@ -36,6 +36,7 @@ public class PgegItems implements ItemAdder {
         Item.registerItemBlock(MAGIC_OAK_BUTTON, ItemGroup.REDSTONE);
         Item.registerItemBlock(MAGIC_OAK_SLAB, ItemGroup.BUILDING_BLOCKS);
         Item.registerItemBlock(MAGIC_OAK_SAPLING, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(QUARTZ_PILLAR, ItemGroup.DECORATIONS);
 
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_crystal_dust"), MANA_CRYSTAL_DUST);
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_cake"), MANA_CAKE);
