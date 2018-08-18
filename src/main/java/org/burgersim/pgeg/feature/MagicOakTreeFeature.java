@@ -81,7 +81,7 @@ public class MagicOakTreeFeature extends TreeFeature {
                                     blockPos = new BlockPos(x, y, z);
                                     IBlockState blockState = world.getBlockState(blockPos);
                                     Material material = blockState.getMaterial();
-                                    if (blockState.isAir() || blockState.isTagged(BlockTags.LEAVES) || material == Material.VINE) {
+                                    if (blockState.isAir() || blockState.isIn(BlockTags.LEAVES) || material == Material.VINE) {
                                         this.setBlockState(world, blockPos, this.metaLeaves);
                                     }
                                 }
@@ -92,7 +92,7 @@ public class MagicOakTreeFeature extends TreeFeature {
                     for (y = 0; y < height; ++y) {
                         IBlockState blockState = world.getBlockState(pos.up(y));
                         Material material = blockState.getMaterial();
-                        if (blockState.isAir() || blockState.isTagged(BlockTags.LEAVES) || material == Material.VINE) {
+                        if (blockState.isAir() || blockState.isIn(BlockTags.LEAVES) || material == Material.VINE) {
                             this.func_208520_a(p_208519_1_, world, pos.up(y), this.metaWood);
                         }
                     }

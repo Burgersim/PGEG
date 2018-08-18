@@ -19,12 +19,8 @@ public class BlockModLeaves extends BlockLeaves {
     }
 
     @Override
-    public IItemProvider getItemProvider(IBlockState p_getItemProvider_1_, World p_getItemProvider_2_, BlockPos p_getItemProvider_3_, int p_getItemProvider_4_) {
+    public IItemProvider getItemDropped(IBlockState p_getItemProvider_1_, World p_getItemProvider_2_, BlockPos p_getItemProvider_3_, int p_getItemProvider_4_) {
         return drop;
     }
 
-    @Override
-    public boolean isTagged(Tag<Block> tag) {
-        return super.isTagged(tag) || tag == BlockTags.LEAVES;
-    }
 }

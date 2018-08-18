@@ -27,8 +27,4 @@ public class BlockModSapling extends BlockSapling {
                 block == PgegBlocks.MANA_GRASS;
     }
 
-    @Override
-    public boolean isTagged(Tag<Block> tag) {
-        return super.isTagged(tag) || tag == BlockTags.SAPLINGS;
-    }
 }

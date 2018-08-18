@@ -9,7 +9,7 @@ import org.burgersim.pgeg.tileentity.TileEntityQuartzStand;
 
 public class TileEntityQuartzStandRenderer extends TileEntityRenderer<TileEntityQuartzStand> {
     @Override
-    public void func_199341_a(TileEntityQuartzStand tileEntityQuartzStand, double x, double y, double z, float partialTicks, int destroyStage) {
+    public void render(TileEntityQuartzStand tileEntityQuartzStand, double x, double y, double z, float partialTicks, int destroyStage) {
         ItemStack stack = tileEntityQuartzStand.getStackInSlot(0);
         if (!stack.isEmpty()) {
             GlStateManager.pushAttrib();

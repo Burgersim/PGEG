@@ -23,25 +23,29 @@ import javax.annotation.Nullable;
 public class BlockQuartzStand extends Block implements ITileEntityProvider {
 
     public BlockQuartzStand() {
-        super(Block.Builder.create(Blocks.QUARTZ_PILLAR));
+        super(Block.Builder.from(Blocks.QUARTZ_PILLAR));
+    }
+    private static final VoxelShape SHAPE;
+    static {
+        VoxelShape shape1 = ShapeUtils.create(0.0, 0.0, 0.0, 1.0, 0.1, 1.0);
+        VoxelShape shape2 = ShapeUtils.create(0.0, 0.8, 0.0, 1.0, 0.9, 1.0);
+        VoxelShape shape3 = ShapeUtils.create(0.1, 0.0, 0.1, 0.9, 0.9, 0.9);
+        SHAPE = ShapeUtils.func_197872_a(ShapeUtils.func_197872_a(shape1, shape2), shape3);
     }
 
     @Override
     public VoxelShape getShape(IBlockState p_getShape_1_, IBlockReader p_getShape_2_, BlockPos p_getShape_3_) {
-        VoxelShape shape = ShapeUtils.makeCuboidShape(0.0, 0.0, 0.0, 1.0, 0.1, 1.0);
-        VoxelShape shape2 = ShapeUtils.makeCuboidShape(0.0, 0.8, 0.0, 1.0, 0.9, 1.0);
-        VoxelShape shape3 = ShapeUtils.makeCuboidShape(0.1, 0.0, 0.1, 0.9, 0.9, 0.9);
-        return ShapeUtils.func_197872_a(ShapeUtils.func_197872_a(shape, shape2), shape3);
+        return SHAPE;
     }
 
     @Nullable
     @Override
-    public TileEntity getTileEntity(IBlockReader iBlockReader) {
+    public TileEntity createNewTileEntity(IBlockReader iBlockReader) {
         return new TileEntityQuartzStand();
     }
 
     @Override
-    public boolean onRightClick(IBlockState state, World world, BlockPos blockPos, EntityPlayer player, EnumHand hand, EnumFacing facing, float x, float y, float z) {
+    public boolean onBlockActivated(IBlockState state, World world, BlockPos blockPos, EntityPlayer player, EnumHand hand, EnumFacing facing, float x, float y, float z) {
         if (world.isRemote) {
             return true;
         }
