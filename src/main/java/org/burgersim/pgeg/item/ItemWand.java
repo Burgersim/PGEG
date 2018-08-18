@@ -1,23 +1,25 @@
 package org.burgersim.pgeg.item;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.*;
 import net.minecraft.item.*;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.burgersim.pgeg.listener.PgegItems;
 import org.burgersim.pgeg.mana.IManaHandler;
+import org.burgersim.pgeg.recipe.ModRecipes;
+import org.burgersim.pgeg.recipe.RecipesWand;
 
 public class ItemWand extends Item {
-    public ItemWand() {
+    private final int wandLevel;
+
+    public ItemWand(int wandLevel) {
         super(new Item.Builder().group(ItemGroup.TOOLS).maxStackSize(1).rarity(EnumRarity.UNCOMMON));
+        this.wandLevel = wandLevel;
     }
 
     @Override
@@ -25,27 +27,31 @@ public class ItemWand extends Item {
         World world = context.getWorld();
         BlockPos blockPos = context.getPos();
         IBlockState blockState = world.getBlockState(blockPos);
-        if (blockState != null) {
-            EntityPlayer player = context.getPlayer();
-            IManaHandler handler = (IManaHandler) player;
-            if (handler != null) {
-                if (blockState.getBlock() == Blocks.BOOKSHELF) {
-                    playSound(world, player, blockPos);
+        EntityPlayer player = context.getPlayer();
+        IManaHandler handler = (IManaHandler) player;
+        RecipesWand recipe = (RecipesWand) world.getRecipeManager().getRecipe(
+                new ModRecipes.InWorldCrafting(world.getBlockState(blockPos).getBlock()), world);
+        if (recipe != null && recipe.getWandLevel() <= wandLevel && recipe.getManaCost() <= handler.getMana()) {
+            if (!world.isRemote()) {
+                if (handler.getMaxMana() <= 0) {
+                    handler.setMaxMana(100);
+                }
+                if (!player.capabilities.isCreativeMode) {
+                    handler.setMana(handler.getMana() - recipe.getManaCost());
+                }
+                if ("item".equals(recipe.getOutputType())) {
                     world.setBlockToAir(blockPos);
+                    world.spawnEntity(
+                            new EntityItem(
+                                    world,
+                                    blockPos.getX() + .5,
+                                    blockPos.getY() + .5,
+                                    blockPos.getZ() + .5,
+                                    recipe.getCraftingResult(null)));
                     spawnEnchantParticle(world, blockPos);
-                    if (handler.getMaxMana() == 0.0F) {
-                        handler.setMaxMana(100.0F);
-                    }
-                    double xOffset = (double) (itemRand.nextFloat() * 0.5F) + 0.25D;
-                    double yOffset = (double) (itemRand.nextFloat() * 0.5F) + 0.25D;
-                    double zOffset = (double) (itemRand.nextFloat() * 0.5F) + 0.25D;
-                    EntityItem item = new EntityItem(world, blockPos.getX() + xOffset
-                            , blockPos.getY() + yOffset, blockPos.getZ() + zOffset,
-                            new ItemStack(PgegItems.SPELL_BOOK, 1));
-                    item.setNoDespawn();
-                    item.setDefaultPickupDelay();
-                    if (!world.isRemote())
-                        world.spawnEntity(item);
+                    playSound(world, player, blockPos);
+                } else if ("block".equals(recipe.getOutputType())) {
+                    world.setBlockState(blockPos, Block.getBlockFromItem(recipe.getCraftingResult(null).getItem()).getDefaultState());
                 }
             }
         }
@@ -67,5 +73,9 @@ public class ItemWand extends Item {
 
     private void playSound(World world, EntityPlayer player, BlockPos blockPos) {
         world.playSound(player, blockPos, SoundEvents.ENTITY_PLAYER_LEVELUP, SoundCategory.AMBIENT, 1.0F, 1.0F);
+    }
+
+    public int getWandLevel() {
+        return wandLevel;
     }
 }
