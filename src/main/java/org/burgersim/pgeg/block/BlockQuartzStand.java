@@ -20,7 +20,7 @@ import org.burgersim.pgeg.tileentity.TileEntityQuartzStand;
 
 import javax.annotation.Nullable;
 
-public class BlockQuartzStand extends Block implements ITileEntityProvider {
+public class BlockQuartzStand extends BlockWaterlogged implements ITileEntityProvider {
 
     public BlockQuartzStand() {
         super(Block.Builder.from(Blocks.QUARTZ_PILLAR));
