@@ -23,14 +23,15 @@ public class BlockModOre extends BlockOre {
     }
 
 
-    public IItemProvider getItemProvider(IBlockState p_getItemProvider_1_, World p_getItemProvider_2_, BlockPos p_getItemProvider_3_, int p_getItemProvider_4_) {
+    public IItemProvider getItem(IBlockState p_getItemProvider_1_, World p_getItemProvider_2_, BlockPos p_getItemProvider_3_, int p_getItemProvider_4_) {
         return drop;
     }
 
     @Override
-    public void spawnItems(IBlockState state, World world, BlockPos blockPos, float p_spawnItems_4_, int p_spawnItems_5_) {
-        super.spawnItems(state, world, blockPos, p_spawnItems_4_, p_spawnItems_5_);
+    public void dropBlockAsItemWithChance(IBlockState state, World world, BlockPos blockPos, float p_dropBlockAsItemWithChance_4_, int p_dropBlockAsItemWithChance_5_) {
+        super.dropBlockAsItemWithChance(state, world, blockPos, p_dropBlockAsItemWithChance_4_, p_dropBlockAsItemWithChance_5_);
         int xp = MathHelper.getInt(world.rand, xpMin, xpMax);
         this.dropXpOnBlockBreak(world, blockPos, xp);
     }
+
 }

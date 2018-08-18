@@ -32,4 +32,4 @@ minecraft {
     mappings = 'snapshot_20180817'
     runDir = 'run'
     tweakClass = 'org.dimdev.riftloader.launch.RiftLoaderClientTweaker'
-}
+    }
