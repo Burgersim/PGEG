@@ -5,9 +5,8 @@ This is the repository for my Mod for minecraft 1.13, with the help of the Rift 
 Planned features:
 
 * Magic System
-* New Biomes
+* New Biome
 * New Logs, Woods, Planks
-* New Mobs
 * New Foods
 * New Crops
 * New Tools/More Tools
