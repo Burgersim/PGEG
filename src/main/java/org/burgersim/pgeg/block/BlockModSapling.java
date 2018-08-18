@@ -4,15 +4,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.trees.AbstractTree;
-import net.minecraft.client.particle.Particle;
 import net.minecraft.init.Blocks;
-import net.minecraft.particles.ParticleType;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.Tag;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
-import org.burgersim.pgeg.listener.Listener;
-
-import java.util.Random;
+import org.burgersim.pgeg.listener.PgegBlocks;
 
 public class BlockModSapling extends BlockSapling {
     public BlockModSapling(AbstractTree tree, Builder builder) {
@@ -27,6 +24,11 @@ public class BlockModSapling extends BlockSapling {
                 block == Blocks.COARSE_DIRT ||
                 block == Blocks.PODZOL ||
                 block == Blocks.FARMLAND ||
-                block == Listener.MANA_GRASS;
+                block == PgegBlocks.MANA_GRASS;
+    }
+
+    @Override
+    public boolean isTagged(Tag<Block> tag) {
+        return super.isTagged(tag) || tag == BlockTags.SAPLINGS;
     }
 }
