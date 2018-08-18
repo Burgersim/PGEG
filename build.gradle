@@ -2,14 +2,17 @@ buildscript {
     repositories {
         jcenter()
         maven { url 'https://www.dimdev.org/maven/' }
+        maven { url 'http://repo.spongepowered.org/maven' }
     }
     dependencies {
         classpath 'org.dimdev:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
     }
 }
 
 apply plugin: 'net.minecraftforge.gradle.tweaker-client'
 apply plugin: 'java'
+apply plugin: 'org.spongepowered.mixin'
 
 group 'org.burgersim.pgeg'
 version '1.0'
@@ -21,10 +24,16 @@ targetCompatibility = 1.8
 repositories {
     mavenCentral()
     maven { url 'https://www.dimdev.org/maven/' }
+    maven { url = 'https://repo.spongepowered.org/maven/' }
 }
 
 dependencies {
     implementation 'org.dimdev:rift:1.0.4-51:dev'
+}
+
+mixin {
+    defaultObfuscationEnv notch
+    add sourceSets.main, 'mixins.rift.refmap.json'
 }
 
 minecraft {
@@ -33,3 +42,5 @@ minecraft {
     runDir = 'run'
     tweakClass = 'org.dimdev.riftloader.launch.RiftLoaderClientTweaker'
     }
+
+
