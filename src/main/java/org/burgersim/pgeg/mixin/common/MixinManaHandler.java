@@ -1,4 +1,4 @@
-package org.burgersim.pgeg.mixin;
+package org.burgersim.pgeg.mixin.common;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EntityType;

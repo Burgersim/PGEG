@@ -1,4 +1,4 @@
-package org.burgersim.pgeg.mixin;
+package org.burgersim.pgeg.mixin.common;
 
 import net.minecraft.block.BlockGrass;
 import net.minecraft.entity.EntityAgeable;

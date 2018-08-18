@@ -3,12 +3,11 @@
   "minVersion": "0.7.7",
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",
-  "package": "org.burgersim.pgeg.mixin",
+  "package": "org.burgersim.pgeg.mixin.client",
   "refmap": "mixins.pgeg.refmap.json",
-  "mixins": [
-    "MixinEntityAnimal",
-    "MixinManaHandler",
-    "MixinManaRenderer"
-  ],
-  "client": []
+  "mixins": [],
+  "client": [
+    "MixinManaBarOverlay",
+    "MixinWandCraftingOverlay"
+  ]
 }
