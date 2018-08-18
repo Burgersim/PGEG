@@ -64,7 +64,7 @@ public abstract class MixinManaHandler extends EntityLivingBase implements IMana
 
     @Inject(method = "entityInit", at = @At("TAIL"))
     private void manaInit(CallbackInfo ci) {
-        this.dataManager.register(MAX_MANA, 20.0F);
+        this.dataManager.register(MAX_MANA, 0.0F);
         this.dataManager.register(MANA, 0.0F);
     }
 

@@ -34,7 +34,7 @@ public class ItemWand extends Item {
         if (recipe != null && recipe.getWandLevel() <= wandLevel && recipe.getManaCost() <= handler.getMana()) {
             if (!world.isRemote()) {
                 if (handler.getMaxMana() <= 0) {
-                    handler.setMaxMana(100);
+                    handler.setMaxMana(20);
                 }
                 if (!player.capabilities.isCreativeMode) {
                     handler.setMana(handler.getMana() - recipe.getManaCost());
