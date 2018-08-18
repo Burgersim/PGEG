@@ -37,9 +37,9 @@ public class PgegBlocks implements BlockAdder {
             .hardnessAndResistance(3.0f,4)
             .soundType(SoundType.STONE), PgegItems.MANA_CRYSTAL_DUST, 3, 7);
 
-    public static Block QUARTZ_PILLAR = new BlockQuartzPillar();
-    public static Block MANA_FERN = new BlockModFern(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().soundType(SoundType.PLANT));
-    public static Block MANA_TALLGRASS = new BlockModFern(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().soundType(SoundType.PLANT));
+    public static Block QUARTZ_PILLAR = new BlockQuartzStand();
+    public static Block MANA_FERN = new BlockModTallGrass(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().soundType(SoundType.PLANT));
+    public static Block MANA_TALLGRASS = new BlockModTallGrass(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().soundType(SoundType.PLANT));
     @Override
     public void registerBlocks() {
         Block.registerBlock(new ResourceLocation(MOD_ID, "mana_grass_block"), MANA_GRASS);

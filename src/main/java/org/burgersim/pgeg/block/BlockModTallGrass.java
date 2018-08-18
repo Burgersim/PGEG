@@ -8,8 +8,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
-public class BlockModFern extends BlockTallGrass {
-    public BlockModFern(Builder builder) {
+public class BlockModTallGrass extends BlockTallGrass {
+    public BlockModTallGrass(Builder builder) {
         super(builder);
     }
 
