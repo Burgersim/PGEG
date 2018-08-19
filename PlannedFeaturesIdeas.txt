@@ -27,7 +27,7 @@ recipe system with inputs (maybe in order, but not neccessarily) and outputs in 
 clicking with a wand finishes a cauldron recipe?
 
 ###Spellbinding Table###
-crafted from enchantment table
+crafted via Wand from enchantment table
 needs mana dust to operate
 used to bind Spells to Wands
 
