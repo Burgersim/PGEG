@@ -35,7 +35,7 @@ used to bind Spells to Wands
 lvl of wand/staff gives max number of saved spells
 maybe two classes wands/staffs (wands less mana cost, but staffs more "power" or another benefit?)
 
-###Magic Flowers###
+###Magic Flowers in Pots###
 Flower Pot with blue Flower --> Snowbell (produces snow around itself)
 Flower Pot with Mushroom --> Glowshroom (produces light)
 
