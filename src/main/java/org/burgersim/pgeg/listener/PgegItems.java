@@ -6,7 +6,6 @@ import net.minecraft.util.ResourceLocation;
 import org.burgersim.pgeg.item.ItemSpellBook;
 import org.burgersim.pgeg.item.ItemWand;
 import org.burgersim.pgeg.item.ManaFood;
-import org.burgersim.pgeg.recipe.ModRecipes;
 import org.dimdev.rift.listener.ItemAdder;
 
 import static org.burgersim.pgeg.listener.PgegBlocks.*;
@@ -18,7 +17,6 @@ public class PgegItems implements ItemAdder {
             ,new Item.Builder().group(ItemGroup.FOOD));
     public static Item WAND = new ItemWand(1);
     public static Item SPELL_BOOK = new ItemSpellBook();
-    private static final ModRecipes recipes = new ModRecipes();
 
     @Override
     public void registerItems() {

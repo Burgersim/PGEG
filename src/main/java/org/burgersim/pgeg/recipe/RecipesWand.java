@@ -30,9 +30,9 @@ public class RecipesWand implements IRecipe {
 
     @Override
     public boolean matches(IInventory iInventory, World world) {
-        if (iInventory instanceof ModRecipes.InWorldCrafting) {
+        if (iInventory instanceof InWorldCrafting) {
             for (ItemStack stack : recipeInput.getMatchingStacks()) {
-                if (((ModRecipes.InWorldCrafting) iInventory).input.asItem() == stack.getItem()) {
+                if (((InWorldCrafting) iInventory).input.asItem() == stack.getItem()) {
                     return true;
                 }
             }
@@ -62,7 +62,7 @@ public class RecipesWand implements IRecipe {
 
     @Override
     public IRecipeSerializer<?> getSerializer() {
-        return ModRecipes.RECIPE_WAND;
+        return Serizalizer.INSTANCE;
     }
 
     public int getWandLevel() {
@@ -74,7 +74,8 @@ public class RecipesWand implements IRecipe {
     }
 
     public static class Serizalizer implements IRecipeSerializer<RecipesWand> {
-        public Serizalizer() {
+        public static final Serizalizer INSTANCE = new Serizalizer();
+        private Serizalizer() {
         }
 
         @Override
