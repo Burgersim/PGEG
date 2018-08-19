@@ -30,8 +30,6 @@ public abstract class MixinManaBarOverlay extends Gui {
     @Shadow
     private int field_194812_I;
     @Shadow
-    private int playerHealth;
-
     @Final
     private Minecraft mc;
 
