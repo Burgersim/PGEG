@@ -5,7 +5,6 @@
     "item": "minecraft:bookshelf"
   },
   "result": "pgeg:spell_book",
-  "result_type": "item",
   "wand_level": 0,
   "mana_cost": 0.0
 }

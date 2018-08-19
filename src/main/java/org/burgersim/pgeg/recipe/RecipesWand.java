@@ -14,17 +14,15 @@ public class RecipesWand implements IRecipe {
     private final ResourceLocation id;
     private final String group;
     private final ItemStack recipeOutput;
-    private final String outputType;
     private final Ingredient recipeInput;
     private final int wandLevel;
     private final float manaCost;
 
-    public RecipesWand(ResourceLocation id, String group, ItemStack recipeOutput, String outputType, Ingredient recipeInput,
+    public RecipesWand(ResourceLocation id, String group, ItemStack recipeOutput, Ingredient recipeInput,
                        int wandLevel, float manaCost) {
         this.id = id;
         this.group = group;
         this.recipeOutput = recipeOutput;
-        this.outputType = outputType;
         this.recipeInput = recipeInput;
         this.wandLevel = wandLevel;
         this.manaCost = manaCost;
@@ -62,10 +60,6 @@ public class RecipesWand implements IRecipe {
         return id;
     }
 
-    public String getOutputType() {
-        return outputType;
-    }
-
     @Override
     public IRecipeSerializer<?> getSerializer() {
         return ModRecipes.RECIPE_WAND;
@@ -88,7 +82,6 @@ public class RecipesWand implements IRecipe {
             String recipeGroup = JsonUtils.getString(jsonObject, "group", "");
             Ingredient ingredient = Ingredient.fromJson(JsonUtils.getJsonObject(jsonObject, "input"));
             String registryName = JsonUtils.getString(jsonObject, "result");
-            String resultType = JsonUtils.getString(jsonObject, "result_type");
             int wandLevel = JsonUtils.getInt(jsonObject, "wand_level");
             float manaCost = JsonUtils.getFloat(jsonObject, "mana_cost");
             Item item = Item.REGISTRY.getObject(new ResourceLocation(registryName));
@@ -98,7 +91,7 @@ public class RecipesWand implements IRecipe {
             } else {
                 throw new IllegalStateException(item + " did not exist");
             }
-            return new RecipesWand(resourceLocation, recipeGroup, stack, resultType, ingredient, wandLevel, manaCost);
+            return new RecipesWand(resourceLocation, recipeGroup, stack, ingredient, wandLevel, manaCost);
 
         }
 
@@ -110,7 +103,7 @@ public class RecipesWand implements IRecipe {
             float manaCost = packetBuffer.readFloat();
             ItemStack output = packetBuffer.readItemStack();
             String outputType = packetBuffer.readString(32767);
-            return new RecipesWand(resourceLocation, recipeGroup, output, outputType, input, wandLevel, manaCost);
+            return new RecipesWand(resourceLocation, recipeGroup, output, input, wandLevel, manaCost);
         }
 
         @Override
@@ -120,7 +113,6 @@ public class RecipesWand implements IRecipe {
             packetBuffer.writeInt(recipesWand.wandLevel);
             packetBuffer.writeFloat(recipesWand.manaCost);
             packetBuffer.writeItemStack(recipesWand.recipeOutput);
-            packetBuffer.writeString(recipesWand.outputType);
         }
 
         @Override

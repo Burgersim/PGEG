@@ -5,7 +5,6 @@
     "item": "minecraft:quartz_pillar"
   },
   "result": "pgeg:quartz_stand",
-  "result_type": "block",
   "wand_level": 1,
   "mana_cost": 10.0
 }
