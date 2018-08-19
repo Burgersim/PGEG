@@ -39,7 +39,10 @@ public class ItemWand extends Item {
                 if (!player.capabilities.isCreativeMode) {
                     handler.setMana(handler.getMana() - recipe.getManaCost());
                 }
-                if ("item".equals(recipe.getOutputType())) {
+                Block result = Block.getBlockFromItem(recipe.getCraftingResult(null).getItem());
+                if (result != Blocks.AIR) {
+                    world.setBlockState(blockPos, result.getDefaultState());
+                } else {
                     world.setBlockToAir(blockPos);
                     world.spawnEntity(
                             new EntityItem(
@@ -50,8 +53,6 @@ public class ItemWand extends Item {
                                     recipe.getCraftingResult(null)));
                     spawnEnchantParticle(world, blockPos);
                     playSound(world, player, blockPos);
-                } else if ("block".equals(recipe.getOutputType())) {
-                    world.setBlockState(blockPos, Block.getBlockFromItem(recipe.getCraftingResult(null).getItem()).getDefaultState());
                 }
             }
         }
