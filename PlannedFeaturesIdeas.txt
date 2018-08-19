@@ -1,4 +1,4 @@
-###Basic Spell Events:###
+###Basic Spell Events###
 Spawn Entity (a Fireball should fall into this too, right? xD)
 Spawn Block
 Spawn Item
