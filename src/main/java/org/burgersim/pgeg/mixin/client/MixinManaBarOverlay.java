@@ -1,4 +1,4 @@
-package org.burgersim.pgeg.mixin;
+package org.burgersim.pgeg.mixin.client;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
@@ -17,10 +17,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Random;
 
+import static org.burgersim.pgeg.utils.Reference.MANA_ICONS;
 import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 @Mixin(GuiIngame.class)
-public abstract class MixinManaRenderer extends Gui {
+public abstract class MixinManaBarOverlay extends Gui {
     @Shadow
     private int field_194811_H;
     @Shadow
@@ -30,7 +31,7 @@ public abstract class MixinManaRenderer extends Gui {
     private int field_194812_I;
     @Shadow
     private int playerHealth;
-    private static final ResourceLocation MANA_ICONS = new ResourceLocation(MOD_ID, "textures/gui/icons.png");
+
     @Final
     private Minecraft mc;
 

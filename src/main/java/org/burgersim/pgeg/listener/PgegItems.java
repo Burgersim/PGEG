@@ -7,6 +7,7 @@ import org.burgersim.pgeg.item.ItemSpellBook;
 import org.burgersim.pgeg.item.ItemWand;
 import org.burgersim.pgeg.item.ManaDebugItem;
 import org.burgersim.pgeg.item.ManaFood;
+import org.burgersim.pgeg.recipe.ModRecipes;
 import org.dimdev.rift.listener.ItemAdder;
 
 import static org.burgersim.pgeg.listener.PgegBlocks.*;
@@ -16,9 +17,10 @@ public class PgegItems implements ItemAdder {
     public static Item MANA_CRYSTAL_DUST = new Item(new Item.Builder().group(ItemGroup.MISC));
     public static Item MANA_CAKE = new ManaFood(1,0.2F, 20.0F , false
             ,new Item.Builder().group(ItemGroup.FOOD));
-    public static Item WAND = new ItemWand();
+    public static Item WAND = new ItemWand(1);
     public static Item SPELL_BOOK = new ItemSpellBook();
     private static Item MANA_DEBUG = new ManaDebugItem();
+    private static final ModRecipes recipes = new ModRecipes();
 
     @Override
     public void registerItems() {

@@ -8,6 +8,7 @@ public class PgegInit implements InitializationListener {
     @Override
     public void onInitialization() {
         MixinBootstrap.init();
-        Mixins.addConfiguration("mixins.pgeg.json");
+        Mixins.addConfiguration("mixins.pgeg.common.json");
+        Mixins.addConfiguration("mixins.pgeg.client.json");
     }
 }
