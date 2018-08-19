@@ -1,6 +1,10 @@
 ###Recipe Compat###
 Can Wand/Staff/Cauldron recipes be shown in AEI?
 
+###Mana Dust###
+Placable Mana Dust, if Placed in a closed formation, hostile mobs cannot cross
+woking indicated by low lighting?
+
 ###Basic Spell Events###
 Spawn Entity (a Fireball should fall into this too, right? xD)
 Spawn Block
