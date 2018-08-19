@@ -48,3 +48,8 @@ Brimstone (black stone/yellow ore, smelting on tools?, burn on weapons?, fire re
 ###Additional Materials (Tools/Weapons)###
 Obsidian (stronger than Diamond
 Emerald (as strong as Iron, high enchantability)
+
+###Plants/Crops###
+Tomato
+Rice
+Cotton
