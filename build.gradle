@@ -33,7 +33,7 @@ dependencies {
 
 mixin {
     defaultObfuscationEnv notch
-    add sourceSets.main, 'mixins.rift.refmap.json'
+    add sourceSets.main, 'mixins.pgeg.refmap.json'
 }
 
 minecraft {
