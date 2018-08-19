@@ -52,7 +52,7 @@ Saturnium (dark blue/purple, random enchantments on crafted tools andd weapons, 
 Brimstone (black stone/yellow ore, smelting on tools?, burn on weapons?, fire resistance on armor?, as strong as Iron, generates in the Nether)
 
 ###Additional Materials (Tools/Weapons)###
-Obsidian (stronger than Diamond
+Obsidian (stronger than Diamond)
 Emerald (as strong as Iron, high enchantability)
 
 ###Plants/Crops###
