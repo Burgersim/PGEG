@@ -5,7 +5,6 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import org.burgersim.pgeg.item.ItemSpellBook;
 import org.burgersim.pgeg.item.ItemWand;
-import org.burgersim.pgeg.item.ManaDebugItem;
 import org.burgersim.pgeg.item.ManaFood;
 import org.burgersim.pgeg.recipe.ModRecipes;
 import org.dimdev.rift.listener.ItemAdder;
@@ -19,7 +18,6 @@ public class PgegItems implements ItemAdder {
             ,new Item.Builder().group(ItemGroup.FOOD));
     public static Item WAND = new ItemWand(1);
     public static Item SPELL_BOOK = new ItemSpellBook();
-    private static Item MANA_DEBUG = new ManaDebugItem();
     private static final ModRecipes recipes = new ModRecipes();
 
     @Override
@@ -46,6 +44,5 @@ public class PgegItems implements ItemAdder {
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_cake"), MANA_CAKE);
         Item.registerItem(new ResourceLocation(MOD_ID, "wand"), WAND);
         Item.registerItem(new ResourceLocation(MOD_ID, "spell_book"), SPELL_BOOK);
-        Item.registerItem(new ResourceLocation(MOD_ID, "mana_debug"), MANA_DEBUG);
     }
 }

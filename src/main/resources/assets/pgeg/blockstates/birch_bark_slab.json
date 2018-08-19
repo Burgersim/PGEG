@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "type=bottom": { "model": "pgeg:block/birch_bark_slab" },
-        "type=top": { "model": "pgeg:block/birch_bark_slab_top" },
-        "type=double": { "model": "block/birch_wood" }
-    }
-}
