@@ -46,7 +46,7 @@ Flower Pot with blue Flower --> Snowbell (produces snow around itself)
 Flower Pot with Mushroom --> Glowshroom (produces light)
 
 ###Additional Ores###
-Mithril (light blue, stronger than diamond, generates near bedrock)
+Mithril (light blue, stronger than diamond, generates near bedrock/compound of Iron, ManaDust and Diamond?)
 Orichalcum (red/pink, faster underwater, strong as diamond, generates in deep Oceans)
 Saturnium (dark blue/purple, random enchantments on crafted tools andd weapons, generates in the End)
 Brimstone (black stone/yellow ore, smelting on tools?, burn on weapons?, fire resistance on armor?, as strong as Iron, generates in the Nether)
