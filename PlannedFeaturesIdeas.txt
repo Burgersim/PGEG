@@ -48,8 +48,18 @@ Flower Pot with Mushroom --> Glowshroom (produces light)
 ###Additional Ores###
 Mithril (light blue, stronger than diamond, generates near bedrock/compound of Iron, ManaDust and Diamond?)
 Orichalcum (red/pink, faster underwater, strong as diamond, generates in deep Oceans)
-Saturnium (dark blue/purple, random enchantments on crafted tools andd weapons, generates in the End)
-Brimstone (black stone/yellow ore, smelting on tools?, burn on weapons?, fire resistance on armor?, as strong as Iron, generates in the Nether)
+Saturnium (dark blue/purple, random enchantments on crafted tools andd weapons, generates in the End, stronger than Obsidian)
+Brimstone (black stone/yellow ore, smelting on tools?, burn on weapons?, fire resistance on armor?, as stronger than Diamond, generates in the Nether)
+Meteorite (stronger than Saturnium, randomly spawns in Meteorite structures (balls made of obsidian?))
+
+###Ore Strenghts###
+Wood
+Stone
+Iron / Emerald
+Diamond / Mithril / Orichalcum
+Obsidian / Brimstone
+Saturnium
+Meteorite
 
 ###Additional Materials (Tools/Weapons)###
 Obsidian (stronger than Diamond)
