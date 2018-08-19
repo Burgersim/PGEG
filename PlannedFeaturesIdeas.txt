@@ -1,0 +1,50 @@
+###Basic Spell Events:###
+Spawn Entity (a Fireball should fall into this too, right? xD)
+Spawn Block
+Spawn Item
+Inflict Damage on target
+Inflict (potion) effect on target
+Mine Block
+Destroy Block
+Transform Block
+Teleport Entity/Player
+
+###Basic Spell Json Structure###
+Spell Name
+associated Item (Spell Scroll e.g. Fireball)
+min Staff lvl
+Basic Spell Event
+	Target
+	Output
+Sound
+Particle Effect
+Mana Cost
+
+###Spellbrewing Cauldron###
+needs heat source underneath
+crafted via Wand (min lvl 1) from Vanilla Cauldron
+recipe system with inputs (maybe in order, but not neccessarily) and outputs in jsons
+clicking with a wand finishes a cauldron recipe?
+
+###Spellbinding Table###
+crafted from enchantment table
+needs mana dust to operate
+used to bind Spells to Wands
+
+###Spells on Wands/Staffs###
+lvl of wand/staff gives max number of saved spells
+maybe two classes wands/staffs (wands less mana cost, but staffs more "power" or another benefit?)
+
+###Magic Flowers###
+Flower Pot with blue Flower --> Snowbell (produces snow around itself)
+Flower Pot with Mushroom --> Glowshroom (produces light)
+
+###Additional Ores###
+Mithril (light blue, stronger than diamond, generates near bedrock)
+Orichalcum (red/pink, faster underwater, strong as diamond, generates in deep Oceans)
+Saturnium (dark blue/purple, random enchantments on crafted tools andd weapons, generates in the End)
+Brimstone (black stone/yellow ore, smelting on tools?, burn on weapons?, fire resistance on armor?, as strong as Iron, generates in the Nether)
+
+###Additional Materials (Tools/Weapons)###
+Obsidian (stronger than Diamond
+Emerald (as strong as Iron, high enchantability)
