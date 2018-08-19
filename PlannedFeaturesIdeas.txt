@@ -12,9 +12,6 @@ Destroy Block
 Transform Block
 Teleport Entity/Player
 
-###Recipe Compat###
-Can Wand/Staff/Cauldron recipes be shown in AEI?
-
 ###Basic Spell Json Structure###
 Spell Name
 associated Item (Spell Scroll e.g. Fireball)
@@ -62,7 +59,12 @@ Emerald (as strong as Iron, high enchantability)
 Tomato
 Rice
 Cotton
+Berry Bush
 
 ###Food###
 Sushi
 Squid Tentacles (raw/cooked)
+Berries
+Caramel
+Caramel Apple
+Candy (maybe with Potion effects)
