@@ -26,7 +26,7 @@ public abstract class MixinManaHandler extends EntityLivingBase implements IMana
         MAX_MANA = EntityDataManager.createKey(EntityPlayer.class, DataSerializers.FLOAT);
     }
 
-    protected MixinManaHandler(EntityType<?> p_i48577_1_, World p_i48577_2_) {
+    public MixinManaHandler(EntityType<?> p_i48577_1_, World p_i48577_2_) {
         super(p_i48577_1_, p_i48577_2_);
     }
 
