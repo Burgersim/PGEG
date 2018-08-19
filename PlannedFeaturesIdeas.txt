@@ -82,3 +82,8 @@ Berries
 Caramel
 Caramel Apple
 Candy (maybe with Potion effects)
+Cheese
+Caprese (Mozarella and Tomato)
+Pizza
+Dough
+Jerky (Monster, Mutton, Squid, Fish, Pork,...) [maybe a drying rack, like tinkers consstruct has]
