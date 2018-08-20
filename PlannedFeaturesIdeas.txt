@@ -1,8 +1,26 @@
 ###Recipe Compat###
 Can Wand/Staff/Cauldron recipes be shown in AEI?
 
+###RuneLexicon###
+Make Rune Encyclopedia from Spellbook
+Place Runes with certain effects on the floor, use inventory materials for it (redstone, mana dust, glowstone,...)
+Activate a rune with a Wand/Staff of min LVL that book or effect needs, and pay Mana Cost
+Runes vanish after some time, or need to be reactivated, maybe the lvl makes it stay longer
+
+###Runes Effects on contact with connected Dust###
+Water (drowning damage)
+Fire (Fire damage)
+Binding (stay in place, only one mob per dust occupied block?)
+Damage (physical damage, duh)
+Ice (slowness effect)
+Plant (poison effect)
+Earth (Dig 4 Deep Hole, 2x2x4?)
+Air (jump up, like on a slimeblock)
+
+End (teleport --> maybe special, rune in the middle, dust around makes a teleport point, connected to all others, maybe colored dust to differentiate?)
+
 ###Mana Dust###
-Placable Mana Dust, if Placed in a closed formation, hostile mobs cannot cross
+Placable Mana Dust, if Placed checks for adjacent rune, gives the line of dust the effect of the rune
 woking indicated by low lighting?
 
 ###Basic Spell Events###
