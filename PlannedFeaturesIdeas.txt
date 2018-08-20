@@ -40,6 +40,11 @@ used to bind Spells to Wands
 
 	###Spellbook###
 	IF Spells get bound to Wands/Staffs, change Spellbook to Almanac of Mysticism and Magic (Mod Documentation)
+	
+	###RuneLexicon###
+	Make Rune Encyclopedia from Spellbook
+	Place Runes with certain effects on the floor, use inventory materials for it (redstone, mana dust, glowstone,...)
+	Activate a rune with a Wand/Staff of min LVL that book or effect needs
 
 ###Spells on Wands/Staffs###
 lvl of wand/staff gives max number of saved spells
