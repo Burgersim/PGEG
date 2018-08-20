@@ -1,8 +1,13 @@
 ###Recipe Compat###
 Can Wand/Staff/Cauldron recipes be shown in AEI?
 
+###RuneLexicon###
+Make Rune Encyclopedia from Spellbook
+Place Runes with certain effects on the floor, use inventory materials for it (redstone, mana dust, glowstone,...)
+Activate a rune with a Wand/Staff of min LVL that book or effect needs
+
 ###Mana Dust###
-Placable Mana Dust, if Placed in a closed formation, hostile mobs cannot cross
+Placable Mana Dust, if Placed checks for adjacent rune, gives the line of dust the effect of the rune
 woking indicated by low lighting?
 
 ###Basic Spell Events###
@@ -40,11 +45,6 @@ used to bind Spells to Wands
 
 	###Spellbook###
 	IF Spells get bound to Wands/Staffs, change Spellbook to Almanac of Mysticism and Magic (Mod Documentation)
-	
-	###RuneLexicon###
-	Make Rune Encyclopedia from Spellbook
-	Place Runes with certain effects on the floor, use inventory materials for it (redstone, mana dust, glowstone,...)
-	Activate a rune with a Wand/Staff of min LVL that book or effect needs
 
 ###Spells on Wands/Staffs###
 lvl of wand/staff gives max number of saved spells
