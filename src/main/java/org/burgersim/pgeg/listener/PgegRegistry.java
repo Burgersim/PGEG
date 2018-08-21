@@ -47,20 +47,19 @@ public class PgegRegistry {
     /*add bounce/fall resistance chance 20-30%*/
     public static Item SLIME_PIE = new ItemFood(4, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD));
 
-    public static Item SQUID_RAW = new ItemFood(2, 0.2F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item SQUID_COOKED = new ItemFood(6, 1.2F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item TOMATO = new ItemFood(2, 6.0F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item RICE = new ItemFood(2, 0.8F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item DOUGH = new ItemFood(2, 0.2F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item NIGIRI_TROPICAL = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item ROLL_SEA_PICKLE = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
+        public static Item SQUID_RAW = new ItemFood(2, 0.2F,false, new Item.Builder().group(ItemGroup.FOOD));
+        public static Item SQUID_COOKED = new ItemFood(6, 1.2F,false, new Item.Builder().group(ItemGroup.FOOD));
+        public static Item TOMATO = new ItemFood(2, 6.0F,false, new Item.Builder().group(ItemGroup.FOOD));
+        public static Item DOUGH = new ItemFood(2, 0.2F, false, new Item.Builder().group(ItemGroup.FOOD));
+        public static Item NIGIRI_TROPICAL = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
+        public static Item ROLL_SEA_PICKLE = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
 
 
     public static Block TOMATO_CROP = new BlockTomato(BlockCrops.Builder.from(Blocks.CARROTS));
     public static Block RICE_CROP = new BlockRice(BlockCrops.Builder.from(Blocks.CARROTS));
 
-    public static Item TOMATO_SEEDS = new ItemSeeds(PgegRegistry.TOMATO_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
-    public static Item RICE_SEEDS = new ItemSeeds(PgegRegistry.RICE_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
+        public static Item TOMATO_SEEDS = new ItemSeeds(PgegRegistry.TOMATO_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
+        public static Item RICE = new ItemSeedFood(2, 0.8F, PgegRegistry.RICE_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
 
     /*Other Items*/
     public static Item PLANT_TREAT = new ItemBoneMeal(EnumDyeColor.BROWN, new Item.Builder().group(ItemGroup.MATERIALS));
