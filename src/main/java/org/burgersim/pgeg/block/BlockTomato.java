@@ -1,7 +1,7 @@
 package org.burgersim.pgeg.block;
 
 import net.minecraft.block.BlockCrops;
-import org.burgersim.pgeg.listener.PgegItems;
+import org.burgersim.pgeg.listener.PgegRegistry;
 import net.minecraft.util.IItemProvider;
 
 public class BlockTomato extends BlockCrops {
@@ -11,11 +11,11 @@ public class BlockTomato extends BlockCrops {
 
     @Override
     protected IItemProvider getSeedsItem(){
-        return PgegItems.TOMATO_SEEDS;
+        return PgegRegistry.TOMATO_SEEDS;
     }
 
     @Override
     protected IItemProvider getCropsItem() {
-        return PgegItems.TOMATO;
+        return PgegRegistry.TOMATO;
     }
 }

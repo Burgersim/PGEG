@@ -2,7 +2,7 @@ package org.burgersim.pgeg.block;
 
 import net.minecraft.block.BlockCrops;
 import net.minecraft.util.IItemProvider;
-import org.burgersim.pgeg.listener.PgegItems;
+import org.burgersim.pgeg.listener.PgegRegistry;
 
 public class BlockRice extends BlockCrops {
     public BlockRice(Builder builder) {
@@ -11,11 +11,11 @@ public class BlockRice extends BlockCrops {
 
     @Override
     protected IItemProvider getSeedsItem(){
-        return PgegItems.RICE_SEEDS;
+        return PgegRegistry.RICE_SEEDS;
     }
 
     @Override
     protected IItemProvider getCropsItem() {
-        return PgegItems.RICE;
+        return PgegRegistry.RICE;
     }
 }
