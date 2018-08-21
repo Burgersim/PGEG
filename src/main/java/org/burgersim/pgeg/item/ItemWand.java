@@ -4,14 +4,19 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.*;
-import net.minecraft.item.*;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Particles;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.EnumRarity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.burgersim.pgeg.mana.IManaHandler;
-import org.burgersim.pgeg.recipe.ModRecipes;
+import org.burgersim.pgeg.recipe.InWorldCrafting;
 import org.burgersim.pgeg.recipe.RecipesWand;
 
 public class ItemWand extends Item {
@@ -30,7 +35,7 @@ public class ItemWand extends Item {
         EntityPlayer player = context.getPlayer();
         IManaHandler handler = (IManaHandler) player;
         RecipesWand recipe = (RecipesWand) world.getRecipeManager().getRecipe(
-                new ModRecipes.InWorldCrafting(world.getBlockState(blockPos).getBlock()), world);
+                new InWorldCrafting(world.getBlockState(blockPos).getBlock()), world);
         if (recipe != null && recipe.getWandLevel() <= wandLevel && recipe.getManaCost() <= handler.getMana()) {
             if (!world.isRemote()) {
                 if (handler.getMaxMana() <= 0) {

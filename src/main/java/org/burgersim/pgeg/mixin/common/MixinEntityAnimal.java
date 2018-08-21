@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin(EntityAnimal.class)
 public abstract class MixinEntityAnimal extends EntityAgeable {
 
-    protected MixinEntityAnimal(EntityType<?> p_i48581_1_, World p_i48581_2_) {
+    public MixinEntityAnimal(EntityType<?> p_i48581_1_, World p_i48581_2_) {
         super(p_i48581_1_, p_i48581_2_);
     }
 

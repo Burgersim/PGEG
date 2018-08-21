@@ -11,7 +11,7 @@ import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class PgegItems implements ItemAdder {
 
-@Override
+    @Override
     public void registerItems() {
 
         /*Item Blocks */
@@ -40,7 +40,6 @@ public class PgegItems implements ItemAdder {
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_cake"), MANA_CAKE);
         Item.registerItem(new ResourceLocation(MOD_ID, "wand"), WAND);
         Item.registerItem(new ResourceLocation(MOD_ID, "spell_book"), SPELL_BOOK);
-        Item.registerItem(new ResourceLocation(MOD_ID, "mana_debug"), MANA_DEBUG);
 
         /*Food Items*/
 

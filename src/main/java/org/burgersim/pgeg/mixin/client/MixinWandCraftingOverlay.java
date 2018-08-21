@@ -17,7 +17,7 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import org.burgersim.pgeg.item.ItemWand;
 import org.burgersim.pgeg.mana.IManaHandler;
-import org.burgersim.pgeg.recipe.ModRecipes;
+import org.burgersim.pgeg.recipe.InWorldCrafting;
 import org.burgersim.pgeg.recipe.RecipesWand;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -101,7 +101,7 @@ public abstract class MixinWandCraftingOverlay extends Gui {
                     }
                 } else {
                     lastBlock = block;
-                    lastRecipe = world.getRecipeManager().getRecipe(new ModRecipes.InWorldCrafting(block), world);
+                    lastRecipe = world.getRecipeManager().getRecipe(new InWorldCrafting(block), world);
                 }
             }
         }
