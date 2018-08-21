@@ -76,7 +76,6 @@ public class PgegItems implements ItemAdder {
         Item.registerItem(new ResourceLocation(MOD_ID, "roll_sea_pickle"), ROLL_SEA_PICKLE);
 
         Item.registerItem(new ResourceLocation(MOD_ID, "tomato_seeds"), TOMATO_SEEDS);
-        Item.registerItem(new ResourceLocation(MOD_ID, "rice_seeds"), RICE_SEEDS);
 
         /*Other Items*/
         Item.registerItem(new ResourceLocation(MOD_ID, "plant_treat"), PLANT_TREAT);
