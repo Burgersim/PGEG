@@ -89,7 +89,7 @@ Caramel
 Caramel Apple
 Candy (maybe with Potion effects)
 Cheese
-Caprese (Cheese and Tomato)
+Cheese + Tomato + Kelp (+ Bowl) --> Caprese Salad
 Tomato + Noodles --> Spaghetti
 Tomato + Dough + Kelp + Cheese = Pizza (maybe like a Cake?)
 Dough --> Like Stick Crafting --> Noodlesx4
