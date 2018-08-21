@@ -1,69 +1,7 @@
 package org.burgersim.pgeg.listener;
 
-import net.minecraft.item.*;
-import net.minecraft.util.ResourceLocation;
-import org.burgersim.pgeg.item.ItemSpellBook;
-import org.burgersim.pgeg.item.ItemWand;
-import org.burgersim.pgeg.item.ManaDebugItem;
-import org.burgersim.pgeg.item.ManaFood;
-import org.burgersim.pgeg.recipe.ModRecipes;
-import org.dimdev.rift.listener.ItemAdder;
-
-import static org.burgersim.pgeg.listener.PgegBlocks.*;
-import static org.burgersim.pgeg.utils.Reference.MOD_ID;
-
-public class PgegItems implements ItemAdder {
-
-    /*Magic Items*/
-
-    public static Item MANA_CRYSTAL_DUST = new Item(new Item.Builder().group(ItemGroup.MISC));
-    public static Item MANA_CAKE = new ManaFood(1,0.2F, 20.0F , false
-            ,new Item.Builder().group(ItemGroup.FOOD));
-    public static Item WAND = new ItemWand(1);
-    public static Item SPELL_BOOK = new ItemSpellBook();
-    private static Item MANA_DEBUG = new ManaDebugItem();
-    private static final ModRecipes recipes = new ModRecipes();
-
-    /*Food Items*/
-    public static Item BROWNIE = new ItemFood(2,0.2F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item BURRITO_BEEF = new ItemFood(12,2,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item BURRITO_FISH = new ItemFood(10,2,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item BURRITO_VEGGIE = new ItemFood(6, 1.6F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item CARAMEL = new ItemFood(1,0.2F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item CARAMEL_APPLE = new ItemFood(5,0.6F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item COOKIE_CAT = new ItemFood(4,0.4F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item CREAM_COOKIE = new ItemFood(3, 0.3F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item CARAMEL_DONUT = new ItemFood(3, 0.2F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item SUGAR_DONUT = new ItemFood(2, 0.2F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item CHEESE = new ItemFood(2,0.6F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item CHEESE_FRIES = new ItemFood(7, 1.7F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item BERRY_JELLY = new ItemFood(3, 0.3F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item LION_LICKER = new ItemFood(2, 0.2F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item BERRY = new ItemFood(1,0.2F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item NIGIRI_COD = new ItemFood(5, 1.0F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item NIGIRI_SALMON = new ItemFood(5,1.0F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item NIGIRI_SQUID = new ItemFood(5, 1.0F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item ONIGIRI = new ItemFood(3, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item APPLE_PIE = new ItemFood(8, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item BERRY_PIE = new ItemFood(4,0.6F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item CHOCOLATE_PIE = new ItemFood(8, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD));
-    /*add bounce/fall resistance chance 20-30%*/
-    public static Item SLIME_PIE = new ItemFood(4,0.6F,false,new Item.Builder().group(ItemGroup.FOOD));
-
-    public static Item SQUID_RAW = new ItemFood(2, 0.2F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item SQUID_COOKED = new ItemFood(6, 1.2F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item TOMATO = new ItemFood(2, 6.0F,false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item RICE = new ItemFood(2, 0.8F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item DOUGH = new ItemFood(2, 0.2F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item NIGIRI_TROPICAL = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
-    public static Item ROLL_SEA_PICKLE = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
-
-    public static Item TOMATO_SEEDS = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
-    public static Item RICE_SEEDS = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
-
-
-    /*Other Items*/
-    public static Item PLANT_TREAT = new ItemBoneMeal(EnumDyeColor.BROWN, new Item.Builder().group(ItemGroup.MATERIALS));
+import static org.burgersim.pgeg.listener.PgegRegistry;
+import static org.burgersim.pgeg.utils.Reference.*;
 
     @Override
     public void registerItems() {

@@ -1,10 +1,8 @@
 package org.burgersim.pgeg.block;
 
 import net.minecraft.block.BlockCrops;
-import net.minecraft.init.Items;
 import net.minecraft.util.IItemProvider;
-
-import static org.burgersim.pgeg.listener.PgegItems.RICE_SEEDS;
+import org.burgersim.pgeg.listener.PgegItems;
 
 public class BlockRice extends BlockCrops {
     public BlockRice(Builder builder) {
@@ -13,11 +11,11 @@ public class BlockRice extends BlockCrops {
 
     @Override
     protected IItemProvider getSeedsItem(){
-        return Items.RICE_SEEDS;
+        return PgegItems.RICE_SEEDS;
     }
 
     @Override
     protected IItemProvider getCropsItem() {
-        return Items.RICE;
+        return PgegItems.RICE;
     }
 }
