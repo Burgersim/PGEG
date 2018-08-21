@@ -1,3 +1,4 @@
+========================================================================================
 #######Vanilla-Like/Needed Features:#######
 
 ###Recipe Compat###
@@ -79,18 +80,22 @@ Cotton
 Berry Bush
 
 ###Food###
-Sushi
+##The less crafting steps, the more vanilla like it is, right? xD##
+
+Sushi (cod, Salmon, squid, onigiri (kelp+rice))
 Squid Tentacles (raw/cooked)
 Berries
 Caramel
 Caramel Apple
 Candy (maybe with Potion effects)
 Cheese
-Caprese (Mozarella and Tomato)
-Pizza
-Dough
+Caprese (Cheese and Tomato)
+Tomato + Noodles --> Spaghetti
+Tomato + Dough + Kelp + Cheese = Pizza (maybe like a Cake?)
+Dough --> Like Stick Crafting --> Noodlesx4
 Jerky (Monster, Mutton, Squid, Fish, Pork,...) [maybe a drying rack, like tinkers consstruct has]
 
+=======================================================================================================
 #########Extra/Not-So-Vanilla Features:
 
 ###RuneLexicon###
