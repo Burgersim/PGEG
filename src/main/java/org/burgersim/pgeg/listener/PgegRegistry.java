@@ -3,6 +3,7 @@ package org.burgersim.pgeg.listener;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.*;
 import org.burgersim.pgeg.block.*;
 import org.burgersim.pgeg.block.tree.MagicOakTree;
@@ -55,15 +56,11 @@ public class PgegRegistry {
     public static Item ROLL_SEA_PICKLE = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
 
 
-        public static Block TOMATO_CROP = new BlockTomato(BlockCrops.Builder.create(Material.GRASS).doesNotBlockMovement().needsRandomTick());
-        public static Block RICE_CROP = new BlockRice(BlockCrops.Builder.create(Material.GRASS).doesNotBlockMovement().needsRandomTick());
-
-        public static Item TOMATO_SEEDS = new ItemSeeds(PgegRegistry.TOMATO_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
-        public static Item RICE_SEEDS = new ItemSeeds(PgegRegistry.RICE_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
+    public static Block TOMATO_CROP = new BlockTomato(BlockCrops.Builder.from(Blocks.CARROTS));
+    public static Block RICE_CROP = new BlockRice(BlockCrops.Builder.from(Blocks.CARROTS));
 
     public static Item TOMATO_SEEDS = new ItemSeeds(PgegRegistry.TOMATO_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
     public static Item RICE_SEEDS = new ItemSeeds(PgegRegistry.RICE_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
-
 
     /*Other Items*/
     public static Item PLANT_TREAT = new ItemBoneMeal(EnumDyeColor.BROWN, new Item.Builder().group(ItemGroup.MATERIALS));
