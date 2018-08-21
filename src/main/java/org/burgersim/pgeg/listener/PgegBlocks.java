@@ -41,6 +41,9 @@ public class PgegBlocks implements BlockAdder {
     public static Block MANA_FERN = new BlockModTallGrass(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT));
     public static Block MANA_TALLGRASS = new BlockModTallGrass(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT));
 
+    public static Block TOMATO_CROP = new BlockTomato(BlockCrops.Builder.create(Material.GRASS).doesNotBlockMovement().needsRandomTick());
+    public static Block RICE_CROP = new BlockRice(BlockCrops.Builder.create(Material.GRASS).doesNotBlockMovement().needsRandomTick());
+
     @Override
     public void registerBlocks() {
         Block.register(new ResourceLocation(MOD_ID, "mana_grass_block"), MANA_GRASS);
@@ -60,5 +63,7 @@ public class PgegBlocks implements BlockAdder {
         Block.register(new ResourceLocation(MOD_ID, "quartz_stand"), QUARTZ_PILLAR);
         Block.register(new ResourceLocation(MOD_ID, "mana_fern"), MANA_FERN);
         Block.register(new ResourceLocation(MOD_ID, "mana_tallgrass"), MANA_TALLGRASS);
+        Block.register(new ResourceLocation(MOD_ID, "tomato_crop"), TOMATO_CROP);
+        Block.register(new ResourceLocation(MOD_ID, "rice_crop"), RICE_CROP);
     }
 }

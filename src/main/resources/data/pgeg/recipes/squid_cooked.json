@@ -1,0 +1,9 @@
+{
+  "type": "smelting",
+  "ingredient": {
+    "item": "pgeg:squid_raw"
+  },
+  "result": "pgeg:squid_cooked",
+  "experience": 0.35,
+  "cookingtime": 200
+}

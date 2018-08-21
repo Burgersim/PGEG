@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0": { "model": "pgeg:block/rice_crop_stage_0" },
+        "age=1": { "model": "pgeg:block/rice_crop_stage_0" },
+        "age=2": { "model": "pgeg:block/rice_crop_stage_1" },
+        "age=3": { "model": "pgeg:block/rice_crop_stage_1" },
+        "age=4": { "model": "pgeg:block/rice_crop_stage_2" },
+        "age=5": { "model": "pgeg:block/rice_crop_stage_2" },
+        "age=6": { "model": "pgeg:block/rice_crop_stage_2" },
+        "age=7": { "model": "pgeg:block/rice_crop_stage_3" }
+    }
+}

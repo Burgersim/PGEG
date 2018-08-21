@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "pgeg:block/tomato_crop_stage_3"
+    }
+}

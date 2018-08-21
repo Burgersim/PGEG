@@ -1,0 +1,21 @@
+{
+  "type": "crafting_shaped",
+  "group": "pgeg",
+  "pattern": [
+    "###",
+    "#W#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "W":{
+      "item":"minecraft:water_bucket"
+    },
+  },
+  "result": {
+    "item": "pgeg:dough",
+    "count": 8
+  }
+}

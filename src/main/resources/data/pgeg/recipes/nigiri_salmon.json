@@ -1,0 +1,19 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "minecraft:salmon"
+    },
+    {
+      "item": "pgeg:rice"
+    }
+  ],
+  "result": {
+    "item": "pgeg:nigiri_salmon",
+    "count": 1
+  },
+  "group": "sushi"
+}

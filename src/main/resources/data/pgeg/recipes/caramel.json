@@ -1,0 +1,9 @@
+{
+  "type": "smelting",
+  "ingredient": {
+    "item": "minecraft:sugar"
+  },
+  "result": "pgeg:caramel",
+  "experience": 0,
+  "cookingtime": 200
+}

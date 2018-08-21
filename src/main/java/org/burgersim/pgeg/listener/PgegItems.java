@@ -54,6 +54,12 @@ public class PgegItems implements ItemAdder {
     public static Item SQUID_COOKED = new ItemFood(6, 1.2F,false, new Item.Builder().group(ItemGroup.FOOD));
     public static Item TOMATO = new ItemFood(2, 6.0F,false, new Item.Builder().group(ItemGroup.FOOD));
     public static Item RICE = new ItemFood(2, 0.8F, false, new Item.Builder().group(ItemGroup.FOOD));
+    public static Item DOUGH = new ItemFood(2, 0.2F, false, new Item.Builder().group(ItemGroup.FOOD));
+    public static Item NIGIRI_TROPICAL = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
+    public static Item ROLL_SEA_PICKLE = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
+
+    public static Item TOMATO_SEEDS = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
+    public static Item RICE_SEEDS = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
 
 
     /*Other Items*/
@@ -96,7 +102,7 @@ public class PgegItems implements ItemAdder {
         Item.registerItem(new ResourceLocation(MOD_ID, "burrito_beef"), BURRITO_BEEF);
         Item.registerItem(new ResourceLocation(MOD_ID, "burrito_fish"), BURRITO_FISH);
         Item.registerItem(new ResourceLocation(MOD_ID, "burrito_veggie"), BURRITO_VEGGIE);
-        Item.registerItem(new ResourceLocation(MOD_ID, "CARAMEL"), CARAMEL);
+        Item.registerItem(new ResourceLocation(MOD_ID, "caramel"), CARAMEL);
         Item.registerItem(new ResourceLocation(MOD_ID, "caramel_apple"), CARAMEL_APPLE);
         Item.registerItem(new ResourceLocation(MOD_ID, "cookie_cat"), COOKIE_CAT);
         Item.registerItem(new ResourceLocation(MOD_ID, "cream_cookie"), CREAM_COOKIE);
@@ -114,11 +120,17 @@ public class PgegItems implements ItemAdder {
         Item.registerItem(new ResourceLocation(MOD_ID, "apple_pie"), APPLE_PIE);
         Item.registerItem(new ResourceLocation(MOD_ID, "chocolate_pie"), CHOCOLATE_PIE);
         Item.registerItem(new ResourceLocation(MOD_ID, "berry_pie"), BERRY_PIE);
-        Item.registerItem(new ResourceLocation(MOD_ID, "slme_pie"), SLIME_PIE);
+        Item.registerItem(new ResourceLocation(MOD_ID, "slime_pie"), SLIME_PIE);
         Item.registerItem(new ResourceLocation(MOD_ID, "squid_raw"), SQUID_RAW);
         Item.registerItem(new ResourceLocation(MOD_ID, "squid_cooked"), SQUID_COOKED);
         Item.registerItem(new ResourceLocation(MOD_ID, "tomato"), TOMATO);
         Item.registerItem(new ResourceLocation(MOD_ID, "rice"), RICE);
+        Item.registerItem(new ResourceLocation(MOD_ID, "dough"), DOUGH);
+        Item.registerItem(new ResourceLocation(MOD_ID, "nigiri_tropical"), NIGIRI_TROPICAL);
+        Item.registerItem(new ResourceLocation(MOD_ID, "roll_sea_pickle"), ROLL_SEA_PICKLE);
+
+        Item.registerItem(new ResourceLocation(MOD_ID, "tomato_seeds"), TOMATO_SEEDS);
+        Item.registerItem(new ResourceLocation(MOD_ID, "rice_seeds"), RICE_SEEDS);
 
         /*Other Items*/
         Item.registerItem(new ResourceLocation(MOD_ID, "plant_treat"), PLANT_TREAT);

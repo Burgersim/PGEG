@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "item": "pgeg:cheese"
+    }
+  ],
+  "result": {
+    "item": "pgeg:cheese_fries",
+    "count": 1
+  }
+}

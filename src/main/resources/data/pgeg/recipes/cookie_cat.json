@@ -1,0 +1,26 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "#C#",
+    "BMB",
+    "#C#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:wheat"
+    },
+    "C": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "M": {
+      "item": "minecraft:milk_bucket"
+    },
+    "B":{
+      "item": "pgeg:berry"
+    }
+  },
+  "result": {
+    "item": "pgeg:cookie_cat",
+    "count": 16
+  }
+}
