@@ -1,7 +1,14 @@
 package org.burgersim.pgeg.listener;
 
-import static org.burgersim.pgeg.listener.PgegRegistry;
-import static org.burgersim.pgeg.utils.Reference.*;
+import net.minecraft.block.Block;
+import net.minecraft.util.ResourceLocation;
+import org.dimdev.rift.listener.BlockAdder;
+
+
+import static org.burgersim.pgeg.listener.PgegRegistry.*;
+import static org.burgersim.pgeg.utils.Reference.MOD_ID;
+
+public class PgegBlocks implements BlockAdder {
 
 @Override
     public void registerBlocks() {

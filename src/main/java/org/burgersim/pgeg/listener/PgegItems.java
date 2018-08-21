@@ -1,9 +1,17 @@
 package org.burgersim.pgeg.listener;
 
-import static org.burgersim.pgeg.listener.PgegRegistry;
-import static org.burgersim.pgeg.utils.Reference.*;
 
-    @Override
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.util.ResourceLocation;
+import org.dimdev.rift.listener.ItemAdder;
+
+import static org.burgersim.pgeg.listener.PgegRegistry.*;
+import static org.burgersim.pgeg.utils.Reference.MOD_ID;
+
+public class PgegItems implements ItemAdder {
+
+@Override
     public void registerItems() {
 
         /*Item Blocks */

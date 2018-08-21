@@ -5,11 +5,9 @@ import net.minecraft.block.BlockSapling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.trees.AbstractTree;
 import net.minecraft.init.Blocks;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.Tag;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
-import org.burgersim.pgeg.listener.PgegBlocks;
+import org.burgersim.pgeg.listener.PgegRegistry;
 
 public class BlockModSapling extends BlockSapling {
     public BlockModSapling(AbstractTree tree, Builder builder) {
@@ -24,7 +22,7 @@ public class BlockModSapling extends BlockSapling {
                 block == Blocks.COARSE_DIRT ||
                 block == Blocks.PODZOL ||
                 block == Blocks.FARMLAND ||
-                block == PgegBlocks.MANA_GRASS;
+                block == PgegRegistry.MANA_GRASS;
     }
 
 }

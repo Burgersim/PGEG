@@ -11,8 +11,6 @@ import org.burgersim.pgeg.item.ItemWand;
 import org.burgersim.pgeg.item.ManaDebugItem;
 import org.burgersim.pgeg.item.ManaFood;
 import org.burgersim.pgeg.recipe.ModRecipes;
-import org.dimdev.rift.listener.BlockAdder;
-import org.dimdev.rift.listener.ItemAdder;
 
 public class PgegRegistry  {
 
@@ -23,8 +21,8 @@ public class PgegRegistry  {
                 ,new Item.Builder().group(ItemGroup.FOOD));
         public static Item WAND = new ItemWand(1);
         public static Item SPELL_BOOK = new ItemSpellBook();
-        private static Item MANA_DEBUG = new ManaDebugItem();
-        private static final ModRecipes recipes = new ModRecipes();
+        public static Item MANA_DEBUG = new ManaDebugItem();
+        public static final ModRecipes recipes = new ModRecipes();
 
         /*Food Items*/
         public static Item BROWNIE = new ItemFood(2,0.2F,false, new Item.Builder().group(ItemGroup.FOOD));
@@ -60,8 +58,12 @@ public class PgegRegistry  {
         public static Item NIGIRI_TROPICAL = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
         public static Item ROLL_SEA_PICKLE = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
 
-        public static Item TOMATO_SEEDS = new ItemSeeds(PgegRegistry.TOMATO_CROP);
-        public static Item RICE_SEEDS = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
+
+        public static Block TOMATO_CROP = new BlockTomato(BlockCrops.Builder.create(Material.GRASS).doesNotBlockMovement().needsRandomTick());
+        public static Block RICE_CROP = new BlockRice(BlockCrops.Builder.create(Material.GRASS).doesNotBlockMovement().needsRandomTick());
+        
+        public static Item TOMATO_SEEDS = new ItemSeeds(PgegRegistry.TOMATO_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
+        public static Item RICE_SEEDS = new ItemSeeds(PgegRegistry.RICE_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
 
 
         /*Other Items*/
@@ -99,7 +101,6 @@ public class PgegRegistry  {
     public static Block MANA_FERN = new BlockModTallGrass(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT));
     public static Block MANA_TALLGRASS = new BlockModTallGrass(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT));
 
-    public static Block TOMATO_CROP = new BlockTomato(BlockCrops.Builder.create(Material.GRASS).doesNotBlockMovement().needsRandomTick());
-    public static Block RICE_CROP = new BlockRice(BlockCrops.Builder.create(Material.GRASS).doesNotBlockMovement().needsRandomTick());
+
 
     }
