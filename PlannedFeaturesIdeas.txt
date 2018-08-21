@@ -1,27 +1,7 @@
+#######Vanilla-Like/Needed Features:#######
+
 ###Recipe Compat###
 Can Wand/Staff/Cauldron recipes be shown in AEI?
-
-###RuneLexicon###
-Make Rune Encyclopedia from Spellbook
-Place Runes with certain effects on the floor, use inventory materials for it (redstone, mana dust, glowstone,...)
-Activate a rune with a Wand/Staff of min LVL that book or effect needs, and pay Mana Cost
-Runes vanish after some time, or need to be reactivated, maybe the lvl makes it stay longer
-
-###Runes Effects on contact with connected Dust###
-Water (drowning damage)
-Fire (Fire damage)
-Binding (stay in place, only one mob per dust occupied block?)
-Damage (physical damage, duh)
-Ice (slowness effect)
-Plant (poison effect)
-Earth (Dig 4 Deep Hole, 2x2x4?)
-Air (jump up, like on a slimeblock)
-
-End (teleport --> maybe special, rune in the middle, dust around makes a teleport point, connected to all others, maybe colored dust to differentiate?)
-
-###Mana Dust###
-Placable Mana Dust, if Placed checks for adjacent rune, gives the line of dust the effect of the rune
-woking indicated by low lighting?
 
 ###Basic Spell Events###
 Spawn Entity (a Fireball should fall into this too, right? xD)
@@ -45,13 +25,13 @@ Sound
 Particle Effect
 Mana Cost
 
-###Spellbrewing Cauldron###
+###Spellbrewing Cauldron### (could it be done in a vanilla cauldron?)
 needs heat source underneath
 crafted via Wand (min lvl 1) from Vanilla Cauldron
 recipe system with inputs (maybe in order, but not neccessarily) and outputs in jsons
 clicking with a wand finishes a cauldron recipe?
 
-###Spellbinding Table###
+###Spellbinding Table### (should it be just crafting a wand with mana dust and a spell? --> more like vanilla?)
 crafted via Wand from enchantment table
 needs mana dust to operate
 used to bind Spells to Wands
@@ -64,8 +44,13 @@ lvl of wand/staff gives max number of saved spells
 maybe two classes wands/staffs (wands less mana cost, but staffs more "power" or another benefit?)
 
 ###Magic Flowers in Pots###
-Flower Pot with blue Flower --> Snowbell (produces snow around itself)
+Flower Pot with Blue Orchid --> Snowbell (produces snow around itself)
 Flower Pot with Mushroom --> Glowshroom (produces light)
+Flower Pot with Poppy --> Bloodrose (Heals nearby players)
+Flower Pot with Allium -->
+Flower Pot with Dandelion -->
+Flower Pot with Azure Bluet -->
+Flower Pot with Tulip -->
 
 ###Additional Ores###
 Mithril (light blue, stronger than diamond, generates near bedrock/compound of Iron, ManaDust and Diamond?)
@@ -105,9 +90,8 @@ Caprese (Mozarella and Tomato)
 Pizza
 Dough
 Jerky (Monster, Mutton, Squid, Fish, Pork,...) [maybe a drying rack, like tinkers consstruct has]
-=======
-###Recipe Compat###
-Can Wand/Staff/Cauldron recipes be shown in AEI?
+
+#########Extra/Not-So-Vanilla Features:
 
 ###RuneLexicon###
 Make Rune Encyclopedia from Spellbook
@@ -130,86 +114,3 @@ End (teleport --> maybe special, rune in the middle, dust around makes a telepor
 ###Mana Dust###
 Placable Mana Dust, if Placed checks for adjacent rune, gives the line of dust the effect of the rune
 woking indicated by low lighting?
-
-###Basic Spell Events###
-Spawn Entity (a Fireball should fall into this too, right? xD)
-Spawn Block
-Spawn Item
-Inflict Damage on target
-Inflict (potion) effect on target
-Mine Block
-Destroy Block
-Transform Block
-Teleport Entity/Player
-
-###Basic Spell Json Structure###
-Spell Name
-associated Item (Spell Scroll e.g. Fireball)
-min Staff lvl
-Basic Spell Event
-	Target
-	Output
-Sound
-Particle Effect
-Mana Cost
-
-###Spellbrewing Cauldron###
-needs heat source underneath
-crafted via Wand (min lvl 1) from Vanilla Cauldron
-recipe system with inputs (maybe in order, but not neccessarily) and outputs in jsons
-clicking with a wand finishes a cauldron recipe?
-
-###Spellbinding Table###
-crafted via Wand from enchantment table
-needs mana dust to operate
-used to bind Spells to Wands
-
-	###Spellbook###
-	IF Spells get bound to Wands/Staffs, change Spellbook to Almanac of Mysticism and Magic (Mod Documentation)
-
-###Spells on Wands/Staffs###
-lvl of wand/staff gives max number of saved spells
-maybe two classes wands/staffs (wands less mana cost, but staffs more "power" or another benefit?)
-
-###Magic Flowers in Pots###
-Flower Pot with blue Flower --> Snowbell (produces snow around itself)
-Flower Pot with Mushroom --> Glowshroom (produces light)
-
-###Additional Ores###
-Mithril (light blue, stronger than diamond, generates near bedrock/compound of Iron, ManaDust and Diamond?)
-Orichalcum (red/pink, faster underwater, strong as diamond, generates in deep Oceans)
-Saturnium (dark blue/purple, random enchantments on crafted tools andd weapons, generates in the End, stronger than Obsidian)
-Brimstone (black stone/yellow ore, smelting on tools?, burn on weapons?, fire resistance on armor?, as stronger than Diamond, generates in the Nether)
-Meteorite (stronger than Saturnium, randomly spawns in Meteorite structures (balls made of obsidian?))
-
-###Ore Strenghts###
-Wood
-Stone
-Iron / Emerald
-Diamond / Mithril / Orichalcum
-Obsidian / Brimstone
-Saturnium
-Meteorite
-
-###Additional Materials (Tools/Weapons)###
-Obsidian (stronger than Diamond)
-Emerald (as strong as Iron, high enchantability)
-
-###Plants/Crops###
-Tomato
-Rice
-Cotton
-Berry Bush
-
-###Food###
-Sushi
-Squid Tentacles (raw/cooked)
-Berries
-Caramel
-Caramel Apple
-Candy (maybe with Potion effects)
-Cheese
-Caprese (Mozarella and Tomato)
-Pizza
-Dough
-Jerky (Monster, Mutton, Squid, Fish, Pork,...) [maybe a drying rack, like tinkers consstruct has]
