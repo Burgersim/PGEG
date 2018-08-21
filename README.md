@@ -10,3 +10,8 @@ Planned features:
 * New Foods
 * New Crops
 * New Tools/More Tools
+
+
+Disclaimer:
+Some of the item textures are taken from Itembound, so I'll put a link to this awesome resource pack here:
+https://minecraft.curseforge.com/projects/itembound-16x?gameCategorySlug=texture-packs&projectID=252691
