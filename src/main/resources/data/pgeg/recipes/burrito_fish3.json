@@ -1,0 +1,25 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:kelp"
+    },
+    {
+      "item": "pgeg:dough"
+    },
+    {
+      "item": "pgeg:tomato"
+    },
+    {
+      "item": "minecraft:tropical_fish"
+    },
+    {
+      "item": "pgeg:cheese"
+    }
+  ],
+  "result": {
+    "item": "pgeg:burrito_beef",
+    "count": 1
+  },
+  "group": "burrito"
+}

@@ -19,7 +19,7 @@ import net.minecraft.world.gen.placement.LakeChanceConfig;
 import net.minecraft.world.gen.surfacebuilders.CompositeSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import org.burgersim.pgeg.feature.MagicOakTreeFeature;
-import org.burgersim.pgeg.listener.PgegBlocks;
+import org.burgersim.pgeg.listener.PgegRegistry;
 import org.burgersim.pgeg.utils.WorldGenUtils;
 
 public class MagicForestBiome extends Biome {
@@ -29,7 +29,7 @@ public class MagicForestBiome extends Biome {
                 .surfaceBuilder(
                         new CompositeSurfaceBuilder(DEFAULT_SURFACE_BUILDER,
                                 new SurfaceBuilderConfig(
-                                        PgegBlocks.MANA_GRASS.getDefaultState(),
+                                        PgegRegistry.MANA_GRASS.getDefaultState(),
                                         DIRT,
                                         STONE)
                         )
@@ -54,7 +54,7 @@ public class MagicForestBiome extends Biome {
 
         //OREGEN
         //MANA CRYSTAL ORE
-        this.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, createCompositeFeature(Feature.MINABLE, new MinableConfig(MinableConfig.IS_ROCK, PgegBlocks.MANA_CRYSTAL_ORE.getDefaultState(), 9), COUNT_RANGE, new CountRangeConfig(20, 0, 0, 64)));
+        this.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, createCompositeFeature(Feature.MINABLE, new MinableConfig(MinableConfig.IS_ROCK, PgegRegistry.MANA_CRYSTAL_ORE.getDefaultState(), 9), COUNT_RANGE, new CountRangeConfig(20, 0, 0, 64)));
         //VANILLA ORES
         WorldGenUtils.addVanillaRocks(this);
         WorldGenUtils.addVanillaOres(this);
@@ -82,8 +82,8 @@ public class MagicForestBiome extends Biome {
         this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(new MagicOakTreeFeature(), IFeatureConfig.NO_FEATURE_CONFIG, AT_SURFACE_WITH_EXTRA, new AtSurfaceWithExtraConfig(3, 0.2F, 2)));
         this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(Feature.LIQUIDS, new LiquidsConfig(Fluids.WATER), HEIGHT_BIASED_RANGE, new CountRangeConfig(50, 8, 8, 256)));
         this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(Feature.LIQUIDS, new LiquidsConfig(Fluids.LAVA), HEIGHT_VERY_BIASED_RANGE, new CountRangeConfig(20, 8, 16, 256)));
-        this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(Feature.TALL_GRASS, new TallGrassConfig(PgegBlocks.MANA_FERN.getDefaultState()), TWICE_SURFACE, new FrequencyConfig(2)));
-        this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(Feature.TALL_GRASS, new TallGrassConfig(PgegBlocks.MANA_TALLGRASS.getDefaultState()), TWICE_SURFACE, new FrequencyConfig(2)));
+        this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(Feature.TALL_GRASS, new TallGrassConfig(PgegRegistry.MANA_FERN.getDefaultState()), TWICE_SURFACE, new FrequencyConfig(2)));
+        this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, createCompositeFeature(Feature.TALL_GRASS, new TallGrassConfig(PgegRegistry.MANA_TALLGRASS.getDefaultState()), TWICE_SURFACE, new FrequencyConfig(2)));
     }
 
     @Override

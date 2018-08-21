@@ -1,0 +1,9 @@
+{
+  "type": "smelting",
+  "ingredient": {
+    "item": "minecraft:milk_bucket"
+  },
+  "result": "pgeg:cheese",
+  "experience": 0,
+  "cookingtime": 200
+}

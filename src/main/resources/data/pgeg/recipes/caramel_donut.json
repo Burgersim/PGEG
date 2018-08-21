@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "pgeg:dough"
+    },
+    {
+      "item": "pgeg:caramel"
+    },
+  ],
+  "result": {
+    "item": "pgeg:caramel_donut",
+    "count": 1
+  }
+}

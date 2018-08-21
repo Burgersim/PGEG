@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "pgeg:rice"
+    }
+  ],
+  "result": {
+    "item": "pgeg:onigiri",
+    "count": 1
+  },
+  "group": "sushi"
+}

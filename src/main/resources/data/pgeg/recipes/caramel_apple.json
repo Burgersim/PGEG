@@ -1,0 +1,18 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "pgeg:caramel"
+    }
+  ],
+  "result": {
+    "item": "pgeg:caramel_apple",
+    "count": 1
+  }
+}

@@ -8,18 +8,18 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.feature.TreeFeature;
-import org.burgersim.pgeg.listener.PgegBlocks;
+import org.burgersim.pgeg.listener.PgegRegistry;
 
 import java.util.Random;
 import java.util.Set;
 
 public class MagicOakTreeFeature extends TreeFeature {
-    private IBlockState metaLeaves = PgegBlocks.MAGIC_OAK_LEAVES.getDefaultState();
-    private IBlockState metaWood = PgegBlocks.MAGIC_OAK_LOG.getDefaultState();
+    private IBlockState metaLeaves = PgegRegistry.MAGIC_OAK_LEAVES.getDefaultState();
+    private IBlockState metaWood = PgegRegistry.MAGIC_OAK_LOG.getDefaultState();
 
     public MagicOakTreeFeature() {
-        super(true, 4, PgegBlocks.MAGIC_OAK_LOG.getDefaultState()
-                , PgegBlocks.MAGIC_OAK_LEAVES.getDefaultState(), false);
+        super(true, 4, PgegRegistry.MAGIC_OAK_LOG.getDefaultState()
+                , PgegRegistry.MAGIC_OAK_LEAVES.getDefaultState(), false);
     }
 
     @Override
@@ -61,7 +61,7 @@ public class MagicOakTreeFeature extends TreeFeature {
                 if ((block == Blocks.GRASS_BLOCK ||
                         Block.isDirt(block) ||
                         block == Blocks.FARMLAND ||
-                        block == PgegBlocks.MANA_GRASS) && pos.getY() < 256 - height - 1) {
+                        block == PgegRegistry.MANA_GRASS) && pos.getY() < 256 - height - 1) {
                     this.setDirtAt(world, pos.down());
 
                     int lvt_12_3_;

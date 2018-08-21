@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "pgeg:dough"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+  ],
+  "result": {
+    "item": "pgeg:sugar_donut",
+    "count": 1
+  }
+}
