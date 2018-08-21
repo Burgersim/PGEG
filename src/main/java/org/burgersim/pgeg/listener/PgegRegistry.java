@@ -61,7 +61,7 @@ public class PgegRegistry  {
 
         public static Block TOMATO_CROP = new BlockTomato(BlockCrops.Builder.create(Material.GRASS).doesNotBlockMovement().needsRandomTick());
         public static Block RICE_CROP = new BlockRice(BlockCrops.Builder.create(Material.GRASS).doesNotBlockMovement().needsRandomTick());
-        
+
         public static Item TOMATO_SEEDS = new ItemSeeds(PgegRegistry.TOMATO_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
         public static Item RICE_SEEDS = new ItemSeeds(PgegRegistry.RICE_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
 

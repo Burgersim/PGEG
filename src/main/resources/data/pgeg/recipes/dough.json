@@ -12,7 +12,7 @@
     },
     "W":{
       "item":"minecraft:water_bucket"
-    },
+    }
   },
   "result": {
     "item": "pgeg:dough",
