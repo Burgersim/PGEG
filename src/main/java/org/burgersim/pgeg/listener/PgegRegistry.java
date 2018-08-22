@@ -12,6 +12,8 @@ import org.burgersim.pgeg.item.ItemSpellBook;
 import org.burgersim.pgeg.item.ItemWand;
 import org.burgersim.pgeg.item.ManaFood;
 
+import static net.minecraft.init.Blocks.*;
+
 public class PgegRegistry {
 
     /*Magic Items*/
@@ -89,9 +91,26 @@ public class PgegRegistry {
     public static Block MAGIC_OAK_FENCE_GATE = new BlockModFenceGate(BlockFenceGate.Builder.from(MAGIC_OAK_PLANKS));
     public static Block MAGIC_OAK_BUTTON = new BlockModButtonWood(BlockButtonWood.Builder.from(MAGIC_OAK_PLANKS));
     public static Block MAGIC_OAK_SLAB = new BlockModSlab(BlockSlab.Builder.from(MAGIC_OAK_PLANKS));
+
+    /*Ores*/
     public static Block MANA_CRYSTAL_ORE = new BlockModOre(BlockOre.Builder.create(Material.ROCK, MapColor.STONE)
-            .hardnessAndResistance(3.0f, 4)
+            .hardnessAndResistance(3.0f, 15F)
             .sound(SoundType.STONE), PgegRegistry.MANA_CRYSTAL_DUST, 3, 7);
+    public static Block ORICHALCUM_ORE = new BlockOre(BlockOre.Builder.from(DIAMOND_ORE));
+    public static Block SATURNIUM_ORE = new BlockOre(BlockOre.Builder.from(DIAMOND_ORE)
+            .hardnessAndResistance(5.0F,5.0F));
+    public static Block BRIMSTONE_ORE = new BlockOre(BlockOre.Builder.from(DIAMOND_ORE)
+            .hardnessAndResistance(4.0F, 4.0F));
+    public static Block METEORITE_ORE = new BlockOre(BlockOre.Builder.from(DIAMOND_ORE)
+            .hardnessAndResistance(6.0F,6.0F));
+
+    /*OreBlocks*/
+    public static Block MANA_DUST_BLOCK = new Block(Block.Builder.create(Material.SAND, MapColor.LIGHT_BLUE).hardnessAndResistance(0.5F, 0.5F));
+    public static Block ORICHALCUM_BLOCK = new Block(Block.Builder.create(Material.IRON, MapColor.PURPLE).hardnessAndResistance(2.0F, 2.0F));
+    public static Block SATURNIUM_BLOCK = new Block(Block.Builder.create(Material.ROCK, MapColor.OBSIDIAN).hardnessAndResistance(5.0F,5.0F));
+    public static Block BRIMSTONE_BLOCK = new Block(Block.Builder.create(Material.ROCK, MapColor.NETHERRACK).hardnessAndResistance(4.0F, 4.0F));
+    public static Block METEORITE_BLOCK = new Block(Block.Builder.create(Material.ROCK, MapColor.OBSIDIAN).hardnessAndResistance(6.0F,6.0F));
+    public static Block MITHRIL_BLOCK = new Block(Block.Builder.from(DIAMOND_BLOCK).sound(SoundType.METAL));
 
     public static Block QUARTZ_PILLAR = new BlockQuartzStand();
     public static Block MANA_FERN = new BlockModTallGrass(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT));

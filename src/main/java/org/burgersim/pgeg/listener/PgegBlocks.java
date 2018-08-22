@@ -31,5 +31,15 @@ public class PgegBlocks implements BlockAdder {
         Block.register(new ResourceLocation(MOD_ID, "mana_tallgrass"), MANA_TALLGRASS);
         Block.register(new ResourceLocation(MOD_ID, "tomato_crop"), TOMATO_CROP);
         Block.register(new ResourceLocation(MOD_ID, "rice_crop"), RICE_CROP);
+
+        Block.register(new ResourceLocation(MOD_ID, "orichalcum_ore"), ORICHALCUM_ORE);
+        Block.register(new ResourceLocation(MOD_ID, "brimstone_ore"), BRIMSTONE_ORE);
+        Block.register(new ResourceLocation(MOD_ID, "saturnium_ore"), SATURNIUM_ORE);
+        Block.register(new ResourceLocation(MOD_ID, "meteorite_ore"), METEORITE_ORE);
+        Block.register(new ResourceLocation(MOD_ID, "orichalcum_block"), ORICHALCUM_BLOCK);
+        Block.register(new ResourceLocation(MOD_ID, "brimstone_block"), BRIMSTONE_BLOCK);
+        Block.register(new ResourceLocation(MOD_ID, "saturnium_block"), SATURNIUM_BLOCK);
+        Block.register(new ResourceLocation(MOD_ID, "meteorite_block"), METEORITE_BLOCK);
+        Block.register(new ResourceLocation(MOD_ID, "mithril_block"), MITHRIL_BLOCK);
     }
 }
