@@ -20,6 +20,8 @@ import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 public abstract class MixinManaHandler extends EntityLivingBase implements IManaHandler {
     private static final DataParameter<Float> MANA;
     private static final DataParameter<Float> MAX_MANA;
+    private static final int REGEN_SPEED = 20;
+    private static final float REGEN_AMOUNT = 1.0f;
 
     static {
         MANA = EntityDataManager.createKey(EntityPlayer.class, DataSerializers.FLOAT);
@@ -57,8 +59,8 @@ public abstract class MixinManaHandler extends EntityLivingBase implements IMana
 
     @Inject(method = "onLivingUpdate", at = @At("RETURN"))
     private void onPlayerUpdate(CallbackInfo ci) {
-        if (this.getMana() < this.getMaxMana() && this.ticksExisted % 20 == 0) {
-            regenMana(1.0F);
+        if (this.getMana() < this.getMaxMana() && this.ticksExisted % REGEN_SPEED == 0) {
+            regenMana(REGEN_AMOUNT);
         }
     }
 
