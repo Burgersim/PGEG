@@ -64,8 +64,8 @@ Meteorite (stronger than Saturnium, randomly spawns in Meteorite structures (bal
 Wood
 Stone
 Iron / Emerald
-Diamond / Mithril / Orichalcum
-Obsidian / Brimstone
+Diamond / Orichalcum
+Obsidian / Brimstone / Mithril
 Saturnium
 Meteorite
 
