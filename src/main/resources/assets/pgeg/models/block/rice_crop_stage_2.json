@@ -1,6 +1,7 @@
 {
-    "parent": "block/crop",
+    "parent": "block/cross",
     "textures": {
-        "crop": "pgeg:block/rice_crop_stage_2"
+        "particle": "pgeg:block/rice_crop_stage_2",
+        "cross": "pgeg:block/rice_crop_stage_2"
     }
 }

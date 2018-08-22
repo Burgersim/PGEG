@@ -15,8 +15,8 @@ apply plugin: 'java'
 apply plugin: 'org.spongepowered.mixin'
 
 group 'org.burgersim.pgeg'
-version '1.0'
-archivesBaseName = 'PupsiGacksiEinhornGlitzer'
+version '0.2.0'
+archivesBaseName = 'PGEG'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
