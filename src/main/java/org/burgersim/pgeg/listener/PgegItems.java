@@ -21,6 +21,11 @@ public class PgegItems implements ItemAdder {
         Item.registerItemBlock(MAGIC_OAK_PLANKS, ItemGroup.BUILDING_BLOCKS);
         Item.registerItemBlock(MAGIC_OAK_LEAVES, ItemGroup.DECORATIONS);
         Item.registerItemBlock(MANA_CRYSTAL_ORE, ItemGroup.BUILDING_BLOCKS);
+        Item.registerItemBlock(ORICHALCUM_ORE, ItemGroup.BUILDING_BLOCKS);
+        Item.registerItemBlock(BRIMSTONE_ORE, ItemGroup.BUILDING_BLOCKS);
+        Item.registerItemBlock(SATURNIUM_ORE, ItemGroup.BUILDING_BLOCKS);
+        Item.registerItemBlock(METEORITE_ORE, ItemGroup.BUILDING_BLOCKS);
+        Item.registerItemBlock(MITHRIL_ORE, ItemGroup.BUILDING_BLOCKS);
         Item.registerItemBlock(MAGIC_OAK_STAIRS, ItemGroup.BUILDING_BLOCKS);
         Item.registerItemBlock(MAGIC_OAK_TRAPDOOR, ItemGroup.REDSTONE);
         Item.registerItemBlock(MAGIC_OAK_DOOR, ItemGroup.REDSTONE);

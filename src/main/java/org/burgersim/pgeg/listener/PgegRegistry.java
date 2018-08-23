@@ -102,6 +102,8 @@ public class PgegRegistry {
             .hardnessAndResistance(5.0F,5.0F));
     public static Block BRIMSTONE_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE)
             .hardnessAndResistance(4.0F, 4.0F));
+    public static Block MITHRIL_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE)
+            .hardnessAndResistance(4.0F, 4.0F));
     public static Block METEORITE_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE)
             .hardnessAndResistance(6.0F,6.0F));
 

@@ -37,6 +37,8 @@ public class PgegBlocks implements BlockAdder {
         Block.register(new ResourceLocation(MOD_ID, "brimstone_ore"), BRIMSTONE_ORE);
         Block.register(new ResourceLocation(MOD_ID, "saturnium_ore"), SATURNIUM_ORE);
         Block.register(new ResourceLocation(MOD_ID, "meteorite_ore"), METEORITE_ORE);
+        Block.register(new ResourceLocation(MOD_ID, "mithril_ore"), MITHRIL_ORE);
+
         Block.register(new ResourceLocation(MOD_ID, "orichalcum_block"), ORICHALCUM_BLOCK);
         Block.register(new ResourceLocation(MOD_ID, "brimstone_block"), BRIMSTONE_BLOCK);
         Block.register(new ResourceLocation(MOD_ID, "saturnium_block"), SATURNIUM_BLOCK);

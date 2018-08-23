@@ -32,6 +32,11 @@ public class RecipesSpellCauldron implements IRecipe {
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return recipeItems;
+    }
+
+    @Override
     public boolean matches(IInventory iInventory, World world) {
         if (!(iInventory instanceof TileEntitySpellCauldron)) {
             return false;
@@ -80,7 +85,7 @@ public class RecipesSpellCauldron implements IRecipe {
 
     @Override
     public IRecipeSerializer<?> getSerializer() {
-        return null;
+        return Serializer.INSTANCE;
     }
 
     public static class Serializer implements IRecipeSerializer<RecipesSpellCauldron> {
