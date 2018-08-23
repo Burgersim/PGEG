@@ -6,6 +6,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.*;
 import org.burgersim.pgeg.block.*;
+import org.burgersim.pgeg.block.base.*;
 import org.burgersim.pgeg.block.tree.MagicOakTree;
 import org.burgersim.pgeg.item.ItemRice;
 import org.burgersim.pgeg.item.ItemSpellBook;
@@ -58,8 +59,8 @@ public class PgegRegistry {
     public static Item ROLL_SEA_PICKLE = new ItemFood(5, 1.0F, false, new Item.Builder().group(ItemGroup.FOOD));
 
 
-    public static Block TOMATO_CROP = new BlockTomato(BlockCrops.Builder.from(Blocks.CARROTS));
-    public static Block RICE_CROP = new BlockRice(BlockCrops.Builder.from(Blocks.CARROTS));
+    public static Block TOMATO_CROP = new BlockTomato(Block.Builder.from(Blocks.CARROTS));
+    public static Block RICE_CROP = new BlockRice(Block.Builder.from(Blocks.CARROTS));
 
     public static Item TOMATO_SEEDS = new ItemSeeds(PgegRegistry.TOMATO_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
     public static Item RICE = new ItemRice(2, 0.8F, PgegRegistry.RICE_CROP, new Item.Builder().group(ItemGroup.MATERIALS));
@@ -69,39 +70,40 @@ public class PgegRegistry {
 
 
     /*Blocks*/
-    public static Block MANA_GRASS = new BlockModGrass(BlockGrass.Builder.create(Material.GRASS, MapColor.LIGHT_BLUE)
-            .hardnessAndResistance(0.6f, 1).sound(SoundType.GROUND));
-    public static Block MAGIC_OAK_LOG = new BlockModLog(BlockLog.Builder.create(Material.WOOD, MapColor.BLUE)
+    public static Block MANA_GRASS = new BlockGrass(Block.Builder.create(Material.GRASS, MapColor.LIGHT_BLUE)
+            .hardnessAndResistance(0.6f, 1).sound(SoundType.GROUND).needsRandomTick());
+    public static Block MAGIC_OAK_LOG = new BlockLog(MapColor.BLUE, Block.Builder.create(Material.WOOD, MapColor.BLUE)
             .hardnessAndResistance(2.0F, 2.0F)
-            .sound(SoundType.WOOD), MapColor.BLUE);
-    public static Block MAGIC_OAK_PLANKS = new BlockModPlanks(Block.Builder.create(Material.WOOD, MapColor.LIGHT_BLUE)
+            .sound(SoundType.WOOD));
+    public static Block MAGIC_OAK_PLANKS = new Block(Block.Builder.create(Material.WOOD, MapColor.LIGHT_BLUE)
             .hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
 
     public static Block MAGIC_OAK_SAPLING = new BlockModSapling(new MagicOakTree(),
-            BlockSapling.Builder.create(Material.PLANTS, MapColor.LIGHT_BLUE).needsRandomTick());
-    public static Block MAGIC_OAK_LEAVES = new BlockModLeaves(BlockLeaves.Builder.create(Material.LEAVES, MapColor.GOLD)
+            Block.Builder.create(Material.PLANTS, MapColor.LIGHT_BLUE).needsRandomTick());
+    public static Block MAGIC_OAK_LEAVES = new BlockModLeaves(Block.Builder.create(Material.LEAVES, MapColor.GOLD)
             .hardnessAndResistance(0.2f, 0.2f).sound(SoundType.PLANT)
             , MAGIC_OAK_SAPLING);
-    public static Block MAGIC_OAK_STAIRS = new BlockModStair(MAGIC_OAK_PLANKS, BlockStairs.Builder.from(MAGIC_OAK_PLANKS));
-    public static Block MAGIC_OAK_TRAPDOOR = new BlockModTrapDoor(BlockTrapDoor.Builder.from(MAGIC_OAK_PLANKS));
-    public static Block MAGIC_OAK_DOOR = new BlockModDoor(BlockDoor.Builder.from(MAGIC_OAK_PLANKS));
+    public static Block MAGIC_OAK_STAIRS = new BlockModStair(MAGIC_OAK_PLANKS, Block.Builder.from(MAGIC_OAK_PLANKS));
+    public static Block MAGIC_OAK_TRAPDOOR = new BlockModTrapDoor(Block.Builder.from(MAGIC_OAK_PLANKS));
+    public static Block MAGIC_OAK_DOOR = new BlockModDoor(Block.Builder.from(MAGIC_OAK_PLANKS));
     public static Block MAGIC_OAK_PRESSURE_PLATE = new BlockModPressurePlate(BlockPressurePlate.Sensitivity.EVERYTHING,
-            BlockPressurePlate.Builder.from(MAGIC_OAK_PLANKS));
-    public static Block MAGIC_OAK_FENCE = new BlockModFence(BlockFence.Builder.from(MAGIC_OAK_PLANKS));
-    public static Block MAGIC_OAK_FENCE_GATE = new BlockModFenceGate(BlockFenceGate.Builder.from(MAGIC_OAK_PLANKS));
-    public static Block MAGIC_OAK_BUTTON = new BlockModButtonWood(BlockButtonWood.Builder.from(MAGIC_OAK_PLANKS));
-    public static Block MAGIC_OAK_SLAB = new BlockModSlab(BlockSlab.Builder.from(MAGIC_OAK_PLANKS));
+            Block.Builder.from(MAGIC_OAK_PLANKS));
+    public static Block MAGIC_OAK_FENCE = new BlockModFence(Block.Builder.from(MAGIC_OAK_PLANKS));
+    public static Block MAGIC_OAK_FENCE_GATE = new BlockModFenceGate(Block.Builder.from(MAGIC_OAK_PLANKS));
+    public static Block MAGIC_OAK_BUTTON = new BlockModButtonWood(Block.Builder.from(MAGIC_OAK_PLANKS));
+    public static Block MAGIC_OAK_SLAB = new BlockSlab(Block.Builder.from(MAGIC_OAK_PLANKS));
+    public static Block MANA_CRYSTAL_ORE = new BlockModOre(Block.Builder.from(Blocks.IRON_ORE), PgegRegistry.MANA_CRYSTAL_DUST, 3, 7);
 
     /*Ores*/
-    public static Block MANA_CRYSTAL_ORE = new BlockModOre(BlockOre.Builder.create(Material.ROCK, MapColor.STONE)
+    public static Block MANA_CRYSTAL_ORE = new BlockModOre(Block.Builder.create(Material.ROCK, MapColor.STONE)
             .hardnessAndResistance(3.0f, 15F)
             .sound(SoundType.STONE), PgegRegistry.MANA_CRYSTAL_DUST, 3, 7);
-    public static Block ORICHALCUM_ORE = new BlockOre(BlockOre.Builder.from(DIAMOND_ORE));
-    public static Block SATURNIUM_ORE = new BlockOre(BlockOre.Builder.from(DIAMOND_ORE)
+    public static Block ORICHALCUM_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE));
+    public static Block SATURNIUM_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE)
             .hardnessAndResistance(5.0F,5.0F));
-    public static Block BRIMSTONE_ORE = new BlockOre(BlockOre.Builder.from(DIAMOND_ORE)
+    public static Block BRIMSTONE_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE)
             .hardnessAndResistance(4.0F, 4.0F));
-    public static Block METEORITE_ORE = new BlockOre(BlockOre.Builder.from(DIAMOND_ORE)
+    public static Block METEORITE_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE)
             .hardnessAndResistance(6.0F,6.0F));
 
     /*OreBlocks*/
@@ -113,6 +115,6 @@ public class PgegRegistry {
     public static Block MITHRIL_BLOCK = new Block(Block.Builder.from(DIAMOND_BLOCK).sound(SoundType.METAL));
 
     public static Block QUARTZ_PILLAR = new BlockQuartzStand();
-    public static Block MANA_FERN = new BlockModTallGrass(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT));
-    public static Block MANA_TALLGRASS = new BlockModTallGrass(BlockTallGrass.Builder.create(Material.VINE).zeroHardnessAndResistance().doesNotBlockMovement().sound(SoundType.PLANT));
+    public static Block MANA_FERN = new BlockModTallGrass(Block.Builder.from(Blocks.FERN));
+    public static Block MANA_TALLGRASS = new BlockModTallGrass(Block.Builder.from(Blocks.TALL_GRASS));
 }

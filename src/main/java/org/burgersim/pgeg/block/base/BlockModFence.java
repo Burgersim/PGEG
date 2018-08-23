@@ -1,14 +1,14 @@
-package org.burgersim.pgeg.block;
+package org.burgersim.pgeg.block.base;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockDoor;
+import net.minecraft.block.BlockFence;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 
-public class BlockModDoor extends BlockDoor {
+public class BlockModFence extends BlockFence {
 
-    public BlockModDoor(Builder builder) {
+    public BlockModFence(Builder builder) {
         super(builder);
     }
 
