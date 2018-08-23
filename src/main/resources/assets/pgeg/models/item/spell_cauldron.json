@@ -1,12 +1,12 @@
 {
-    "ambientocclusion": false,
+    "parent":"block/block",
+    "ambientocclusion": true,
     "textures": {
         "particle": "pgeg:block/spell_cauldron_side",
         "top": "pgeg:block/spell_cauldron_top",
         "bottom": "pgeg:block/spell_cauldron_bottom",
         "side": "pgeg:block/spell_cauldron_side",
-        "inside": "pgeg:block/spell_cauldron_inner",
-        "water": "pgeg:block/water_still"
+        "inside": "pgeg:block/spell_cauldron_inner"
     },
     "elements": [
         {   "from": [ 0, 3, 0 ],
@@ -150,12 +150,6 @@
                 "south": { "texture": "#side" },
                 "west":  { "texture": "#side" },
                 "east":  { "texture": "#side" }
-            }
-        },
-        {   "from": [ 2, 12, 2 ],
-            "to": [ 14, 12, 14 ],
-            "faces": {
-                "up": { "texture": "#water", "tintindex": 0 }
             }
         }
     ]

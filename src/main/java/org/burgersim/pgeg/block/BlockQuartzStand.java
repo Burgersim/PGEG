@@ -6,6 +6,7 @@ import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -80,5 +81,16 @@ public class BlockQuartzStand extends BlockWaterlogged implements ITileEntityPro
             }
         }
         return true;
+    }
+    @Override
+    public void onReplaced(IBlockState state, World world, BlockPos pos, IBlockState newState, boolean p_beforeReplacingBlock_5_) {
+        if (state.getBlock() != newState.getBlock()) {
+            TileEntity tileEntity = world.getTileEntity(pos);
+            if (tileEntity instanceof IInventory) {
+                InventoryHelper.dropInventoryItems(world, pos, (IInventory) tileEntity);
+            }
+            world.removeTileEntity(pos);
+        }
+        super.onReplaced(state, world, pos, newState, p_beforeReplacingBlock_5_);
     }
 }

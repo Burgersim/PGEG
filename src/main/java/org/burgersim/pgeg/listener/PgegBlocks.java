@@ -10,7 +10,7 @@ import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class PgegBlocks implements BlockAdder {
 
-@Override
+    @Override
     public void registerBlocks() {
         Block.register(new ResourceLocation(MOD_ID, "mana_grass_block"), MANA_GRASS);
         Block.register(new ResourceLocation(MOD_ID, "magic_oak_log"), MAGIC_OAK_LOG);
@@ -31,11 +31,14 @@ public class PgegBlocks implements BlockAdder {
         Block.register(new ResourceLocation(MOD_ID, "mana_tallgrass"), MANA_TALLGRASS);
         Block.register(new ResourceLocation(MOD_ID, "tomato_crop"), TOMATO_CROP);
         Block.register(new ResourceLocation(MOD_ID, "rice_crop"), RICE_CROP);
+        Block.register(new ResourceLocation(MOD_ID, "spell_cauldron"), SPELL_CAULDRON);
 
         Block.register(new ResourceLocation(MOD_ID, "orichalcum_ore"), ORICHALCUM_ORE);
         Block.register(new ResourceLocation(MOD_ID, "brimstone_ore"), BRIMSTONE_ORE);
         Block.register(new ResourceLocation(MOD_ID, "saturnium_ore"), SATURNIUM_ORE);
         Block.register(new ResourceLocation(MOD_ID, "meteorite_ore"), METEORITE_ORE);
+        Block.register(new ResourceLocation(MOD_ID, "mithril_ore"), MITHRIL_ORE);
+
         Block.register(new ResourceLocation(MOD_ID, "orichalcum_block"), ORICHALCUM_BLOCK);
         Block.register(new ResourceLocation(MOD_ID, "brimstone_block"), BRIMSTONE_BLOCK);
         Block.register(new ResourceLocation(MOD_ID, "saturnium_block"), SATURNIUM_BLOCK);

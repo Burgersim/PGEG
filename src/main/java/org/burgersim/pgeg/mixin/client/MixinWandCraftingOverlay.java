@@ -16,6 +16,7 @@ import net.minecraft.util.math.RayTraceFluidMode;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import org.burgersim.pgeg.item.ItemWand;
+import org.burgersim.pgeg.listener.PgegBootstrap;
 import org.burgersim.pgeg.mana.IManaHandler;
 import org.burgersim.pgeg.recipe.InWorldCrafting;
 import org.burgersim.pgeg.recipe.RecipesWand;
@@ -47,7 +48,6 @@ public abstract class MixinWandCraftingOverlay extends Gui {
     @Inject(method = "renderHotbar", at = @At("RETURN"))
     private void renderOverlay(float p_renderHotbar_1_, CallbackInfo ci) {
         RenderHelper.enableGUIStandardItemLighting();
-        GlStateManager.disableDepth();
         EntityPlayer player = (EntityPlayer) this.mc.getRenderViewEntity();
         Item mainhand = player.getHeldItemMainhand().getItem();
         Item offhand = player.getHeldItemOffhand().getItem();
@@ -60,20 +60,14 @@ public abstract class MixinWandCraftingOverlay extends Gui {
                 Block block = world.getBlockState(traceResult.getBlockPos()).getBlock();
                 if (block == lastBlock) {
                     if (lastRecipe != null) {
-                        int wandLevel = ((RecipesWand) lastRecipe).getWandLevel();
-                        float manaCost = ((RecipesWand) lastRecipe).getManaCost();
+                        RecipesWand recipe = (RecipesWand) lastRecipe;
+                        float manaCost = recipe.getManaCost();
                         this.itemRenderer.renderItemIntoGUI(lastRecipe.getRecipeOutput(),
                                 this.field_194811_H / 2 - 25,
                                 this.field_194812_I / 2 - 7);
-                        if (mainhand instanceof ItemWand) {
-                            if (wandLevel > ((ItemWand) mainhand).getWandLevel()) {
-                                this.itemRenderer.renderItemIntoGUI(
-                                        new ItemStack(Item.BLOCK_TO_ITEM.get(Blocks.BARRIER)),
-                                        this.field_194811_H / 2 - 25,
-                                        this.field_194812_I / 2 - 7);
-                            }
-                        } else if (offhand instanceof ItemWand) {
-                            if (wandLevel > ((ItemWand) offhand).getWandLevel()) {
+                        GlStateManager.disableDepth();
+                        if (mainhand.isIn(PgegBootstrap.wands) || offhand.isIn(PgegBootstrap.wands)) {
+                            if (!recipe.isRightWand(player.getHeldItemMainhand()) && !recipe.isRightWand(player.getHeldItemOffhand())) {
                                 this.itemRenderer.renderItemIntoGUI(
                                         new ItemStack(Item.BLOCK_TO_ITEM.get(Blocks.BARRIER)),
                                         this.field_194811_H / 2 - 25,

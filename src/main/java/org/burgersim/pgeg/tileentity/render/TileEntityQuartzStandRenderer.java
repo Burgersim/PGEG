@@ -22,6 +22,7 @@ public class TileEntityQuartzStandRenderer extends TileEntityRenderer<TileEntity
             GlStateManager.translate(0, Math.sin((Math.PI / 180) * (time * 4)) / 15 + .15, 0);
             GlStateManager.rotate(time * 3, 0, 1, 0);
             GlStateManager.scale(0.7, 0.7, 0.7);
+
             Minecraft.getMinecraft().getRenderItem().renderItem(stack, ItemCameraTransforms.TransformType.GROUND);
 
             GlStateManager.popMatrix();

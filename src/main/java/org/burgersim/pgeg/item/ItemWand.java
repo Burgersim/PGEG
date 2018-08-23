@@ -20,11 +20,9 @@ import org.burgersim.pgeg.recipe.InWorldCrafting;
 import org.burgersim.pgeg.recipe.RecipesWand;
 
 public class ItemWand extends Item {
-    private final int wandLevel;
 
-    public ItemWand(int wandLevel) {
+    public ItemWand() {
         super(new Item.Builder().group(ItemGroup.TOOLS).maxStackSize(1).rarity(EnumRarity.UNCOMMON));
-        this.wandLevel = wandLevel;
     }
 
     @Override
@@ -36,7 +34,7 @@ public class ItemWand extends Item {
         IManaHandler handler = (IManaHandler) player;
         RecipesWand recipe = (RecipesWand) world.getRecipeManager().getRecipe(
                 new InWorldCrafting(world.getBlockState(blockPos).getBlock()), world);
-        if (recipe != null && recipe.getWandLevel() <= wandLevel && recipe.getManaCost() <= handler.getMana()) {
+        if (recipe != null && recipe.isRightWand(context.getItem()) && recipe.getManaCost() <= handler.getMana()) {
             if (!world.isRemote()) {
                 if (handler.getMaxMana() <= 0) {
                     handler.setMaxMana(20);
@@ -81,7 +79,4 @@ public class ItemWand extends Item {
         world.playSound(player, blockPos, SoundEvents.ENTITY_PLAYER_LEVELUP, SoundCategory.AMBIENT, 1.0F, 1.0F);
     }
 
-    public int getWandLevel() {
-        return wandLevel;
-    }
 }
