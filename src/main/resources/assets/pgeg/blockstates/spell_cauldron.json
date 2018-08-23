@@ -1,8 +1,6 @@
 {
     "variants": {
-        "level=0": { "model": "pgeg:block/spell_cauldron" },
-        "level=1": { "model": "pgeg:block/spell_cauldron_level1" },
-        "level=2": { "model": "pgeg:block/spell_cauldron_level2" },
-        "level=3": { "model": "pgeg:block/spell_cauldron_level3" }
+        "has_water=false": { "model": "pgeg:block/spell_cauldron_empty" },
+        "has_water=true": { "model": "pgeg:block/spell_cauldron_filled" }
     }
 }

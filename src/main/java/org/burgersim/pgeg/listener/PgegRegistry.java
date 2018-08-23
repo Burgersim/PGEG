@@ -22,7 +22,7 @@ public class PgegRegistry {
     public static Item MANA_CRYSTAL_DUST = new Item(new Item.Builder().group(ItemGroup.MISC));
     public static Item MANA_CAKE = new ManaFood(1, 0.2F, 20.0F, false
             , new Item.Builder().group(ItemGroup.FOOD));
-    public static Item WAND = new ItemWand(1);
+    public static Item WAND = new ItemWand();
     public static Item SPELL_BOOK = new ItemSpellBook();
 
     /*Food Items*/
@@ -92,7 +92,6 @@ public class PgegRegistry {
     public static Block MAGIC_OAK_FENCE_GATE = new BlockModFenceGate(Block.Builder.from(MAGIC_OAK_PLANKS));
     public static Block MAGIC_OAK_BUTTON = new BlockModButtonWood(Block.Builder.from(MAGIC_OAK_PLANKS));
     public static Block MAGIC_OAK_SLAB = new BlockSlab(Block.Builder.from(MAGIC_OAK_PLANKS));
-    public static Block MANA_CRYSTAL_ORE = new BlockModOre(Block.Builder.from(Blocks.IRON_ORE), PgegRegistry.MANA_CRYSTAL_DUST, 3, 7);
 
     /*Ores*/
     public static Block MANA_CRYSTAL_ORE = new BlockModOre(Block.Builder.create(Material.ROCK, MapColor.STONE)
@@ -115,6 +114,7 @@ public class PgegRegistry {
     public static Block MITHRIL_BLOCK = new Block(Block.Builder.from(DIAMOND_BLOCK).sound(SoundType.METAL));
 
     public static Block QUARTZ_PILLAR = new BlockQuartzStand();
+    public static Block SPELL_CAULDRON = new BlockSpellCauldron(Block.Builder.from(Blocks.CAULDRON).needsRandomTick());
     public static Block MANA_FERN = new BlockModTallGrass(Block.Builder.from(Blocks.FERN));
     public static Block MANA_TALLGRASS = new BlockModTallGrass(Block.Builder.from(Blocks.TALL_GRASS));
 }

@@ -33,6 +33,7 @@ public class PgegItems implements ItemAdder {
         Item.registerItemBlock(QUARTZ_PILLAR, ItemGroup.DECORATIONS);
         Item.registerItemBlock(MANA_FERN, ItemGroup.DECORATIONS);
         Item.registerItemBlock(MANA_TALLGRASS, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(SPELL_CAULDRON, ItemGroup.DECORATIONS);
 
         /*Magic Items*/
 

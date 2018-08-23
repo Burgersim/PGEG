@@ -11,6 +11,7 @@
     "org.burgersim.pgeg.listener.PgegBlocks",
     "org.burgersim.pgeg.listener.PgegBiomes",
     "org.burgersim.pgeg.listener.PgegTileEntityTypes",
-    "org.burgersim.pgeg.listener.PgegTileEntityRenderer"
+    "org.burgersim.pgeg.listener.PgegTileEntityRenderer",
+    "org.burgersim.pgeg.listener.PgegEntityRenderers"
   ]
 }

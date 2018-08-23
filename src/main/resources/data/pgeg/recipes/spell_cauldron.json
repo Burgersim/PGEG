@@ -2,13 +2,13 @@
   "type": "crafting_wand",
   "group": "enchanting",
   "input": {
-    "item": "minecraft:quartz_pillar"
+    "item": "minecraft:cauldron"
   },
-  "result": "pgeg:quartz_stand",
+  "result": "pgeg:spell_cauldron",
   "wands": [
     {
       "tag": "pgeg:wand_level_1"
     }
   ],
-  "mana_cost": 10.0
+  "mana_cost": 20.0
 }

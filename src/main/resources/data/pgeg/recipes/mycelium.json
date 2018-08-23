@@ -1,0 +1,24 @@
+{
+  "type": "spell_cauldron",
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "item": "minecraft:red_mushroom"
+    },
+    {
+      "item": "minecraft:brown_mushroom"
+    }
+  ],
+  "result": {
+    "item": "minecraft:mycelium",
+    "count": 1
+  },
+  "wands": [
+    {
+      "tag": "pgeg:wand_level_1"
+    }
+  ],
+  "group": "transmutation"
+}
