@@ -7,6 +7,9 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.*;
 import org.burgersim.pgeg.block.*;
 import org.burgersim.pgeg.block.base.*;
+import org.burgersim.pgeg.block.flower.BlockBloodrose;
+import org.burgersim.pgeg.block.flower.BlockGlowshroom;
+import org.burgersim.pgeg.block.flower.BlockSnowbell;
 import org.burgersim.pgeg.block.tree.MagicOakTree;
 import org.burgersim.pgeg.item.ItemRice;
 import org.burgersim.pgeg.item.ItemSpellBook;
@@ -120,4 +123,8 @@ public class PgegRegistry {
     public static Block MANA_FERN = new BlockModTallGrass(Block.Builder.from(Blocks.FERN));
     public static Block MANA_TALLGRASS = new BlockModTallGrass(Block.Builder.from(Blocks.TALL_GRASS));
     public static Block MANA_DUST_WIRE = new BlockManaDustWire(Block.Builder.from(Blocks.REDSTONE_WIRE));
+
+    public static Block GLOWSHROOM = new BlockGlowshroom(Block.Builder.from(Blocks.BROWN_MUSHROOM));
+    public static Block SNOWBELL = new BlockSnowbell(Block.Builder.from(Blocks.POPPY));
+    public static Block BLOODROSE = new BlockBloodrose(Block.Builder.from(Blocks.POPPY));
 }

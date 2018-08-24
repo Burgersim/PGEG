@@ -1,12 +1,12 @@
 {
   "type": "crafting_wand",
   "group": "enchanting",
-  "input":  "minecraft:cauldron",
-  "result": "pgeg:spell_cauldron",
+  "input": "minecraft:potted_brown_mushroom",
+  "result": "pgeg:glowshroom",
   "wands": [
     {
       "tag": "pgeg:wand_level_1"
     }
   ],
-  "mana_cost": 20.0
+  "mana_cost": 5.0
 }
