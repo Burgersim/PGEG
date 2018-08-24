@@ -1,0 +1,50 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "east": "false",
+        "west": "false",
+        "north": "false",
+        "south": "false"
+      },
+      "apply": {
+        "model": "pgeg:block/mana_dust_dot"
+      }
+    },
+    {
+      "when": {
+        "east": "true"
+      },
+      "apply": {
+        "model": "pgeg:block/mana_dust_side",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "north": "true"
+      },
+      "apply": {
+        "model": "pgeg:block/mana_dust_side"
+      }
+    },
+    {
+      "when": {
+        "south": "true"
+      },
+      "apply": {
+        "model": "pgeg:block/mana_dust_side",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "west": "true"
+      },
+      "apply": {
+        "model": "pgeg:block/mana_dust_side",
+        "y": 270
+      }
+    }
+  ]
+}

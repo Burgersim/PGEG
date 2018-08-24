@@ -119,4 +119,5 @@ public class PgegRegistry {
     public static Block SPELL_CAULDRON = new BlockSpellCauldron(Block.Builder.from(Blocks.CAULDRON).needsRandomTick());
     public static Block MANA_FERN = new BlockModTallGrass(Block.Builder.from(Blocks.FERN));
     public static Block MANA_TALLGRASS = new BlockModTallGrass(Block.Builder.from(Blocks.TALL_GRASS));
+    public static Block MANA_DUST_WIRE = new BlockManaDustWire(Block.Builder.from(Blocks.REDSTONE_WIRE));
 }

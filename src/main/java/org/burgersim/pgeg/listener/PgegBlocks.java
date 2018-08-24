@@ -44,5 +44,6 @@ public class PgegBlocks implements BlockAdder {
         Block.register(new ResourceLocation(MOD_ID, "saturnium_block"), SATURNIUM_BLOCK);
         Block.register(new ResourceLocation(MOD_ID, "meteorite_block"), METEORITE_BLOCK);
         Block.register(new ResourceLocation(MOD_ID, "mithril_block"), MITHRIL_BLOCK);
+        Block.register(new ResourceLocation(MOD_ID, "mana_dust_wire"), MANA_DUST_WIRE);
     }
 }
