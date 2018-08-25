@@ -1,6 +1,7 @@
 package org.burgersim.pgeg.block;
 
 
+import com.github.ondee.snowflake.block.BlockWaterlogged;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.state.IBlockState;
@@ -26,7 +27,9 @@ public class BlockQuartzStand extends BlockWaterlogged implements ITileEntityPro
     public BlockQuartzStand() {
         super(Block.Builder.from(Blocks.QUARTZ_PILLAR));
     }
+
     private static final VoxelShape SHAPE;
+
     static {
         VoxelShape shape1 = ShapeUtils.create(0.0, 0.0, 0.0, 1.0, 0.1, 1.0);
         VoxelShape shape2 = ShapeUtils.create(0.0, 0.8, 0.0, 1.0, 0.9, 1.0);
@@ -82,6 +85,7 @@ public class BlockQuartzStand extends BlockWaterlogged implements ITileEntityPro
         }
         return true;
     }
+
     @Override
     public void onReplaced(IBlockState state, World world, BlockPos pos, IBlockState newState, boolean p_beforeReplacingBlock_5_) {
         if (state.getBlock() != newState.getBlock()) {

@@ -30,7 +30,7 @@ repositories {
 
 dependencies {
     implementation 'org.dimdev:rift:1.0.4-51:dev'
-    implementation 'com.github.onDee:snowflake:0.1.0'
+    implementation 'com.github.onDee:snowflake:0.1.5'
 }
 
 mixin {

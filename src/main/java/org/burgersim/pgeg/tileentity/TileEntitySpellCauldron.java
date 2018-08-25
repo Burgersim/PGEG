@@ -1,5 +1,7 @@
 package org.burgersim.pgeg.tileentity;
 
+import com.github.ondee.snowflake.block.BlockWaterlogged;
+import com.github.ondee.snowflake.tileentity.TileEntityInventory;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,7 +18,6 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import org.burgersim.pgeg.block.BlockSpellCauldron;
-import org.burgersim.pgeg.block.BlockWaterlogged;
 import org.burgersim.pgeg.recipe.RecipesSpellCauldron;
 
 import javax.annotation.Nullable;
@@ -24,10 +25,9 @@ import java.util.Iterator;
 
 import static org.burgersim.pgeg.listener.PgegTileEntityTypes.SPELL_CAULDRON;
 
-public class TileEntitySpellCauldron extends TileEntity implements IInventory, ITickable {
+public class TileEntitySpellCauldron extends TileEntityInventory implements ITickable {
     private static final int TIME_TO_HEAT = 60;
 
-    private NonNullList<ItemStack> content;
     private int heatTicks;
     private int time;
     private int prevTime;
@@ -35,164 +35,12 @@ public class TileEntitySpellCauldron extends TileEntity implements IInventory, I
     private IRecipe cachedRecipe;
 
     public TileEntitySpellCauldron() {
-        super(SPELL_CAULDRON);
-        content = NonNullList.withSize(9, ItemStack.EMPTY);
-    }
-
-    @Override
-    public int getSizeInventory() {
-        return 9;
-    }
-
-    @Override
-    public void markDirty() {
-        super.markDirty();
-        if (world != null) {
-            IBlockState state = world.getBlockState(getPos());
-            world.notifyBlockUpdate(getPos(), state, state, 3);
-        }
-    }
-
-    @Override
-    public void readFromNBT(NBTTagCompound tag) {
-        super.readFromNBT(tag);
-        content = NonNullList.withSize(getSizeInventory(), ItemStack.EMPTY);
-        ItemStackHelper.loadAllItems(tag, content);
-    }
-
-    @Override
-    public NBTTagCompound writeToNBT(NBTTagCompound tag) {
-        super.writeToNBT(tag);
-        writeContent(tag);
-        return tag;
-    }
-
-    NBTTagCompound writeContent(NBTTagCompound tag) {
-        ItemStackHelper.saveAllItems(tag, content);
-        return tag;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        Iterator var1 = this.content.iterator();
-
-        ItemStack stack;
-        do {
-            if (!var1.hasNext()) {
-                return true;
-            }
-
-            stack = (ItemStack) var1.next();
-        } while (stack.isEmpty());
-
-        return false;
-    }
-
-    @Override
-    public ItemStack getStackInSlot(int i) {
-        return content.get(i);
-    }
-
-    @Override
-    public ItemStack decrStackSize(int index, int count) {
-        ItemStack stack = ItemStackHelper.getAndSplit(content, index, count);
-
-        if (!stack.isEmpty()) {
-            markDirty();
-        }
-
-        return stack;
-    }
-
-    @Override
-    public ItemStack removeStackFromSlot(int i) {
-        return ItemStackHelper.getAndRemove(content, i);
-    }
-
-    @Override
-    public void setInventorySlotContents(int i, ItemStack itemStack) {
-        content.set(i, itemStack);
-
-        if (itemStack.getCount() > this.getInventoryStackLimit()) {
-            itemStack.setCount(this.getInventoryStackLimit());
-        }
-        markDirty();
+        super(SPELL_CAULDRON, 9, "tile.pgeg.spell_cauldron");
     }
 
     @Override
     public int getInventoryStackLimit() {
         return 1;
-    }
-
-    @Override
-    public boolean isUsableByPlayer(EntityPlayer entityPlayer) {
-        return false;
-    }
-
-    @Override
-    public void openInventory(EntityPlayer entityPlayer) {
-
-    }
-
-    @Override
-    public void closeInventory(EntityPlayer entityPlayer) {
-
-    }
-
-    @Override
-    public boolean isItemValidForSlot(int i, ItemStack itemStack) {
-        return getStackInSlot(i).isEmpty();
-    }
-
-    @Override
-    public int getField(int i) {
-        return 0;
-    }
-
-    @Override
-    public void setField(int i, int i1) {
-
-    }
-
-    @Override
-    public int getFieldCount() {
-        return 0;
-    }
-
-    @Override
-    public void clear() {
-        content.clear();
-    }
-
-    @Override
-    public ITextComponent getName() {
-        return new TextComponentTranslation("tile.pgeg.spell_cauldron");
-    }
-
-    @Override
-    public boolean hasCustomName() {
-        return false;
-    }
-
-    @Nullable
-    @Override
-    public ITextComponent getCustomName() {
-        return null;
-    }
-
-    @Nullable
-    @Override
-    public SPacketUpdateTileEntity getUpdatePacket() {
-        NBTTagCompound nbtTag = super.getUpdateTag();
-        this.writeContent(nbtTag);
-        return new SPacketUpdateTileEntity(getPos(), -1, nbtTag);
-    }
-
-    @Override
-    public NBTTagCompound getUpdateTag() {
-        NBTTagCompound tag = super.getUpdateTag();
-        writeContent(tag);
-        return tag;
     }
 
     @Override
@@ -209,7 +57,7 @@ public class TileEntitySpellCauldron extends TileEntity implements IInventory, I
                     }
                 }
             }
-        }else{
+        } else {
             prevTime = time;
             time++;
 
@@ -229,7 +77,7 @@ public class TileEntitySpellCauldron extends TileEntity implements IInventory, I
     }
 
     public boolean hasEmptySpace() {
-        for (ItemStack stack : content) {
+        for (ItemStack stack : getContent()) {
             if (stack.isEmpty()) {
                 return true;
             }
@@ -238,7 +86,7 @@ public class TileEntitySpellCauldron extends TileEntity implements IInventory, I
     }
 
     public void addItem(ItemStack stack) {
-        for (int i = 0; i < content.size(); i++) {
+        for (int i = 0; i < getContent().size(); i++) {
             if (isItemValidForSlot(i, stack)) {
                 setInventorySlotContents(i, stack);
                 return;
@@ -247,7 +95,7 @@ public class TileEntitySpellCauldron extends TileEntity implements IInventory, I
     }
 
     public ItemStack removeItem() {
-        for (int i = content.size() - 1; i >= 0; i--) {
+        for (int i = getContent().size() - 1; i >= 0; i--) {
             ItemStack remove = getStackInSlot(i);
             if (!remove.isEmpty()) {
                 setInventorySlotContents(i, ItemStack.EMPTY);
@@ -258,20 +106,20 @@ public class TileEntitySpellCauldron extends TileEntity implements IInventory, I
     }
 
     public IRecipe getRecipe() {
-        if (content.equals(cachedContent)) {
+        if (getContent().equals(cachedContent)) {
             return cachedRecipe;
         } else {
             RecipesSpellCauldron recipe = (RecipesSpellCauldron) world.getRecipeManager().getRecipe(this, world);
-            cachedContent = content;
+            cachedContent = getContent();
             cachedRecipe = recipe;
             return recipe;
         }
     }
 
-    public int itemCount(){
+    public int itemCount() {
         int count = 0;
-        for(ItemStack stack: content){
-            if(!stack.isEmpty()){
+        for (ItemStack stack : getContent()) {
+            if (!stack.isEmpty()) {
                 count++;
             }
         }
