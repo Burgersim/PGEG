@@ -4,8 +4,10 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.*;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.potion.PotionEffect;
 import org.burgersim.pgeg.block.*;
 import org.burgersim.pgeg.block.base.*;
 import org.burgersim.pgeg.block.flower.BlockBloodrose;
@@ -53,7 +55,7 @@ public class PgegRegistry {
     public static Item BERRY_PIE = new ItemFood(4, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD));
     public static Item CHOCOLATE_PIE = new ItemFood(8, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD));
     /*add bounce/fall resistance chance 20-30%*/
-    public static Item SLIME_PIE = new ItemFood(4, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD));
+    public static Item SLIME_PIE = new ItemFood(4, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD)).setPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST), 0.1F);
 
     public static Item SQUID_RAW = new ItemFood(2, 0.2F, false, new Item.Builder().group(ItemGroup.FOOD));
     public static Item SQUID_COOKED = new ItemFood(6, 1.2F, false, new Item.Builder().group(ItemGroup.FOOD));

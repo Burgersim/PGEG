@@ -61,17 +61,16 @@ Brimstone (black stone/yellow ore, smelting on tools?, burn on weapons?, fire re
 Meteorite (stronger than Saturnium, randomly spawns in Meteorite structures (balls made of obsidian?))
 
 ###Ore Strenghts###
-Wood
-Stone
-Iron / Emerald
-Diamond / Orichalcum
-Obsidian / Brimstone / Mithril
-Saturnium
-Meteorite
+0	Wood
+1	Stone
+2	Iron
+3	Diamond / Orichalcum
+4	Obsidian / Brimstone / Mithril
+5	Saturnium
+6	Meteorite
 
 ###Additional Materials (Tools/Weapons)###
-Obsidian (stronger than Diamond)
-Emerald (as strong as Iron, high enchantability)
+Obsidian (stronger than Diamond, more durability, slower?)
 
 ###Plants/Crops###
 Tomato
