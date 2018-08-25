@@ -39,7 +39,6 @@ public class PgegItems implements ItemAdder {
         Item.registerItemBlock(MANA_FERN, ItemGroup.DECORATIONS);
         Item.registerItemBlock(MANA_TALLGRASS, ItemGroup.DECORATIONS);
         Item.registerItemBlock(SPELL_CAULDRON, ItemGroup.DECORATIONS);
-        Item.registerItemBlock(MANA_DUST_WIRE, ItemGroup.DECORATIONS);
         Item.registerItemBlock(GLOWSHROOM, ItemGroup.DECORATIONS);
         Item.registerItemBlock(SNOWBELL, ItemGroup.DECORATIONS);
         Item.registerItemBlock(BLOODROSE, ItemGroup.DECORATIONS);

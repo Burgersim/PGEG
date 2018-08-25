@@ -43,7 +43,6 @@ public class TileEntitySnowbell extends TileEntity implements ITickable {
         if (world.isAirBlock(blockPos) && ground.isTopSolid(world.getBlockState(blockPos.down()))) {
             if (random.nextFloat() < SNOW_CHANCE) {
                 world.setBlockState(blockPos, Blocks.SNOW.getDefaultState());
-                System.out.println("work");
             }
         }
         if (block == PgegRegistry.SNOWBELL && !world.getBlockState(blockPos).getValue(BlockSnowbell.SNOWY)) {

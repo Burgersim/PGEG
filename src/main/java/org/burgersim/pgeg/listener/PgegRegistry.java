@@ -11,10 +11,7 @@ import org.burgersim.pgeg.block.flower.BlockBloodrose;
 import org.burgersim.pgeg.block.flower.BlockGlowshroom;
 import org.burgersim.pgeg.block.flower.BlockSnowbell;
 import org.burgersim.pgeg.block.tree.MagicOakTree;
-import org.burgersim.pgeg.item.ItemRice;
-import org.burgersim.pgeg.item.ItemSpellBook;
-import org.burgersim.pgeg.item.ItemWand;
-import org.burgersim.pgeg.item.ManaFood;
+import org.burgersim.pgeg.item.*;
 
 import static net.minecraft.init.Blocks.*;
 
@@ -22,7 +19,7 @@ public class PgegRegistry {
 
     /*Magic Items*/
 
-    public static Item MANA_CRYSTAL_DUST = new Item(new Item.Builder().group(ItemGroup.MISC));
+    public static Item MANA_CRYSTAL_DUST = new ItemManaDust(new Item.Builder().group(ItemGroup.MISC));
     public static Item MANA_CAKE = new ManaFood(1, 0.2F, 20.0F, false
             , new Item.Builder().group(ItemGroup.FOOD));
     public static Item WAND = new ItemWand();

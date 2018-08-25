@@ -62,7 +62,7 @@ public class BlockManaDustWire extends BlockWaterlogged {
 
     @Override
     public boolean isValidPosition(IBlockState state, IWorldReaderBase worldReaderBase, BlockPos blockPos) {
-        return true;
+        return worldReaderBase.getBlockState(blockPos.down()).isTopSolid();
     }
 
     @Override
