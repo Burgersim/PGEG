@@ -1,8 +1,11 @@
 package org.burgersim.pgeg.listener;
 
 
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
 import org.dimdev.rift.listener.ItemAdder;
 
@@ -10,6 +13,7 @@ import static org.burgersim.pgeg.listener.PgegRegistry.*;
 import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class PgegItems implements ItemAdder {
+    public static Item SLIME_PIE = new ItemFood(4, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD)).setPotionEffect(new PotionEffect(MobEffects.HUNGER), 0.1F);
 
     @Override
     public void registerItems() {
