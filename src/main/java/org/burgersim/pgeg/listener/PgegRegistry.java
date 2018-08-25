@@ -7,11 +7,11 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.*;
 import org.burgersim.pgeg.block.*;
 import org.burgersim.pgeg.block.base.*;
+import org.burgersim.pgeg.block.flower.BlockBloodrose;
+import org.burgersim.pgeg.block.flower.BlockGlowshroom;
+import org.burgersim.pgeg.block.flower.BlockSnowbell;
 import org.burgersim.pgeg.block.tree.MagicOakTree;
-import org.burgersim.pgeg.item.ItemRice;
-import org.burgersim.pgeg.item.ItemSpellBook;
-import org.burgersim.pgeg.item.ItemWand;
-import org.burgersim.pgeg.item.ManaFood;
+import org.burgersim.pgeg.item.*;
 
 import static net.minecraft.init.Blocks.*;
 
@@ -19,7 +19,7 @@ public class PgegRegistry {
 
     /*Magic Items*/
 
-    public static Item MANA_CRYSTAL_DUST = new Item(new Item.Builder().group(ItemGroup.MISC));
+    public static Item MANA_CRYSTAL_DUST = new ItemManaDust(new Item.Builder().group(ItemGroup.MISC));
     public static Item MANA_CAKE = new ManaFood(1, 0.2F, 20.0F, false
             , new Item.Builder().group(ItemGroup.FOOD));
     public static Item WAND = new ItemWand();
@@ -119,4 +119,9 @@ public class PgegRegistry {
     public static Block SPELL_CAULDRON = new BlockSpellCauldron(Block.Builder.from(Blocks.CAULDRON).needsRandomTick());
     public static Block MANA_FERN = new BlockModTallGrass(Block.Builder.from(Blocks.FERN));
     public static Block MANA_TALLGRASS = new BlockModTallGrass(Block.Builder.from(Blocks.TALL_GRASS));
+    public static Block MANA_DUST_WIRE = new BlockManaDustWire(Block.Builder.from(Blocks.REDSTONE_WIRE));
+
+    public static Block GLOWSHROOM = new BlockGlowshroom(Block.Builder.from(Blocks.BROWN_MUSHROOM));
+    public static Block SNOWBELL = new BlockSnowbell(Block.Builder.from(Blocks.POPPY));
+    public static Block BLOODROSE = new BlockBloodrose(Block.Builder.from(Blocks.POPPY));
 }

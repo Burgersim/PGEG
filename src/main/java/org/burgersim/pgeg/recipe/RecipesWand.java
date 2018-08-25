@@ -2,6 +2,7 @@ package org.burgersim.pgeg.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.minecraft.block.Block;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,11 +19,11 @@ public class RecipesWand implements IRecipe {
     private final ResourceLocation id;
     private final String group;
     private final ItemStack recipeOutput;
-    private final Ingredient recipeInput;
+    private final ResourceLocation recipeInput;
     private final NonNullList<Ingredient> wandItems;
     private final float manaCost;
 
-    public RecipesWand(ResourceLocation id, String group, ItemStack recipeOutput, Ingredient recipeInput, NonNullList<Ingredient> wandItems, float manaCost) {
+    public RecipesWand(ResourceLocation id, String group, ItemStack recipeOutput, ResourceLocation recipeInput, NonNullList<Ingredient> wandItems, float manaCost) {
         this.id = id;
         this.group = group;
         this.recipeOutput = recipeOutput;
@@ -34,10 +35,9 @@ public class RecipesWand implements IRecipe {
     @Override
     public boolean matches(IInventory iInventory, World world) {
         if (iInventory instanceof InWorldCrafting) {
-            for (ItemStack stack : recipeInput.getMatchingStacks()) {
-                if (((InWorldCrafting) iInventory).input.asItem() == stack.getItem()) {
-                    return true;
-                }
+
+            if (recipeInput.equals(Block.REGISTRY.getNameForObject(((InWorldCrafting) iInventory).input))) {
+                return true;
             }
         }
         return false;
@@ -68,9 +68,9 @@ public class RecipesWand implements IRecipe {
         return Serializer.INSTANCE;
     }
 
-    public boolean isRightWand(ItemStack stack){
-        for(Ingredient ingredient : wandItems){
-            if (ingredient.test(stack)){
+    public boolean isRightWand(ItemStack stack) {
+        for (Ingredient ingredient : wandItems) {
+            if (ingredient.test(stack)) {
                 return true;
             }
         }
@@ -83,13 +83,14 @@ public class RecipesWand implements IRecipe {
 
     public static class Serializer implements IRecipeSerializer<RecipesWand> {
         public static final Serializer INSTANCE = new Serializer();
+
         private Serializer() {
         }
 
         @Override
         public RecipesWand read(ResourceLocation resourceLocation, JsonObject jsonObject) {
             String recipeGroup = JsonUtils.getString(jsonObject, "group", "");
-            Ingredient ingredient = Ingredient.fromJson(JsonUtils.getJsonObject(jsonObject, "input"));
+            ResourceLocation input = new ResourceLocation(JsonUtils.getString(jsonObject, "input"));
             String registryName = JsonUtils.getString(jsonObject, "result");
             NonNullList<Ingredient> wandItems = getIngredients(JsonUtils.getJsonArray(jsonObject, "wands"));
             float manaCost = JsonUtils.getFloat(jsonObject, "mana_cost");
@@ -100,9 +101,10 @@ public class RecipesWand implements IRecipe {
             } else {
                 throw new IllegalStateException(item + " did not exist");
             }
-            return new RecipesWand(resourceLocation, recipeGroup, stack, ingredient, wandItems, manaCost);
+            return new RecipesWand(resourceLocation, recipeGroup, stack, input, wandItems, manaCost);
 
         }
+
         private static NonNullList<Ingredient> getIngredients(JsonArray jsonArray) {
             NonNullList<Ingredient> ingredients = NonNullList.create();
 
@@ -119,7 +121,7 @@ public class RecipesWand implements IRecipe {
         @Override
         public RecipesWand read(ResourceLocation resourceLocation, PacketBuffer buffer) {
             String recipeGroup = buffer.readString(32767);
-            Ingredient input = Ingredient.fromBuffer(buffer);
+            ResourceLocation input = new ResourceLocation(buffer.readString(32767));
             int wandsSize = buffer.readVarInt();
             NonNullList<Ingredient> wandItems = NonNullList.withSize(wandsSize, Ingredient.EMPTY);
             for (int i = 0; i < wandItems.size(); ++i) {
@@ -134,7 +136,7 @@ public class RecipesWand implements IRecipe {
         @Override
         public void write(PacketBuffer buffer, RecipesWand recipesWand) {
             buffer.writeString(recipesWand.group);
-            recipesWand.recipeInput.writeToBuffer(buffer);
+            buffer.writeString(recipesWand.recipeInput.toString());
             buffer.writeVarInt(recipesWand.wandItems.size());
             Iterator it = recipesWand.wandItems.iterator();
 
