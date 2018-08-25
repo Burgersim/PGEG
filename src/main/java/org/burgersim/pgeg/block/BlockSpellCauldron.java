@@ -1,6 +1,7 @@
 package org.burgersim.pgeg.block;
 
 
+import com.github.ondee.snowflake.block.BlockWaterlogged;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.state.BlockFaceShape;

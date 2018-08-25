@@ -1,5 +1,6 @@
 package org.burgersim.pgeg.tileentity;
 
+import com.github.ondee.snowflake.block.BlockWaterlogged;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,7 +17,6 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 import org.burgersim.pgeg.block.BlockSpellCauldron;
-import org.burgersim.pgeg.block.BlockWaterlogged;
 import org.burgersim.pgeg.recipe.RecipesSpellCauldron;
 
 import javax.annotation.Nullable;
@@ -209,7 +209,7 @@ public class TileEntitySpellCauldron extends TileEntity implements IInventory, I
                     }
                 }
             }
-        }else{
+        } else {
             prevTime = time;
             time++;
 
@@ -268,10 +268,10 @@ public class TileEntitySpellCauldron extends TileEntity implements IInventory, I
         }
     }
 
-    public int itemCount(){
+    public int itemCount() {
         int count = 0;
-        for(ItemStack stack: content){
-            if(!stack.isEmpty()){
+        for (ItemStack stack : content) {
+            if (!stack.isEmpty()) {
                 count++;
             }
         }
