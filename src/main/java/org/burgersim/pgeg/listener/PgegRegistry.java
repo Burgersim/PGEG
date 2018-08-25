@@ -73,6 +73,9 @@ public class PgegRegistry {
     /*Other Items*/
     public static Item PLANT_TREAT = new ItemBoneMeal(EnumDyeColor.BROWN, new Item.Builder().group(ItemGroup.MATERIALS));
 
+    /*Tools*/
+
+
 
     /*Blocks*/
     public static Block MANA_GRASS = new BlockGrass(Block.Builder.create(Material.GRASS, MapColor.LIGHT_BLUE)

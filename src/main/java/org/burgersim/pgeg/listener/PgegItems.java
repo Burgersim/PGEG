@@ -13,7 +13,7 @@ import static org.burgersim.pgeg.listener.PgegRegistry.*;
 import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class PgegItems implements ItemAdder {
-    public static Item SLIME_PIE = new ItemFood(4, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD)).setPotionEffect(new PotionEffect(MobEffects.HUNGER), 0.1F);
+    public static Item SLIME_PIE = new ItemFood(4, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD)).setPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST), 0.1F);
 
     @Override
     public void registerItems() {
