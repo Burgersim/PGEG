@@ -94,5 +94,17 @@ public class PgegItems implements ItemAdder {
         /*Other Items*/
         Item.registerItem(new ResourceLocation(MOD_ID, "plant_treat"), PLANT_TREAT);
 
+        /*Ingots*/
+        Item.registerItem(new ResourceLocation(MOD_ID, "orichalcum_ingot"), ORICHALCUM_INGOT);
+        Item.registerItem(new ResourceLocation(MOD_ID, "saturnium_ingot"), SATURNIUM_INGOT);
+        Item.registerItem(new ResourceLocation(MOD_ID, "brimstone_ingot"), BRIMSTONE_INGOT);
+        Item.registerItem(new ResourceLocation(MOD_ID, "meteorite_ingot"), METEORITE_INGOT);
+        Item.registerItem(new ResourceLocation(MOD_ID, "mithril_ingot"), MITHRIL_INGOT);
+
+        /*Tools*/
+        Item.registerItem(new ResourceLocation(MOD_ID, "orichalcum_pickaxe"), ORICHALCUM_PICKAXE);
+
+        /*Weapons*/
+
     }
 }

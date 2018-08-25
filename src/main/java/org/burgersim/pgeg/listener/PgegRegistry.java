@@ -4,10 +4,8 @@ import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.*;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.potion.PotionEffect;
 import org.burgersim.pgeg.block.*;
 import org.burgersim.pgeg.block.base.*;
 import org.burgersim.pgeg.block.flower.BlockBloodrose;
@@ -73,9 +71,15 @@ public class PgegRegistry {
     /*Other Items*/
     public static Item PLANT_TREAT = new ItemBoneMeal(EnumDyeColor.BROWN, new Item.Builder().group(ItemGroup.MATERIALS));
 
+    /*Ingots*/
+    public static Item ORICHALCUM_INGOT = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
+    public static Item SATURNIUM_INGOT = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
+    public static Item BRIMSTONE_INGOT = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
+    public static Item METEORITE_INGOT = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
+    public static Item MITHRIL_INGOT = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
+
     /*Tools*/
-
-
+   public static Item ORICHALCUM_PICKAXE = new ItemModPickaxe(ItemTier.IRON, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
 
     /*Blocks*/
     public static Block MANA_GRASS = new BlockGrass(Block.Builder.create(Material.GRASS, MapColor.LIGHT_BLUE)
