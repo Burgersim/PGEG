@@ -7,8 +7,7 @@
   "refmap": "mixins.pgeg.refmap.json",
   "mixins": [
     "common.MixinEntityAnimal",
-    "common.MixinManaHandler",
-    "common.MixinSquidLoot"
+    "common.MixinManaHandler"
   ],
   "client": [
     "client.MixinManaBarOverlay",

@@ -22,11 +22,6 @@ public class BlockModOre extends BlockOre {
         this.xpMax = xpMax;
     }
 
-
-    public IItemProvider getItem(IBlockState p_getItemProvider_1_, World p_getItemProvider_2_, BlockPos p_getItemProvider_3_, int p_getItemProvider_4_) {
-        return drop;
-    }
-
     @Override
     public void dropBlockAsItemWithChance(IBlockState state, World world, BlockPos blockPos, float p_dropBlockAsItemWithChance_4_, int p_dropBlockAsItemWithChance_5_) {
         super.dropBlockAsItemWithChance(state, world, blockPos, p_dropBlockAsItemWithChance_4_, p_dropBlockAsItemWithChance_5_);
@@ -34,4 +29,8 @@ public class BlockModOre extends BlockOre {
         this.dropXpOnBlockBreak(world, blockPos, xp);
     }
 
+    @Override
+    public IItemProvider getItemDropped(IBlockState p_getItemDropped_1_, World p_getItemDropped_2_, BlockPos p_getItemDropped_3_, int p_getItemDropped_4_) {
+        return drop;
+    }
 }
