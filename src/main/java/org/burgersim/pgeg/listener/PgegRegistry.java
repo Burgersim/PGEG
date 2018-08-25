@@ -5,6 +5,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.*;
+import net.minecraft.util.ResourceLocation;
 import org.burgersim.pgeg.block.*;
 import org.burgersim.pgeg.block.base.*;
 import org.burgersim.pgeg.block.flower.BlockBloodrose;
@@ -13,7 +14,9 @@ import org.burgersim.pgeg.block.flower.BlockSnowbell;
 import org.burgersim.pgeg.block.tree.MagicOakTree;
 import org.burgersim.pgeg.item.*;
 
-import static net.minecraft.init.Blocks.*;
+import static net.minecraft.init.Blocks.DIAMOND_BLOCK;
+import static net.minecraft.init.Blocks.DIAMOND_ORE;
+import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class PgegRegistry {
 
@@ -24,6 +27,7 @@ public class PgegRegistry {
             , new Item.Builder().group(ItemGroup.FOOD));
     public static Item WAND = new ItemWand();
     public static Item SPELL_BOOK = new ItemSpellBook();
+    public static Item RUNE_BUTCHERY = new ItemRune(new Item.Builder().group(ItemGroup.MISC), new ResourceLocation(MOD_ID, "butchery"));
 
     /*Food Items*/
     public static Item BROWNIE = new ItemFood(2, 0.2F, false, new Item.Builder().group(ItemGroup.FOOD));
@@ -99,20 +103,20 @@ public class PgegRegistry {
             .sound(SoundType.STONE), PgegRegistry.MANA_CRYSTAL_DUST, 3, 7);
     public static Block ORICHALCUM_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE));
     public static Block SATURNIUM_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE)
-            .hardnessAndResistance(5.0F,5.0F));
+            .hardnessAndResistance(5.0F, 5.0F));
     public static Block BRIMSTONE_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE)
             .hardnessAndResistance(4.0F, 4.0F));
     public static Block MITHRIL_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE)
             .hardnessAndResistance(4.0F, 4.0F));
     public static Block METEORITE_ORE = new BlockOre(Block.Builder.from(DIAMOND_ORE)
-            .hardnessAndResistance(6.0F,6.0F));
+            .hardnessAndResistance(6.0F, 6.0F));
 
     /*OreBlocks*/
     public static Block MANA_DUST_BLOCK = new Block(Block.Builder.create(Material.SAND, MapColor.LIGHT_BLUE).hardnessAndResistance(0.5F, 0.5F));
     public static Block ORICHALCUM_BLOCK = new Block(Block.Builder.create(Material.IRON, MapColor.PURPLE).hardnessAndResistance(2.0F, 2.0F));
-    public static Block SATURNIUM_BLOCK = new Block(Block.Builder.create(Material.ROCK, MapColor.OBSIDIAN).hardnessAndResistance(5.0F,5.0F));
+    public static Block SATURNIUM_BLOCK = new Block(Block.Builder.create(Material.ROCK, MapColor.OBSIDIAN).hardnessAndResistance(5.0F, 5.0F));
     public static Block BRIMSTONE_BLOCK = new Block(Block.Builder.create(Material.ROCK, MapColor.NETHERRACK).hardnessAndResistance(4.0F, 4.0F));
-    public static Block METEORITE_BLOCK = new Block(Block.Builder.create(Material.ROCK, MapColor.OBSIDIAN).hardnessAndResistance(6.0F,6.0F));
+    public static Block METEORITE_BLOCK = new Block(Block.Builder.create(Material.ROCK, MapColor.OBSIDIAN).hardnessAndResistance(6.0F, 6.0F));
     public static Block MITHRIL_BLOCK = new Block(Block.Builder.from(DIAMOND_BLOCK).sound(SoundType.METAL));
 
     public static Block QUARTZ_PILLAR = new BlockQuartzStand();
@@ -124,4 +128,6 @@ public class PgegRegistry {
     public static Block GLOWSHROOM = new BlockGlowshroom(Block.Builder.from(Blocks.BROWN_MUSHROOM));
     public static Block SNOWBELL = new BlockSnowbell(Block.Builder.from(Blocks.POPPY));
     public static Block BLOODROSE = new BlockBloodrose(Block.Builder.from(Blocks.POPPY));
+
+    public static Block RUNE_PEDESTAL = new BlockRunePedestal(Block.Builder.from(Blocks.QUARTZ_SLAB).doesNotBlockMovement());
 }

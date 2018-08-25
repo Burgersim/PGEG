@@ -1,4 +1,4 @@
-package org.burgersim.pgeg.tileentity.render;
+package org.burgersim.pgeg.client.render;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;

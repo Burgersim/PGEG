@@ -42,6 +42,7 @@ public class PgegItems implements ItemAdder {
         Item.registerItemBlock(GLOWSHROOM, ItemGroup.DECORATIONS);
         Item.registerItemBlock(SNOWBELL, ItemGroup.DECORATIONS);
         Item.registerItemBlock(BLOODROSE, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(RUNE_PEDESTAL, ItemGroup.DECORATIONS);
 
         /*Magic Items*/
 
@@ -49,6 +50,7 @@ public class PgegItems implements ItemAdder {
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_cake"), MANA_CAKE);
         Item.registerItem(new ResourceLocation(MOD_ID, "wand"), WAND);
         Item.registerItem(new ResourceLocation(MOD_ID, "spell_book"), SPELL_BOOK);
+        Item.registerItem(new ResourceLocation(MOD_ID, "rune_butchery"), RUNE_BUTCHERY);
 
         /*Food Items*/
 
