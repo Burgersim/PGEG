@@ -70,8 +70,7 @@ Saturnium
 Meteorite
 
 ###Additional Materials (Tools/Weapons)###
-Obsidian (stronger than Diamond)
-Emerald (as strong as Iron, high enchantability)
+Obsidian (stronger than Diamond, more durability, slower?)
 
 ###Plants/Crops###
 Tomato
