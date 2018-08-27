@@ -1,9 +1,10 @@
 package org.burgersim.pgeg.item;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.inventory.Container;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -13,12 +14,14 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.IInteractionObject;
 import net.minecraft.world.World;
-import org.burgersim.pgeg.client.gui.RuneLexiconGui;
 import org.burgersim.pgeg.rune.Rune;
 
 import javax.annotation.Nullable;
 import java.util.List;
+
+import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 @SuppressWarnings("NoTranslation")
 public class ItemRuneLexicon extends Item {
@@ -28,8 +31,7 @@ public class ItemRuneLexicon extends Item {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
-        ItemStack stack = player.getHeldItem(hand);
-        Minecraft.getMinecraft().displayGuiScreen(new RuneLexiconGui(stack, world));
+        player.displayGui(new LexiconInteractionObject(player.getHeldItem(hand)));
         return new ActionResult<>(EnumActionResult.PASS, player.getHeldItem(hand));
     }
 
@@ -40,6 +42,52 @@ public class ItemRuneLexicon extends Item {
             String rune = tagCompound.getString("rune");
             iTextComponents.add(new TextComponentString(I18n.format("item.pgeg.runic_lexicon.tooltip", I18n.format(Rune.getRune(new ResourceLocation(rune)).getNameKey()))));
 
+        }
+    }
+
+    public class LexiconInteractionObject implements IInteractionObject {
+        private final ItemStack stack;
+
+        LexiconInteractionObject(ItemStack stack) {
+            this.stack = stack;
+        }
+
+        public ItemStack getStack() {
+            return stack;
+        }
+
+        @Override
+        public Container createContainer(InventoryPlayer inventoryPlayer, EntityPlayer entityPlayer) {
+            return new LexiconContainer();
+        }
+
+        @Override
+        public String getGuiID() {
+            return MOD_ID + ":lexicon";
+        }
+
+        @Override
+        public ITextComponent getName() {
+            return new TextComponentString("Runic Lexicon");
+        }
+
+        @Override
+        public boolean hasCustomName() {
+            return false;
+        }
+
+        @Nullable
+        @Override
+        public ITextComponent getCustomName() {
+            return null;
+        }
+
+        public class LexiconContainer extends Container {
+
+            @Override
+            public boolean canInteractWith(EntityPlayer entityPlayer) {
+                return true;
+            }
         }
     }
 }

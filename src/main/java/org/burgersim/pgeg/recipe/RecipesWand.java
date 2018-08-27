@@ -126,7 +126,6 @@ public class RecipesWand implements IRecipe {
             }
             float manaCost = buffer.readFloat();
             ItemStack output = buffer.readItemStack();
-            String outputType = buffer.readString(32767);
             return new RecipesWand(resourceLocation, recipeGroup, output, input, wandItems, manaCost);
         }
 

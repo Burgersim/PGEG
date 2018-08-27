@@ -7,9 +7,11 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.IInteractionObject;
 import net.minecraft.world.World;
 import org.burgersim.pgeg.client.book.IBookPage;
 import org.burgersim.pgeg.client.book.lexicon.RunesList;
+import org.burgersim.pgeg.item.ItemRuneLexicon;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +19,14 @@ import java.util.List;
 import static org.burgersim.pgeg.utils.Reference.RUNE_LEXICON_TEXTURES;
 
 public class RuneLexiconGui extends GuiScreen {
-    private final ItemStack lexicon;
+    private final ItemRuneLexicon.LexiconInteractionObject interactionObject;
     private IBookPage page;
     private List<IBookPage> history;
     private BackButton backButton;
     private final World world;
 
-    public RuneLexiconGui(ItemStack lexicon, World world) {
-        this.lexicon = lexicon;
+    public RuneLexiconGui(ItemRuneLexicon.LexiconInteractionObject interactionObject, World world) {
+        this.interactionObject = interactionObject;
         this.world = world;
         history = new ArrayList<>();
     }
@@ -81,16 +83,16 @@ public class RuneLexiconGui extends GuiScreen {
     }
 
     public void setRune(String name) {
-        NBTTagCompound compound = lexicon.getTagCompound();
+        NBTTagCompound compound = getLexicon().getTagCompound();
         if (compound == null) {
             compound = new NBTTagCompound();
         }
         compound.setString("rune", name);
-        lexicon.setTagCompound(compound);
+        getLexicon().setTagCompound(compound);
     }
 
     public ItemStack getLexicon() {
-        return lexicon;
+        return interactionObject.getStack();
     }
 
     public class BackButton extends GuiButton {
