@@ -11,9 +11,9 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 public class BlockModOre extends BlockOre {
-    private IItemProvider drop;
-    private int xpMin;
-    private int xpMax;
+    private final IItemProvider drop;
+    private final int xpMin;
+    private final int xpMax;
 
     public BlockModOre(Builder builder, IItemProvider drop, int xpMin, int xpMax) {
         super(builder);

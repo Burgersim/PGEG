@@ -7,7 +7,7 @@ import net.minecraft.world.World;
 import org.burgersim.pgeg.mana.IManaHandler;
 
 public class ManaFood extends ItemFood {
-    private float manaAmount;
+    private final float manaAmount;
     public ManaFood(int healAmount, float saturationModifier,float manaAmount, boolean isWolfsFavoriteMeat, Builder builder) {
         super(healAmount, saturationModifier, isWolfsFavoriteMeat, builder);
         this.setAlwaysEdible();

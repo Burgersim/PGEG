@@ -35,10 +35,7 @@ public class RecipesWand implements IRecipe {
     @Override
     public boolean matches(IInventory iInventory, World world) {
         if (iInventory instanceof InWorldCrafting) {
-
-            if (recipeInput.equals(Block.REGISTRY.getNameForObject(((InWorldCrafting) iInventory).input))) {
-                return true;
-            }
+            return recipeInput.equals(Block.REGISTRY.getNameForObject(((InWorldCrafting) iInventory).input));
         }
         return false;
     }

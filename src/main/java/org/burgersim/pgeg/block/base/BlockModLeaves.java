@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 public class BlockModLeaves extends BlockLeaves {
 
-    private IItemProvider drop;
+    private final IItemProvider drop;
 
     public BlockModLeaves(Builder builder, IItemProvider drop) {
         super(builder);

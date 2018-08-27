@@ -14,11 +14,11 @@ import net.minecraft.world.IWorldReaderBase;
 import net.minecraft.world.World;
 
 public class BlockManaDustWire extends BlockWaterlogged {
-    public static BooleanProperty EAST;
-    public static BooleanProperty WEST;
-    public static BooleanProperty NORTH;
-    public static BooleanProperty SOUTH;
-    protected static final VoxelShape[] SHAPES;
+    public final static BooleanProperty EAST;
+    public final static BooleanProperty WEST;
+    public final static BooleanProperty NORTH;
+    public final static BooleanProperty SOUTH;
+    protected final static VoxelShape[] SHAPES;
 
     public BlockManaDustWire(Builder builder) {
         super(builder);

@@ -10,7 +10,7 @@ import java.util.Collection;
 import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class PgegBiomes implements BiomeAdder {
-    public static Biome MAGIC_FOREST_BIOME = new MagicForestBiome();
+    public final static Biome MAGIC_FOREST_BIOME = new MagicForestBiome();
     @Override
     public void registerBiomes() {
         Biome.registerBiome(Biome.REGISTRY.getKeys().size() + 1,

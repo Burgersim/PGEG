@@ -14,8 +14,8 @@ import java.util.Random;
 import java.util.Set;
 
 public class MagicOakTreeFeature extends TreeFeature {
-    private IBlockState metaLeaves = PgegRegistry.MAGIC_OAK_LEAVES.getDefaultState();
-    private IBlockState metaWood = PgegRegistry.MAGIC_OAK_LOG.getDefaultState();
+    private final IBlockState metaLeaves = PgegRegistry.MAGIC_OAK_LEAVES.getDefaultState();
+    private final IBlockState metaWood = PgegRegistry.MAGIC_OAK_LOG.getDefaultState();
 
     public MagicOakTreeFeature() {
         super(true, 4, PgegRegistry.MAGIC_OAK_LOG.getDefaultState()

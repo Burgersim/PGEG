@@ -22,7 +22,6 @@ public class TileEntitySnowbell extends TileEntity implements ITickable {
     }
 
     private int time;
-    private Random random = new Random();
 
     @Override
     public void update() {
@@ -41,22 +40,22 @@ public class TileEntitySnowbell extends TileEntity implements ITickable {
         Block block = world.getBlockState(blockPos).getBlock();
         Block ground = world.getBlockState(blockPos.down()).getBlock();
         if (world.isAirBlock(blockPos) && ground.isTopSolid(world.getBlockState(blockPos.down()))) {
-            if (random.nextFloat() < SNOW_CHANCE) {
+            if (world.rand.nextFloat() < SNOW_CHANCE) {
                 world.setBlockState(blockPos, Blocks.SNOW.getDefaultState());
             }
         }
         if (block == PgegRegistry.SNOWBELL && !world.getBlockState(blockPos).getValue(BlockSnowbell.SNOWY)) {
-            if (random.nextFloat() < SNOW_CHANCE) {
+            if (world.rand.nextFloat() < SNOW_CHANCE) {
                 world.setBlockState(blockPos, world.getBlockState(blockPos).withProperty(BlockSnowbell.SNOWY, true));
             }
         }
         if (block == Blocks.WATER) {
-            if (random.nextFloat() < SNOW_CHANCE) {
+            if (world.rand.nextFloat() < SNOW_CHANCE) {
                 world.setBlockState(blockPos, Blocks.ICE.getDefaultState());
             }
         }
         if (block == Blocks.LAVA) {
-            if (random.nextFloat() < SNOW_CHANCE) {
+            if (world.rand.nextFloat() < SNOW_CHANCE) {
                 world.setBlockState(blockPos, Blocks.OBSIDIAN.getDefaultState());
             }
         }

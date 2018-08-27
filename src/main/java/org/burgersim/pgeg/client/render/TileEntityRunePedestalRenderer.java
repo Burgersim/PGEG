@@ -1,5 +1,6 @@
 package org.burgersim.pgeg.client.render;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
@@ -14,11 +15,12 @@ public class TileEntityRunePedestalRenderer extends TileEntityRenderer<TileEntit
     @Override
     public void render(TileEntityRunePedestal pedestal, double x, double y, double z, float partialTicks, int destroyStage) {
         if (pedestal.getRune() != null) {
+            Minecraft.getMinecraft().profiler.startSection("rune_pedestal");
             GlStateManager.pushAttrib();
             GlStateManager.pushMatrix();
             GlStateManager.translate(x + .5, y - .8, z + .5);
             GlStateManager.color(1f, 1f, 1f);
-            cube.renderCubes(4, 2, pedestal.getTime(), 0.1f, pedestal.getRune().getColor());
+            cube.renderCubes(4, pedestal.getLevel(), pedestal.getTime(), 0.1f, pedestal.getRune().getColor());
 
             GlStateManager.popMatrix();
             GlStateManager.popAttrib();
@@ -42,6 +44,7 @@ public class TileEntityRunePedestalRenderer extends TileEntityRenderer<TileEntit
             GlStateManager.disableBlend();
             GlStateManager.popMatrix();
             GlStateManager.popAttrib();
+            Minecraft.getMinecraft().profiler.endSection();
         }
     }
 }

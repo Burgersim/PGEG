@@ -1,0 +1,19 @@
+{
+  "type": "rune",
+  "ingredients": [
+    {
+      "item": "minecraft:feather"
+    },
+    {
+      "item": "minecraft:string"
+    },
+    {
+      "item": "minecraft:phantom_membrane"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    }
+  ],
+  "rune": "pgeg:air",
+  "group": "runes"
+}

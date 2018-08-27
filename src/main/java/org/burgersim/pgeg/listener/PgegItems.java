@@ -13,7 +13,7 @@ import static org.burgersim.pgeg.listener.PgegRegistry.*;
 import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class PgegItems implements ItemAdder {
-    public static Item SLIME_PIE = new ItemFood(4, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD)).setPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST), 0.1F);
+    public final static Item SLIME_PIE = new ItemFood(4, 0.6F, false, new Item.Builder().group(ItemGroup.FOOD)).setPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST), 0.1F);
 
     @Override
     public void registerItems() {
@@ -54,7 +54,7 @@ public class PgegItems implements ItemAdder {
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_cake"), MANA_CAKE);
         Item.registerItem(new ResourceLocation(MOD_ID, "wand"), WAND);
         Item.registerItem(new ResourceLocation(MOD_ID, "spell_book"), SPELL_BOOK);
-        Item.registerItem(new ResourceLocation(MOD_ID, "rune_butchery"), RUNE_BUTCHERY);
+        Item.registerItem(new ResourceLocation(MOD_ID, "runic_lexicon"), RUNE_LEXICON);
 
         /*Food Items*/
 
