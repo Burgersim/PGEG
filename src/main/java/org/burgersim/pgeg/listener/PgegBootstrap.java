@@ -5,6 +5,7 @@ import net.minecraft.item.crafting.RecipeSerializers;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
+import org.burgersim.pgeg.recipe.RecipesRune;
 import org.burgersim.pgeg.recipe.RecipesSpellCauldron;
 import org.burgersim.pgeg.recipe.RecipesWand;
 import org.burgersim.pgeg.rune.Rune;
@@ -19,6 +20,7 @@ public class PgegBootstrap implements BootstrapListener {
     public void afterVanillaBootstrap() {
         RecipeSerializers.register(RecipesWand.Serializer.INSTANCE);
         RecipeSerializers.register(RecipesSpellCauldron.Serializer.INSTANCE);
+        RecipeSerializers.register(RecipesRune.Serializer.INSTANCE);
         Rune.registerRunes();
     }
 }

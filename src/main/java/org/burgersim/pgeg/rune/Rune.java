@@ -30,11 +30,11 @@ public class Rune {
         this.textureLocation = textureLocation;
     }
 
-    public void onColide(World world, Entity entity, BlockPos runePos, int levelModifier) {
+    public void processCollide(World world, Entity entity, BlockPos runePos, int levelModifier) {
 
     }
 
-    public void processBlock(BlockPos blockPos, BlockPos runePos, int levelModifier) {
+    public void processBlock(World world, BlockPos blockPos, BlockPos runePos, int levelModifier) {
 
     }
 
@@ -56,6 +56,8 @@ public class Rune {
 
     public static void registerRunes() {
         register(new ResourceLocation(MOD_ID, "butchery"), new RuneButchery());
+        register(new ResourceLocation(MOD_ID, "growth"), new RuneGrowth());
+        register(new ResourceLocation(MOD_ID, "air"), new RuneAir());
     }
 
     public RuneType getRuneType() {
@@ -76,6 +78,22 @@ public class Rune {
 
     public ResourceLocation getTextureLocation() {
         return textureLocation;
+    }
+
+    public String getNameKey() {
+        return "rune." + REGISTRY.getNameForObject(this).getPath() + ".name";
+    }
+
+    public String getDescriptionKey() {
+        return "rune." + REGISTRY.getNameForObject(this).getPath() + ".description";
+    }
+
+    public String getName() {
+        return REGISTRY.getNameForObject(this).toString();
+    }
+
+    public int getId() {
+        return REGISTRY.getIDForObject(this);
     }
 
     static {

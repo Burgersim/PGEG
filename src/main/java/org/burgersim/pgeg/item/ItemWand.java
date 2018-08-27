@@ -29,7 +29,6 @@ public class ItemWand extends Item {
     public EnumActionResult onItemUse(ItemUseContext context) {
         World world = context.getWorld();
         BlockPos blockPos = context.getPos();
-        IBlockState blockState = world.getBlockState(blockPos);
         EntityPlayer player = context.getPlayer();
         IManaHandler handler = (IManaHandler) player;
         RecipesWand recipe = (RecipesWand) world.getRecipeManager().getRecipe(

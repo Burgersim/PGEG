@@ -15,7 +15,7 @@ import org.burgersim.pgeg.tileentity.flower.TileEntitySnowbell;
 import javax.annotation.Nullable;
 
 public class BlockSnowbell extends BlockFlower implements ITileEntityProvider {
-    public static BooleanProperty SNOWY;
+    public final static BooleanProperty SNOWY;
 
     public BlockSnowbell(Builder p_i48396_1_) {
         super(p_i48396_1_);

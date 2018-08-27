@@ -26,7 +26,7 @@ import org.burgersim.pgeg.listener.PgegRegistry;
 import javax.annotation.Nullable;
 
 public class BlockRice extends BlockCrops implements IBucketPickupHandler, ILiquidContainer {
-    public static BooleanProperty isWaterlogged;
+    public final static BooleanProperty isWaterlogged;
 
     public BlockRice(Builder builder) {
         super(builder);

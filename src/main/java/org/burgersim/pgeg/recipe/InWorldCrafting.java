@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 
 public class InWorldCrafting implements IInventory {
 
-    public Block input;
+    public final Block input;
 
     public InWorldCrafting(Block input) {
         this.input = input;

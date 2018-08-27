@@ -13,6 +13,6 @@ import java.util.Random;
 public class MagicOakTree extends OakTree {
     @Nullable
     protected AbstractTreeFeature<NoFeatureConfig> getTreeFeature(Random p_getTreeFeature_1_) {
-        return (AbstractTreeFeature) new MagicOakTreeFeature();
+        return new MagicOakTreeFeature();
     }
 }
