@@ -67,9 +67,11 @@ public class TileEntityRunePedestal extends TileEntity implements ITickable {
     }
 
     public void onCollide(World world, BlockPos blockpos, Entity entity) {
-        if (cooldown >= rune.getWorkSpeed() && world.rand.nextFloat() <= getRune().getWorkChance()) {
-            rune.processCollide(world, entity, blockpos, getLevel());
-            cooldown = 0;
+        if (rune != null) {
+            if (cooldown >= rune.getWorkSpeed() && world.rand.nextFloat() <= getRune().getWorkChance()) {
+                rune.processCollide(world, entity, blockpos, getLevel());
+                cooldown = 0;
+            }
         }
     }
 

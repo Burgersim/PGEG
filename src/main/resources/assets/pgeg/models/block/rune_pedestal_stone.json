@@ -1,0 +1,9 @@
+{
+	"parent": "pgeg:block/rune_pedestal_quartz",
+	"textures": {
+		"side": "block/stone_slab_top",
+		"top": "block/stone_slab_top",
+		"bottom": "block/stone_slab_side",
+		"particle": "block/stone_slab_side"
+	}
+}

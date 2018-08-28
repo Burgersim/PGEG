@@ -31,7 +31,7 @@ public class ItemRuneLexicon extends Item {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
-        player.displayGui(new LexiconInteractionObject(player.getHeldItem(hand)));
+        player.displayGui(new LexiconInteractionObject(hand == EnumHand.MAIN_HAND));
         return new ActionResult<>(EnumActionResult.PASS, player.getHeldItem(hand));
     }
 
@@ -46,14 +46,14 @@ public class ItemRuneLexicon extends Item {
     }
 
     public class LexiconInteractionObject implements IInteractionObject {
-        private final ItemStack stack;
+        private final boolean isMainHand;
 
-        LexiconInteractionObject(ItemStack stack) {
-            this.stack = stack;
+        LexiconInteractionObject(boolean isMainHand) {
+            this.isMainHand = isMainHand;
         }
 
-        public ItemStack getStack() {
-            return stack;
+        public boolean isMainHand() {
+            return isMainHand;
         }
 
         @Override

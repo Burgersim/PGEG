@@ -14,7 +14,9 @@ public class PgegGui implements GameGuiAdder {
     @Override
     public void displayGui(EntityPlayerSP player, String id, IInteractionObject interactionObject) {
         if (id.equals(MOD_ID + ":lexicon")) {
-            Minecraft.getMinecraft().displayGuiScreen(new RuneLexiconGui((ItemRuneLexicon.LexiconInteractionObject) interactionObject, player.world));
+            if (interactionObject instanceof ItemRuneLexicon.LexiconInteractionObject) {
+                Minecraft.getMinecraft().displayGuiScreen(new RuneLexiconGui((ItemRuneLexicon.LexiconInteractionObject) interactionObject, player));
+            }
         }
     }
 

@@ -5,13 +5,12 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.world.IInteractionObject;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import org.burgersim.pgeg.client.book.IBookPage;
 import org.burgersim.pgeg.client.book.lexicon.RunesList;
 import org.burgersim.pgeg.item.ItemRuneLexicon;
+import org.burgersim.pgeg.network.CPacketSetLexiconRune;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +22,11 @@ public class RuneLexiconGui extends GuiScreen {
     private IBookPage page;
     private List<IBookPage> history;
     private BackButton backButton;
-    private final World world;
+    private EntityPlayer player;
 
-    public RuneLexiconGui(ItemRuneLexicon.LexiconInteractionObject interactionObject, World world) {
+    public RuneLexiconGui(ItemRuneLexicon.LexiconInteractionObject interactionObject, EntityPlayer player) {
         this.interactionObject = interactionObject;
-        this.world = world;
+        this.player = player;
         history = new ArrayList<>();
     }
 
@@ -83,16 +82,7 @@ public class RuneLexiconGui extends GuiScreen {
     }
 
     public void setRune(String name) {
-        NBTTagCompound compound = getLexicon().getTagCompound();
-        if (compound == null) {
-            compound = new NBTTagCompound();
-        }
-        compound.setString("rune", name);
-        getLexicon().setTagCompound(compound);
-    }
-
-    public ItemStack getLexicon() {
-        return interactionObject.getStack();
+        Minecraft.getMinecraft().getConnection().sendPacket(new CPacketSetLexiconRune(interactionObject.isMainHand(), name));
     }
 
     public class BackButton extends GuiButton {
@@ -118,6 +108,6 @@ public class RuneLexiconGui extends GuiScreen {
     }
 
     public World getWorld() {
-        return world;
+        return player.world;
     }
 }

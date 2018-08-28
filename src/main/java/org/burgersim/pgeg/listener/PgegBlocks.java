@@ -50,6 +50,9 @@ public class PgegBlocks implements BlockAdder {
         Block.register(new ResourceLocation(MOD_ID, "snowbell"), SNOWBELL);
         Block.register(new ResourceLocation(MOD_ID, "bloodrose"), BLOODROSE);
 
-        Block.register(new ResourceLocation(MOD_ID, "rune_pedestal"), RUNE_PEDESTAL);
+
+        Block.register(new ResourceLocation(MOD_ID, "rune_pedestal_stone"), RUNE_PEDESTAL_STONE);
+        Block.register(new ResourceLocation(MOD_ID, "rune_pedestal_quartz"), RUNE_PEDESTAL_QUARTZ);
+        Block.register(new ResourceLocation(MOD_ID, "rune_pedestal_purpur"), RUNE_PEDESTAL_PURPUR);
     }
 }

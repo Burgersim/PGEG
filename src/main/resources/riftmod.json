@@ -11,6 +11,7 @@
       "class": "org.burgersim.pgeg.listener.PgegGui",
       "side": "client"
     },
+    "org.burgersim.pgeg.listener.PgegPackets",
     "org.burgersim.pgeg.listener.PgegPotions",
     "org.burgersim.pgeg.listener.PgegItems",
     "org.burgersim.pgeg.listener.PgegBlocks",

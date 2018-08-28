@@ -46,7 +46,9 @@ public class PgegItems implements ItemAdder {
         Item.registerItemBlock(GLOWSHROOM, ItemGroup.DECORATIONS);
         Item.registerItemBlock(SNOWBELL, ItemGroup.DECORATIONS);
         Item.registerItemBlock(BLOODROSE, ItemGroup.DECORATIONS);
-        Item.registerItemBlock(RUNE_PEDESTAL, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(RUNE_PEDESTAL_STONE, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(RUNE_PEDESTAL_QUARTZ, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(RUNE_PEDESTAL_PURPUR, ItemGroup.DECORATIONS);
 
         /*Magic Items*/
 

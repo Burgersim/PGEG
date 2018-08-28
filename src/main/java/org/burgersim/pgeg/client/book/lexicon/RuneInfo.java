@@ -117,12 +117,7 @@ public class RuneInfo implements IBookPage {
 
         @Override
         public void mousePressed(double x, double y) {
-            NBTTagCompound compound = gui.getLexicon().getTagCompound();
-            if (compound == null) {
-                compound = new NBTTagCompound();
-            }
-            compound.setString("rune", rune.getName());
-            gui.getLexicon().setTagCompound(compound);
+            gui.setRune(rune.getName());
             gui.close();
         }
     }

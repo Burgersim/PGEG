@@ -45,6 +45,7 @@ public class BlockRunePedestal extends BlockWaterlogged implements ITileEntityPr
                         RecipesRune recipe = (RecipesRune) world.getRecipeManager().getRecipe(new RecipesRune.RuneCrafting(rune), world);
                         if (recipe != null && recipe.tryCraft(player)) {
                             pedestal.setRune(rune);
+                            pedestal.markDirty();
                         }
                     }
                 }

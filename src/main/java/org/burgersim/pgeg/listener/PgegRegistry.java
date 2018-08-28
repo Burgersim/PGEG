@@ -137,5 +137,7 @@ public class PgegRegistry {
     public final static Block SNOWBELL = new BlockSnowbell(Block.Builder.from(Blocks.POPPY));
     public final static Block BLOODROSE = new BlockBloodrose(Block.Builder.from(Blocks.POPPY));
 
-    public final static Block RUNE_PEDESTAL = new BlockRunePedestal(Block.Builder.from(Blocks.QUARTZ_SLAB).doesNotBlockMovement(), 2);
+    public final static Block RUNE_PEDESTAL_STONE = new BlockRunePedestal(Block.Builder.from(Blocks.STONE_SLAB).doesNotBlockMovement(), 1);
+    public final static Block RUNE_PEDESTAL_QUARTZ = new BlockRunePedestal(Block.Builder.from(Blocks.QUARTZ_SLAB).doesNotBlockMovement(), 2);
+    public final static Block RUNE_PEDESTAL_PURPUR = new BlockRunePedestal(Block.Builder.from(Blocks.PURPUR_SLAB).doesNotBlockMovement(), 3);
 }
