@@ -82,6 +82,9 @@
   "rune.butchery.name": "Rune of Butchery",
   "rune.growth.name": "Rune of Growth",
   "rune.air.name": "Rune of Air",
+  "rune.magnetizm.name": "Rune of Magnetizm",
+  "rune.harvest.name": "Rune of Harvest",
+  "rune.fertility.name": "Rune of Fertility",
   "gui.lexicon.title.runes": "Runic Lexicon",
   "gui.lexicon.title.ingredients": "Required items:",
   "gui.lexicon.button.set_rune": "Set Rune"

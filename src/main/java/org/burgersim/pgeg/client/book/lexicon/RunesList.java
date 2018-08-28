@@ -1,66 +1,86 @@
 package org.burgersim.pgeg.client.book.lexicon;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.util.ResourceLocation;
 import org.burgersim.pgeg.client.book.IBookPage;
+import org.burgersim.pgeg.client.book.IPageFragment;
+import org.burgersim.pgeg.client.book.fragment.FragmentLink;
+import org.burgersim.pgeg.client.book.fragment.FragmentLinksList;
+import org.burgersim.pgeg.client.book.fragment.FragmentTitle;
+import org.burgersim.pgeg.client.book.fragment.LinkProvider;
 import org.burgersim.pgeg.client.gui.RuneLexiconGui;
 import org.burgersim.pgeg.rune.Rune;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("NoTranslation")
 public class RunesList implements IBookPage {
     private final RuneLexiconGui gui;
-    List<GuiButton> buttons = new ArrayList<>();
+    private List<IPageFragment> fragments = new ArrayList<>();
 
     public RunesList(RuneLexiconGui gui) {
         this.gui = gui;
-        int x = (gui.width - 285) / 2;
-        int y = (gui.height - 179) / 2;
-        Rune.REGISTRY.forEach(
-                (rune) -> buttons.add(
-                        new RunePageButton(rune.getId(), x + 16, y + 16 * rune.getId() + 32, 120, 16, rune.getNameKey(), new RuneInfo(gui, rune)))
-        );
+        fragments.add(new FragmentTitle(0, 16, 146, I18n.format("gui.lexicon.title.runes"), 4210752));
+        fragments.add(new FragmentLinksList(0, 26, new RuneLinkProvider(), 4210752));
+        fragments.add(new FragmentLinksList(140, 16, new RuneLinkProvider(9, 10), 4210752));
     }
 
     @Override
-    public void draw(int mouseX, int mouseY) {
-        int x = (gui.width - 285) / 2;
-        int y = (gui.height - 179) / 2;
-        int titleWidth = Minecraft.getMinecraft().fontRenderer.getStringWidth(I18n.format("gui.lexicon.title.runes"));
-        Minecraft.getMinecraft().fontRenderer.drawString(I18n.format("gui.lexicon.title.runes"), x + 143 / 2 - titleWidth / 2, y + 16, 4210752);
-        buttons.forEach((guiButton -> guiButton.drawButtonForegroundLayer(0, 0)));
+    public List<IPageFragment> getFragments() {
+        return fragments;
     }
 
     @Override
-    public boolean onMouseClicked(double x, double y, int mode) {
-        boolean flag = false;
-        for (GuiButton button : buttons) {
-            flag = button.mouseClicked(x, y, mode);
-        }
-        return flag;
+    public int getTopLeftX() {
+        return (gui.width - 285) / 2;
     }
 
-    private class RunePageButton extends GuiButton {
-        private final IBookPage destination;
+    @Override
+    public int getTopLeftY() {
+        return (gui.height - 179) / 2;
+    }
 
-        public RunePageButton(int id, int x, int y, int width, int height, String text, IBookPage destination) {
-            super(id, x, y, width, height, text);
-            this.destination = destination;
+    private class RuneLinkProvider extends LinkProvider {
+        private final int offset;
+        private final int max;
+
+        public RuneLinkProvider() {
+            this(0, 9);
+        }
+
+        public RuneLinkProvider(int offset, int max) {
+            this.offset = offset;
+            this.max = max;
         }
 
         @Override
-        public void mousePressed(double x, double y) {
-            gui.setPage(destination, true);
+        public ResourceLocation getIcon(int i) {
+            return Rune.REGISTRY.getObjectById(i + offset).getTextureLocation();
         }
 
         @Override
-        public void drawButtonForegroundLayer(int offsetX, int offsetY) {
-            Minecraft.getMinecraft().getTextureManager().bindTexture(Rune.REGISTRY.getObjectById(id).getTextureLocation());
-            Gui.drawModalRectWithCustomSizedTexture(x + offsetX, y + offsetY, 0, 0, 16, 16, 16, 16);
-            Minecraft.getMinecraft().fontRenderer.drawString(I18n.format(this.displayString), x + offsetX + 16, y + offsetY + 4, 4210752);
+        public String getText(int i) {
+            return I18n.format(Rune.REGISTRY.getObjectById(i + offset).getNameKey());
+        }
+
+        @Override
+        public int getSize() {
+            return Math.min(Rune.REGISTRY.getKeys().size() - offset, max);
+        }
+
+        @Override
+        public boolean onMouseClicked(FragmentLink link, double x, double y, int mode) {
+            if (super.onMouseClicked(link, x, y, mode)) {
+                gui.setPage(new RuneInfo(gui, Rune.REGISTRY.getObjectById(link.id)), true);
+                return true;
+            }
+            return false;
+        }
+
+        @Override
+        public int getOffet() {
+            return offset;
         }
     }
 }
