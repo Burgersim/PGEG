@@ -7,10 +7,6 @@
   "listeners": [
     "org.burgersim.pgeg.listener.PgegInit",
     "org.burgersim.pgeg.listener.PgegBootstrap",
-    {
-      "class": "org.burgersim.pgeg.listener.PgegGui",
-      "side": "client"
-    },
     "org.burgersim.pgeg.listener.PgegPackets",
     "org.burgersim.pgeg.listener.PgegPotions",
     "org.burgersim.pgeg.listener.PgegItems",
@@ -20,8 +16,18 @@
     "org.burgersim.pgeg.listener.PgegBiomes",
     "org.burgersim.pgeg.listener.PgegWorldChanger",
     "org.burgersim.pgeg.listener.PgegTileEntityTypes",
-    "org.burgersim.pgeg.listener.PgegTileEntityRenderer",
-    "org.burgersim.pgeg.listener.PgegEntityRenderers",
-    "org.burgersim.pgeg.listener.PgegLootAdder"
+    "org.burgersim.pgeg.listener.PgegLootAdder",
+    {
+      "class": "org.burgersim.pgeg.listener.PgegTileEntityRenderer",
+      "side": "client"
+    },
+    {
+      "class": "org.burgersim.pgeg.listener.PgegEntityRenderers",
+      "side": "client"
+    },
+    {
+      "class": "org.burgersim.pgeg.listener.PgegGui",
+      "side": "client"
+    }
   ]
 }

@@ -1,0 +1,31 @@
+{
+  "type": "rune",
+  "ingredients": [
+    {
+      "item": "minecraft:golden_hoe"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "minecraft:beetroot"
+    },
+    {
+      "item": "minecraft:wheat"
+    },
+    {
+      "item": "pgeg:tomato"
+    },
+    {
+      "item": "pgeg:rice"
+    },
+    {
+      "item": "minecraft:emerald"
+    }
+  ],
+  "rune": "pgeg:harvest",
+  "group": "runes"
+}

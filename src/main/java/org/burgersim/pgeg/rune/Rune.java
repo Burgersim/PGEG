@@ -19,13 +19,15 @@ public class Rune {
     private final RuneType runeType;
     private final int workSpeed;
     private final float workChance;
+    private final int workRadius;
     private final int color;
     private final ResourceLocation textureLocation;
 
-    public Rune(RuneType runeType, int workSpeed, float workChance, int color, ResourceLocation textureLocation) {
+    public Rune(RuneType runeType, int workSpeed, float workChance, int workRadius, int color, ResourceLocation textureLocation) {
         this.runeType = runeType;
         this.workSpeed = workSpeed;
         this.workChance = workChance;
+        this.workRadius = workRadius;
         this.color = color;
         this.textureLocation = textureLocation;
     }
@@ -58,6 +60,9 @@ public class Rune {
         register(new ResourceLocation(MOD_ID, "butchery"), new RuneButchery());
         register(new ResourceLocation(MOD_ID, "growth"), new RuneGrowth());
         register(new ResourceLocation(MOD_ID, "air"), new RuneAir());
+        register(new ResourceLocation(MOD_ID, "magnetizm"), new RuneMagnetizm());
+        register(new ResourceLocation(MOD_ID, "harvest"), new RuneHarvest());
+        register(new ResourceLocation(MOD_ID, "fertility"), new RuneFertility());
     }
 
     public RuneType getRuneType() {
@@ -70,6 +75,10 @@ public class Rune {
 
     public float getWorkChance() {
         return workChance;
+    }
+
+    public int getWorkRadius() {
+        return workRadius;
     }
 
     public int getColor() {
