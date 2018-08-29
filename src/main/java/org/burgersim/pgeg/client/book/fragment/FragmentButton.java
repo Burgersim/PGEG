@@ -2,8 +2,10 @@ package org.burgersim.pgeg.client.book.fragment;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiButton;
 import org.burgersim.pgeg.client.book.IPageFragment;
+import org.burgersim.pgeg.utils.Reference;
 
 public class FragmentButton extends GuiButton implements IPageFragment {
     private final int offsetX;
@@ -25,12 +27,19 @@ public class FragmentButton extends GuiButton implements IPageFragment {
     public void draw(int x, int y, int mouseX, int mouseY) {
         this.x = x + offsetX;
         this.y = y + offsetY;
-        drawButton(x + this.offsetX, y + this.offsetY, 0.0f);
+        drawButton(mouseX, mouseY, 0.0f);
     }
 
     @Override
     public void drawButton(int x, int y, float p_drawButton_3_) {
-        super.drawButton(x, y, p_drawButton_3_);
+        this.hovered = x >= this.x && y >= this.y && x < this.x + this.width && y < this.y + this.height;
+        Minecraft.getMinecraft().getTextureManager().bindTexture(Reference.COMPENDIUM_TEXTURES);
+        int texX = 0;
+        int texY = 203;
+        if (this.hovered) {
+            texY += 19;
+        }
+        Gui.drawModalRectWithCustomSizedTexture(this.x, this.y, texX, texY, 108, 19, 256, 256);
         drawButtonForegroundLayer(x, y);
     }
 

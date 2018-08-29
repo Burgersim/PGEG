@@ -5,7 +5,6 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.*;
-import net.minecraft.util.ResourceLocation;
 import org.burgersim.pgeg.block.*;
 import org.burgersim.pgeg.block.base.*;
 import org.burgersim.pgeg.block.flower.BlockBloodrose;
@@ -16,7 +15,6 @@ import org.burgersim.pgeg.item.*;
 
 import static net.minecraft.init.Blocks.DIAMOND_BLOCK;
 import static net.minecraft.init.Blocks.DIAMOND_ORE;
-import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class PgegRegistry {
 
@@ -26,8 +24,7 @@ public class PgegRegistry {
     public final static Item MANA_CAKE = new ManaFood(1, 0.2F, 20.0F, false
             , new Item.Builder().group(ItemGroup.FOOD));
     public final static Item WAND = new ItemWand();
-    public final static Item SPELL_BOOK = new ItemSpellBook();
-    public final static Item RUNE_LEXICON = new ItemRuneLexicon(new Item.Builder().maxStackSize(1).group(ItemGroup.MISC));
+    public final static Item COMPENDIUM = new ItemCompendium(new Item.Builder().maxStackSize(1).group(ItemGroup.MISC).rarity(EnumRarity.EPIC));
     /*Food Items*/
     public final static Item BROWNIE = new ItemFood(2, 0.2F, false, new Item.Builder().group(ItemGroup.FOOD));
     public final static Item BURRITO_BEEF = new ItemFood(12, 2, false, new Item.Builder().group(ItemGroup.FOOD));

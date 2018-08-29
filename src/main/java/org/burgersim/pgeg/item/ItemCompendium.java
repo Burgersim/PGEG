@@ -24,8 +24,8 @@ import java.util.List;
 import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 @SuppressWarnings("NoTranslation")
-public class ItemRuneLexicon extends Item {
-    public ItemRuneLexicon(Builder builder) {
+public class ItemCompendium extends Item {
+    public ItemCompendium(Builder builder) {
         super(builder);
     }
 
@@ -40,7 +40,7 @@ public class ItemRuneLexicon extends Item {
         NBTTagCompound tagCompound = stack.getTagCompound();
         if (tagCompound != null && tagCompound.hasKey("rune")) {
             String rune = tagCompound.getString("rune");
-            iTextComponents.add(new TextComponentString(I18n.format("item.pgeg.runic_lexicon.tooltip", I18n.format(Rune.getRune(new ResourceLocation(rune)).getNameKey()))));
+            iTextComponents.add(new TextComponentString(I18n.format("item.compendium.rune.tooltip", I18n.format(Rune.getRune(new ResourceLocation(rune)).getNameKey()))));
 
         }
     }
@@ -63,7 +63,7 @@ public class ItemRuneLexicon extends Item {
 
         @Override
         public String getGuiID() {
-            return MOD_ID + ":lexicon";
+            return MOD_ID + ":rune";
         }
 
         @Override

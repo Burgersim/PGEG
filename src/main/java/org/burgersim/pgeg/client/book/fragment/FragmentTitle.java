@@ -3,6 +3,7 @@ package org.burgersim.pgeg.client.book.fragment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import org.burgersim.pgeg.client.book.IPageFragment;
+import org.burgersim.pgeg.client.gui.GuiCompendium;
 
 public class FragmentTitle implements IPageFragment {
     private final int offsetX;

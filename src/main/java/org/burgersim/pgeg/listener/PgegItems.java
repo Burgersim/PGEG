@@ -55,8 +55,7 @@ public class PgegItems implements ItemAdder {
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_crystal_dust"), MANA_CRYSTAL_DUST);
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_cake"), MANA_CAKE);
         Item.registerItem(new ResourceLocation(MOD_ID, "wand"), WAND);
-        Item.registerItem(new ResourceLocation(MOD_ID, "spell_book"), SPELL_BOOK);
-        Item.registerItem(new ResourceLocation(MOD_ID, "runic_lexicon"), RUNE_LEXICON);
+        Item.registerItem(new ResourceLocation(MOD_ID, "compendium"), COMPENDIUM);
 
         /*Food Items*/
 

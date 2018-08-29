@@ -74,8 +74,8 @@
   "item.pgeg.roll_sea_pickle": "Sea Pickle Roll",
   "item.pgeg.tomato_seeds": "Tomato Seeds",
   "item.pgeg.plant_treat": "Plant Treat",
-  "item.pgeg.runic_lexicon": "Runic Lexicon",
-  "item.pgeg.runic_lexicon.tooltip": "Current rune: %s",
+  "item.pgeg.compendium": "Compendium of the Mythical and Arcane",
+  "item.compendium.rune.tooltip": "Current rune: %s",
   "tile.pgeg.quartz_stand": "Quartz Stand",
   "biome.pgeg.magic_forest": "Magic Forest",
   "effect.pgeg.hover": "Hover",
@@ -85,7 +85,9 @@
   "rune.magnetizm.name": "Rune of Magnetizm",
   "rune.harvest.name": "Rune of Harvest",
   "rune.fertility.name": "Rune of Fertility",
-  "gui.lexicon.title.runes": "Runic Lexicon",
-  "gui.lexicon.title.ingredients": "Required items:",
-  "gui.lexicon.button.set_rune": "Set Rune"
+  "gui.compendium.name": "Compendium",
+  "gui.compendium.category.runes.name": "Runic mastery",
+  "gui.compendium.page.rune_pedestals.name": "Runic pedestals",
+  "gui.compendium.category.runes.title.ingredients": "Required materials: ",
+  "gui.compendium.category.runes.button.set_rune": "Set rune"
 }

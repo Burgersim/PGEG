@@ -1,10 +1,10 @@
 package org.burgersim.pgeg.client.book.fragment;
 
-import net.minecraft.util.ResourceLocation;
+import org.burgersim.pgeg.client.book.fragment.icon.IconAbstract;
 
 public abstract class LinkProvider {
 
-    public abstract ResourceLocation getIcon(int i);
+    public abstract IconAbstract getIcon(int i);
 
     public abstract String getText(int i);
 
