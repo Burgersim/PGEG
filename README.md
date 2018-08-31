@@ -1,4 +1,4 @@
-# PGEG
+# PGEG [![Download](https://curse.nikky.moe/api/img/301102)](https://curse.nikky.moe/api/url/301102)
 
 This is the repository for my Mod for minecraft 1.13, with the help of the Rift Modding API.
 

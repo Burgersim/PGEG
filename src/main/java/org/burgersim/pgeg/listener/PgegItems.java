@@ -46,15 +46,16 @@ public class PgegItems implements ItemAdder {
         Item.registerItemBlock(GLOWSHROOM, ItemGroup.DECORATIONS);
         Item.registerItemBlock(SNOWBELL, ItemGroup.DECORATIONS);
         Item.registerItemBlock(BLOODROSE, ItemGroup.DECORATIONS);
-        Item.registerItemBlock(RUNE_PEDESTAL, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(RUNE_PEDESTAL_STONE, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(RUNE_PEDESTAL_QUARTZ, ItemGroup.DECORATIONS);
+        Item.registerItemBlock(RUNE_PEDESTAL_PURPUR, ItemGroup.DECORATIONS);
 
         /*Magic Items*/
 
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_crystal_dust"), MANA_CRYSTAL_DUST);
         Item.registerItem(new ResourceLocation(MOD_ID, "mana_cake"), MANA_CAKE);
         Item.registerItem(new ResourceLocation(MOD_ID, "wand"), WAND);
-        Item.registerItem(new ResourceLocation(MOD_ID, "spell_book"), SPELL_BOOK);
-        Item.registerItem(new ResourceLocation(MOD_ID, "runic_lexicon"), RUNE_LEXICON);
+        Item.registerItem(new ResourceLocation(MOD_ID, "compendium"), COMPENDIUM);
 
         /*Food Items*/
 

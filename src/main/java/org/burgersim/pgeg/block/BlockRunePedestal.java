@@ -16,7 +16,7 @@ import net.minecraft.util.math.shapes.ShapeUtils;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import org.burgersim.pgeg.item.ItemRuneLexicon;
+import org.burgersim.pgeg.item.ItemCompendium;
 import org.burgersim.pgeg.recipe.RecipesRune;
 import org.burgersim.pgeg.tileentity.TileEntityRunePedestal;
 
@@ -33,7 +33,7 @@ public class BlockRunePedestal extends BlockWaterlogged implements ITileEntityPr
 
     @Override
     public boolean onBlockActivated(IBlockState state, World world, BlockPos blockPos, EntityPlayer player, EnumHand hand, EnumFacing facing, float p_onBlockActivated_7_, float p_onBlockActivated_8_, float p_onBlockActivated_9_) {
-        if (player.getHeldItem(hand).getItem() instanceof ItemRuneLexicon) {
+        if (player.getHeldItem(hand).getItem() instanceof ItemCompendium) {
             ItemStack lexicon = player.getHeldItem(hand);
             NBTTagCompound compound = lexicon.getTagCompound();
             if (compound != null && compound.hasKey("rune")) {
@@ -45,6 +45,7 @@ public class BlockRunePedestal extends BlockWaterlogged implements ITileEntityPr
                         RecipesRune recipe = (RecipesRune) world.getRecipeManager().getRecipe(new RecipesRune.RuneCrafting(rune), world);
                         if (recipe != null && recipe.tryCraft(player)) {
                             pedestal.setRune(rune);
+                            pedestal.markDirty();
                         }
                     }
                 }

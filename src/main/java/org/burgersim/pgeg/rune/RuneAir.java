@@ -12,7 +12,7 @@ import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class RuneAir extends Rune {
     public RuneAir() {
-        super(RuneType.TOUCH, 100, 1.0f, 0xffffff, new ResourceLocation(MOD_ID, "textures/rune/rune_air.png"));
+        super(RuneType.TOUCH, 100, 1.0f, 1, 0xffffff, new ResourceLocation(MOD_ID, "textures/rune/rune_air.png"));
 
     }
 

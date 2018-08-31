@@ -35,8 +35,8 @@ public class TileEntityRunePedestal extends TileEntity implements ITickable {
                     case BLOCK:
                         cooldown = 0;
                         BlockPos.getAllInBox(
-                                new BlockPos(pos.getX() - getLevel(), pos.getY() - 1, pos.getZ() - getLevel()),
-                                new BlockPos(pos.getX() + getLevel(), pos.getY() + 2, pos.getZ() + getLevel()))
+                                new BlockPos(pos.getX() - getLevel() * rune.getWorkRadius(), pos.getY() - 1, pos.getZ() - getLevel() * rune.getWorkRadius()),
+                                new BlockPos(pos.getX() + getLevel() * rune.getWorkRadius(), pos.getY() + 2, pos.getZ() + getLevel() * rune.getWorkRadius()))
                                 .forEach((blockPos -> {
                                     if (world.rand.nextFloat() <= rune.getWorkChance()) {
                                         rune.processBlock(world, blockPos, pos, getLevel());
@@ -47,8 +47,8 @@ public class TileEntityRunePedestal extends TileEntity implements ITickable {
                         cooldown = 0;
                         world.getEntitiesWithinAABB(Entity.class,
                                 new AxisAlignedBB(
-                                        new BlockPos(pos.getX() - getLevel(), pos.getY() - 1, pos.getZ() - getLevel()),
-                                        new BlockPos(pos.getX() + getLevel(), pos.getY() + 2, pos.getZ() + getLevel())))
+                                        new BlockPos(pos.getX() - getLevel() * rune.getWorkRadius(), pos.getY() - 1, pos.getZ() - getLevel() * rune.getWorkRadius()),
+                                        new BlockPos(pos.getX() + getLevel() * rune.getWorkRadius(), pos.getY() + 2, pos.getZ() + getLevel() * rune.getWorkRadius())))
                                 .stream()
                                 .filter((entity) -> world.rand.nextFloat() <= rune.getWorkChance())
                                 .forEach((entity) -> rune.processEntity(entity, pos, getLevel()));
@@ -67,9 +67,11 @@ public class TileEntityRunePedestal extends TileEntity implements ITickable {
     }
 
     public void onCollide(World world, BlockPos blockpos, Entity entity) {
-        if (cooldown >= rune.getWorkSpeed() && world.rand.nextFloat() <= getRune().getWorkChance()) {
-            rune.processCollide(world, entity, blockpos, getLevel());
-            cooldown = 0;
+        if (rune != null) {
+            if (cooldown >= rune.getWorkSpeed() && world.rand.nextFloat() <= getRune().getWorkChance()) {
+                rune.processCollide(world, entity, blockpos, getLevel());
+                cooldown = 0;
+            }
         }
     }
 

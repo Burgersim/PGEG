@@ -13,7 +13,7 @@ import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class RuneButchery extends Rune {
     public RuneButchery() {
-        super(RuneType.ENTITY, 40, 1.0f, 0x644923, new ResourceLocation(MOD_ID, "textures/rune/rune_pain.png"));
+        super(RuneType.ENTITY, 40, 1.0f, 1, 0x644923, new ResourceLocation(MOD_ID, "textures/rune/rune_pain.png"));
     }
 
     @Override

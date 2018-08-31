@@ -2,7 +2,7 @@
   "type": "crafting_wand",
   "group": "enchanting",
   "input": "minecraft:bookshelf",
-  "result": "pgeg:spell_book",
+  "result": "pgeg:compendium",
   "wands": [
     {
       "tag": "pgeg:wands"

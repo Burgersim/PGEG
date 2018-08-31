@@ -9,7 +9,7 @@ import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 public class RuneGrowth extends Rune {
     public RuneGrowth() {
-        super(RuneType.BLOCK, 100, 0.5f, 0x1AC732, new ResourceLocation(MOD_ID, "textures/rune/rune_plant.png"));
+        super(RuneType.BLOCK, 100, 0.5f, 1, 0x1AC732, new ResourceLocation(MOD_ID, "textures/rune/rune_plant.png"));
     }
 
     @Override

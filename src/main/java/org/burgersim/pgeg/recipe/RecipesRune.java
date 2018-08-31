@@ -74,6 +74,9 @@ public class RecipesRune implements IRecipe {
     }
 
     public boolean tryCraft(EntityPlayer player) {
+        if (player.capabilities.isCreativeMode) {
+            return true;
+        }
         List<ItemStack> stacks = new ArrayList<>();
         int itemCount = 0;
         for (Ingredient ingredient : recipeItems) {
