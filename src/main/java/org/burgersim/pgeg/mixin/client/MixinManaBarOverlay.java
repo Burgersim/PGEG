@@ -22,16 +22,17 @@ import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 @Mixin(GuiIngame.class)
 public abstract class MixinManaBarOverlay extends Gui {
-    @Shadow
-    private int field_194811_H;
+
     @Shadow
     @Final
     private Random rand;
     @Shadow
-    private int field_194812_I;
-    @Shadow
     @Final
     private Minecraft mc;
+
+    @Shadow private int scaledWidth;
+
+    @Shadow private int scaledHeight;
 
     @Inject(method = "renderPlayerStats", at = @At("RETURN"))
     private void renderManaBar(CallbackInfo ci) {
@@ -41,8 +42,8 @@ public abstract class MixinManaBarOverlay extends Gui {
             int mana = MathHelper.ceil(handler.getMana());
             float maxMana = handler.getMaxMana();
             if (maxMana > 0) {
-                int barX = this.field_194811_H / 2 - 91;
-                int barY = this.field_194812_I - 39;
+                int barX = this.scaledWidth / 2 - 91;
+                int barY = this.scaledHeight - 39;
                 int manaPerStar = (int) handler.getMaxMana() / 10;
                 int maxHealth = MathHelper.ceil((player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getAttributeValue()
                         + player.getAbsorptionAmount()) / 2.0F / 10.0F);

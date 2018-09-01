@@ -82,7 +82,7 @@ public class PageCategory implements IBookPage {
         }
 
         @Override
-        public int getOffet() {
+        public int getOffset() {
             return 0;
         }
 

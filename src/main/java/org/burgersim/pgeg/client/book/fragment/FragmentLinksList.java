@@ -21,7 +21,7 @@ public class FragmentLinksList implements IPageFragment {
         this.color = color;
         int linksCount = linkProvider.getSize();
         for (int i = 0; i < linksCount; i++) {
-            links.add(new FragmentLink(gui,offsetX + 8, offsetY + i * 16, i + linkProvider.getOffet(), 146, 4210752, linkProvider.getIcon(i), linkProvider.getText(i)) {
+            links.add(new FragmentLink(gui,offsetX + 8, offsetY + i * 16, i + linkProvider.getOffset(), 146, 4210752, linkProvider.getIcon(i), linkProvider.getText(i)) {
                 @Override
                 public boolean onMouseClicked(double x, double y, int mode) {
                     return linkProvider.onMouseClicked(this, x, y, mode);
