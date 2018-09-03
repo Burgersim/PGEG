@@ -8,17 +8,9 @@ import java.util.List;
 
 public class FragmentLinksList implements IPageFragment {
 
-    private final int offsetX;
-    private final int offsetY;
-    private final LinkProvider linkProvider;
-    private final int color;
     private List<FragmentLink> links = new ArrayList<>();
 
     public FragmentLinksList(GuiCompendium gui, int offsetX, int offsetY, LinkProvider linkProvider, int color) {
-        this.offsetX = offsetX;
-        this.offsetY = offsetY;
-        this.linkProvider = linkProvider;
-        this.color = color;
         int linksCount = linkProvider.getSize();
         for (int i = 0; i < linksCount; i++) {
             links.add(new FragmentLink(gui,offsetX + 8, offsetY + i * 16, i + linkProvider.getOffset(), 146, 4210752, linkProvider.getIcon(i), linkProvider.getText(i)) {
