@@ -11,6 +11,7 @@
     "org.burgersim.pgeg.listener.PgegPotions",
     "org.burgersim.pgeg.listener.PgegItems",
     "org.burgersim.pgeg.listener.PgegBlocks",
+    "org.burgersim.pgeg.listener.PgegEnchantments",
     "org.burgersim.pgeg.listener.PgegRecipeSerializers",
     "org.burgersim.pgeg.listener.PgegMiningLevel",
     "org.burgersim.pgeg.listener.PgegGrassSeeds",
