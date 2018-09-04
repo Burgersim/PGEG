@@ -26,10 +26,6 @@ public abstract class MixinEntityDamaged {
     @Shadow
     public abstract boolean addPotionEffect(PotionEffect p_addPotionEffect_1_);
 
-    @Shadow
-    @Final
-    private static DataParameter<Integer> POTION_EFFECTS;
-
     @Inject(method = "damageEntity", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/EntityLivingBase;setHealth(F)V"),
             locals = LocalCapture.CAPTURE_FAILEXCEPTION)
     private void onDamageEntity(DamageSource source, float damage, CallbackInfo ci, float finalDamage) {
@@ -40,6 +36,7 @@ public abstract class MixinEntityDamaged {
                 NBTTagList enchantments = stack.getEnchantmentTagList();
                 int vampirismLevel = 0;
                 int poisonousLevel = 0;
+                boolean isPainCursed = false;
                 for (int i = 0; i < enchantments.size(); i++) {
                     NBTTagCompound compound = enchantments.getCompoundTagAt(i);
                     if ((MOD_ID + ":vampirism").equals(compound.getString("id"))) {
@@ -48,6 +45,12 @@ public abstract class MixinEntityDamaged {
                     if ((MOD_ID + ":poisonous").equals(compound.getString("id"))) {
                         poisonousLevel = compound.getInteger("lvl");
                     }
+                    if ((MOD_ID + ":curse_pain").equals(compound.getString("id"))) {
+                        isPainCursed = true;
+                    }
+                }
+                if (isPainCursed) {
+                    trueSource.attackEntityFrom(DamageSource.MAGIC, 1.0f);
                 }
                 trueSource.setHealth(trueSource.getHealth() + finalDamage * 0.01f * vampirismLevel);
                 this.addPotionEffect(new PotionEffect(MobEffects.POISON, 5 * 20 * poisonousLevel));
