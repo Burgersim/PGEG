@@ -1,16 +1,16 @@
 package org.burgersim.pgeg.mixin.common;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EntityType;
+import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
-import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.potion.PotionType;
 import net.minecraft.util.DamageSource;
-import org.spongepowered.asm.mixin.Final;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,7 +21,11 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 @Mixin(EntityLivingBase.class)
-public abstract class MixinEntityDamaged {
+public abstract class MixinEntityLivingBase extends Entity {
+
+    public MixinEntityLivingBase(EntityType<?> p_i48580_1_, World p_i48580_2_) {
+        super(p_i48580_1_, p_i48580_2_);
+    }
 
     @Shadow
     public abstract boolean addPotionEffect(PotionEffect p_addPotionEffect_1_);
@@ -56,6 +60,43 @@ public abstract class MixinEntityDamaged {
                 this.addPotionEffect(new PotionEffect(MobEffects.POISON, 5 * 20 * poisonousLevel));
             }
         }
+    }
+
+    @Inject(method = "onDeath", at = @At("RETURN"))
+    private void onDeath(DamageSource source, CallbackInfo ci) {
+        if (source.getTrueSource() instanceof EntityLivingBase) {
+            EntityLivingBase trueSource = (EntityLivingBase) source.getTrueSource();
+            ItemStack stack = trueSource.getHeldItemMainhand();
+            if (stack.isItemEnchanted()) {
+                NBTTagList enchantments = stack.getEnchantmentTagList();
+                int beheadingLevel = 0;
+                for (int i = 0; i < enchantments.size(); i++) {
+                    NBTTagCompound compound = enchantments.getCompoundTagAt(i);
+                    if ((MOD_ID + ":beheading").equals(compound.getString("id"))) {
+                        beheadingLevel = compound.getInteger("lvl");
+                    }
+                }
+                if (rand.nextFloat() < 0.1f * beheadingLevel) {
+                    switch (this.getType().getTranslationKey()) {
+                        case "entity.minecraft.skeleton":
+                            this.entityDropItem(new ItemStack(Items.SKELETON_SKULL));
+                            break;
+                        case "entity.minecraft.creeper":
+                            this.entityDropItem(new ItemStack(Items.CREEPER_HEAD));
+                            break;
+                        case "entity.minecraft.zombie":
+                            this.entityDropItem(new ItemStack(Items.ZOMBIE_HEAD));
+                            break;
+                        case "entity.minecraft.wither_skeleton":
+                            this.entityDropItem(new ItemStack(Items.WITHER_SKELETON_SKULL));
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+
     }
 
 }
