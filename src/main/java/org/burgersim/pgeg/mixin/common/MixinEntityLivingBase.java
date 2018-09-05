@@ -10,6 +10,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -41,6 +42,7 @@ public abstract class MixinEntityLivingBase extends Entity {
                 int vampirismLevel = 0;
                 int poisonousLevel = 0;
                 boolean isPainCursed = false;
+                boolean isRandomized = false;
                 for (int i = 0; i < enchantments.size(); i++) {
                     NBTTagCompound compound = enchantments.getCompoundTagAt(i);
                     if ((MOD_ID + ":vampirism").equals(compound.getString("id"))) {
@@ -52,9 +54,19 @@ public abstract class MixinEntityLivingBase extends Entity {
                     if ((MOD_ID + ":curse_pain").equals(compound.getString("id"))) {
                         isPainCursed = true;
                     }
+                    if ((MOD_ID + ":randomization").equals(compound.getString("id"))) {
+                        isRandomized = true;
+                    }
                 }
                 if (isPainCursed) {
                     trueSource.attackEntityFrom(DamageSource.MAGIC, 1.0f);
+                }
+                if (isRandomized) {
+                    BlockPos newPos = new BlockPos(posX, posY, posZ).add(-8 + rand.nextInt(17),
+                            rand.nextInt(8), -8 + rand.nextInt(17));
+                    if (!world.getBlockState(newPos).isSolid()) {
+                        this.setPositionAndUpdate(newPos.getX(), newPos.getY(), newPos.getZ());
+                    }
                 }
                 trueSource.setHealth(trueSource.getHealth() + finalDamage * 0.01f * vampirismLevel);
                 this.addPotionEffect(new PotionEffect(MobEffects.POISON, 5 * 20 * poisonousLevel));
