@@ -18,9 +18,6 @@ public class PgegBootstrap implements BootstrapListener {
 
     @Override
     public void afterVanillaBootstrap() {
-        RecipeSerializers.register(RecipesWand.Serializer.INSTANCE);
-        RecipeSerializers.register(RecipesSpellCauldron.Serializer.INSTANCE);
-        RecipeSerializers.register(RecipesRune.Serializer.INSTANCE);
         Rune.registerRunes();
     }
 }

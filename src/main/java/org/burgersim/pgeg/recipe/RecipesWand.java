@@ -35,7 +35,7 @@ public class RecipesWand implements IRecipe {
     @Override
     public boolean matches(IInventory iInventory, World world) {
         if (iInventory instanceof InWorldCrafting) {
-            return recipeInput.equals(Block.REGISTRY.getNameForObject(((InWorldCrafting) iInventory).input));
+            return recipeInput.equals(Block.REGISTRY.getKey(((InWorldCrafting) iInventory).input));
         }
         return false;
     }
@@ -91,7 +91,7 @@ public class RecipesWand implements IRecipe {
             String registryName = JsonUtils.getString(jsonObject, "result");
             NonNullList<Ingredient> wandItems = getIngredients(JsonUtils.getJsonArray(jsonObject, "wands"));
             float manaCost = JsonUtils.getFloat(jsonObject, "mana_cost");
-            Item item = Item.REGISTRY.getObject(new ResourceLocation(registryName));
+            Item item = Item.REGISTRY.get(new ResourceLocation(registryName));
             ItemStack stack;
             if (item != null) {
                 stack = new ItemStack(item);

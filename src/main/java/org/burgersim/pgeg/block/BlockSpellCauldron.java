@@ -122,7 +122,7 @@ public class BlockSpellCauldron extends BlockWaterlogged implements ITileEntityP
                     if (!player.capabilities.isCreativeMode) {
                         player.setHeldItem(hand, new ItemStack(Items.BUCKET));
                     }
-                    player.addStat(StatList.CAULDRON_FILLED);
+                    player.addStat(StatList.FILL_CAULDRON);
                     world.setBlockState(blockPos, state.withProperty(IS_HEATED, false).withProperty(HAS_WATER, true));
                     world.playSound(null, blockPos, SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
                 }
@@ -137,7 +137,7 @@ public class BlockSpellCauldron extends BlockWaterlogged implements ITileEntityP
                             player.dropItem(new ItemStack(Items.WATER_BUCKET), false);
                         }
                     }
-                    player.addStat(StatList.CAULDRON_USED);
+                    player.addStat(StatList.USE_CAULDRON);
                     world.setBlockState(blockPos, state.withProperty(IS_HEATED, false).withProperty(HAS_WATER, false));
                     TileEntity tileEntity = world.getTileEntity(blockPos);
                     if (tileEntity instanceof IInventory) {
@@ -180,16 +180,16 @@ public class BlockSpellCauldron extends BlockWaterlogged implements ITileEntityP
     }
 
     @Override
-    protected void addPropertiesToBuilder(StateContainer.Builder<Block, IBlockState> map) {
+    protected void fillStateContainer(StateContainer.Builder<Block, IBlockState> map) {
         map.add(HAS_WATER, IS_HEATED);
-        super.addPropertiesToBuilder(map);
+        super.fillStateContainer(map);
     }
 
     static {
         HAS_WATER = BooleanProperty.create("has_water");
         IS_HEATED = BooleanProperty.create("is_heated");
         SHAPE1 = Block.makeCuboidShape(2.0D, 4.0D, 2.0D, 14.0D, 16.0D, 14.0D);
-        SHAPE = ShapeUtils.func_197878_a(ShapeUtils.fullCube(), SHAPE1, IBooleanFunction.ONLY_FIRST);
+        SHAPE = ShapeUtils.combine(ShapeUtils.fullCube(), SHAPE1, IBooleanFunction.ONLY_FIRST);
     }
 
     @Nullable

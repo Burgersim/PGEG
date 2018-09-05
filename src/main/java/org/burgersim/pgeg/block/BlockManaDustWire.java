@@ -65,8 +65,8 @@ public class BlockManaDustWire extends BlockWaterlogged {
     }
 
     @Override
-    protected void addPropertiesToBuilder(StateContainer.Builder<Block, IBlockState> map) {
-        super.addPropertiesToBuilder(map);
+    protected void fillStateContainer(StateContainer.Builder<Block, IBlockState> map) {
+        super.fillStateContainer(map);
         map.add(EAST, WEST, NORTH, SOUTH);
     }
 

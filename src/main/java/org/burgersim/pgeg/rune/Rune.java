@@ -48,12 +48,12 @@ public class Rune {
         if (REGISTRY.containsKey(location)) {
             LOGGER.info("Duplicated rune entry :" + location);
         } else {
-            REGISTRY.putObject(location, rune);
+            REGISTRY.put(location, rune);
         }
     }
 
     public static Rune getRune(ResourceLocation location) {
-        return REGISTRY.getObject(location);
+        return REGISTRY.get(location);
     }
 
     public static void registerRunes() {
@@ -90,19 +90,19 @@ public class Rune {
     }
 
     public String getNameKey() {
-        return "rune." + REGISTRY.getNameForObject(this).getPath() + ".name";
+        return "rune." + REGISTRY.getKey(this).getPath() + ".name";
     }
 
     public String getDescriptionKey() {
-        return "rune." + REGISTRY.getNameForObject(this).getPath() + ".description";
+        return "rune." + REGISTRY.getKey(this).getPath() + ".description";
     }
 
     public String getName() {
-        return REGISTRY.getNameForObject(this).toString();
+        return REGISTRY.getKey(this).toString();
     }
 
     public int getId() {
-        return REGISTRY.getIDForObject(this);
+        return REGISTRY.getId(this);
     }
 
     static {

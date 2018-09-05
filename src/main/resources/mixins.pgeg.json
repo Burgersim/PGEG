@@ -8,7 +8,9 @@
   "mixins": [
     "common.MixinEntityAnimal",
     "common.MixinManaHandler",
-    "common.MixinLevitationEffect"
+    "common.MixinLevitationEffect",
+    "common.MixinEntityLivingBase",
+    "common.MixinPlayerInteraction"
   ],
   "client": [
     "client.MixinManaBarOverlay",

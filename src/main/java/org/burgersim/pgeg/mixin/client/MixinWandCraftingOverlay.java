@@ -38,10 +38,9 @@ public abstract class MixinWandCraftingOverlay extends Gui {
     @Shadow
     @Final
     private ItemRenderer itemRenderer;
-    @Shadow
-    private int field_194811_H;
-    @Shadow
-    private int field_194812_I;
+
+    @Shadow private int scaledWidth;
+    @Shadow private int scaledHeight;
     private Block lastBlock;
     private IRecipe lastRecipe;
 
@@ -63,15 +62,15 @@ public abstract class MixinWandCraftingOverlay extends Gui {
                         RecipesWand recipe = (RecipesWand) lastRecipe;
                         float manaCost = recipe.getManaCost();
                         this.itemRenderer.renderItemIntoGUI(lastRecipe.getRecipeOutput(),
-                                this.field_194811_H / 2 - 25,
-                                this.field_194812_I / 2 - 7);
+                                this.scaledWidth / 2 - 25,
+                                this.scaledHeight / 2 - 7);
                         GlStateManager.disableDepth();
                         if (mainhand.isIn(PgegBootstrap.wands) || offhand.isIn(PgegBootstrap.wands)) {
                             if (!recipe.isRightWand(player.getHeldItemMainhand()) && !recipe.isRightWand(player.getHeldItemOffhand())) {
                                 this.itemRenderer.renderItemIntoGUI(
                                         new ItemStack(Item.BLOCK_TO_ITEM.get(Blocks.BARRIER)),
-                                        this.field_194811_H / 2 - 25,
-                                        this.field_194812_I / 2 - 7);
+                                        this.scaledWidth / 2 - 25,
+                                        this.scaledHeight / 2 - 7);
                             }
                         }
                         if (manaCost > 0 && !player.capabilities.isCreativeMode) {
@@ -80,13 +79,13 @@ public abstract class MixinWandCraftingOverlay extends Gui {
                                     manaCost / (handler.getMaxMana() / 10));
                             int stringWidth = this.mc.fontRenderer.getStringWidth(starsCost);
                             this.mc.fontRenderer.drawStringWithShadow(starsCost,
-                                    this.field_194811_H / 2 - 25 - (stringWidth + 1) / 2,
-                                    this.field_194812_I / 2 + 10,
+                                    this.scaledWidth / 2 - 25 - (stringWidth + 1) / 2,
+                                    this.scaledHeight / 2 + 10,
                                     manaCost > handler.getMana() ? 0xff0000 : 0xffffff);
                             this.mc.getTextureManager().bindTexture(MANA_ICONS);
                             this.drawTexturedModalRect(
-                                    this.field_194811_H / 2 - 25 - (stringWidth + 1) / 2 + stringWidth,
-                                    this.field_194812_I / 2 + 9,
+                                    this.scaledWidth / 2 - 25 - (stringWidth + 1) / 2 + stringWidth,
+                                    this.scaledHeight / 2 + 9,
                                     9,
                                     0,
                                     9,

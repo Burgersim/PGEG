@@ -45,7 +45,7 @@ public class ItemWand extends Item {
                 if (result != Blocks.AIR) {
                     world.setBlockState(blockPos, result.getDefaultState());
                 } else {
-                    world.setBlockToAir(blockPos);
+                    world.removeBlock(blockPos);
                     world.spawnEntity(
                             new EntityItem(
                                     world,

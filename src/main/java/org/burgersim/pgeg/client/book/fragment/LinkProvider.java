@@ -14,5 +14,5 @@ public abstract class LinkProvider {
         return x > link.x && x < link.x + link.getButtonWidth() && y > link.y && y < link.y + link.getButtonHeight();
     }
 
-    public abstract int getOffet();
+    public abstract int getOffset();
 }

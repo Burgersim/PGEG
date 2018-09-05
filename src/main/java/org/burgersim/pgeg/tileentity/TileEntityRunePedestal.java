@@ -94,7 +94,7 @@ public class TileEntityRunePedestal extends TileEntity implements ITickable {
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound tagCompound) {
         NBTTagCompound compound = super.writeToNBT(tagCompound);
-        compound.setString("rune", Rune.REGISTRY.getNameForObject(rune).toString());
+        compound.setString("rune", Rune.REGISTRY.getKey(rune).toString());
         compound.setInteger("cooldown", cooldown);
         return compound;
     }
@@ -103,7 +103,7 @@ public class TileEntityRunePedestal extends TileEntity implements ITickable {
     @Override
     public SPacketUpdateTileEntity getUpdatePacket() {
         NBTTagCompound compound = super.getUpdateTag();
-        compound.setString("rune", Rune.REGISTRY.getNameForObject(rune).toString());
+        compound.setString("rune", Rune.REGISTRY.getKey(rune).toString());
         compound.setInteger("cooldown", cooldown);
         return new SPacketUpdateTileEntity(pos, -1, compound);
     }
@@ -111,7 +111,7 @@ public class TileEntityRunePedestal extends TileEntity implements ITickable {
     @Override
     public NBTTagCompound getUpdateTag() {
         NBTTagCompound compound = super.getUpdateTag();
-        compound.setString("rune", Rune.REGISTRY.getNameForObject(rune).toString());
+        compound.setString("rune", Rune.REGISTRY.getKey(rune).toString());
         compound.setInteger("cooldown", cooldown);
         return compound;
     }

@@ -5,6 +5,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.*;
+import net.minecraft.item.crafting.Ingredient;
 import org.burgersim.pgeg.block.*;
 import org.burgersim.pgeg.block.base.*;
 import org.burgersim.pgeg.block.flower.BlockBloodrose;
@@ -12,6 +13,7 @@ import org.burgersim.pgeg.block.flower.BlockGlowshroom;
 import org.burgersim.pgeg.block.flower.BlockSnowbell;
 import org.burgersim.pgeg.block.tree.MagicOakTree;
 import org.burgersim.pgeg.item.*;
+import org.dimdev.rift.util.ItemTierImpl;
 
 import static net.minecraft.init.Blocks.DIAMOND_BLOCK;
 import static net.minecraft.init.Blocks.DIAMOND_ORE;
@@ -75,8 +77,11 @@ public class PgegRegistry {
     public final static Item METEORITE_INGOT = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
     public final static Item MITHRIL_INGOT = new Item(new Item.Builder().group(ItemGroup.MATERIALS));
 
+    /*Item Tiers*/
+    public final static IItemTier ORICHALCUM = new ItemTierImpl(3, 1561, 8.0F, 3.0F, 10, () -> Ingredient.fromItems(PgegRegistry.ORICHALCUM_INGOT));
+
     /*Tools*/
-    public final static Item ORICHALCUM_PICKAXE = new ItemModPickaxe(ModTiers.ORICHALCUM, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item ORICHALCUM_PICKAXE = new ItemModPickaxe(ORICHALCUM, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
 
     /*Blocks*/
     public final static Block MANA_GRASS = new BlockGrass(Block.Builder.create(Material.GRASS, MapColor.LIGHT_BLUE)

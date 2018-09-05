@@ -85,17 +85,17 @@ public class BlockRice extends BlockCrops implements IBucketPickupHandler, ILiqu
     }
 
 
-    public IBlockState getValidBlockForFacing(IBlockState state, EnumFacing facing, IBlockState state1, IWorld world, BlockPos blockPos, BlockPos blockPos1) {
+    public IBlockState updatePostPlacement(IBlockState state, EnumFacing facing, IBlockState state1, IWorld world, BlockPos blockPos, BlockPos blockPos1) {
         if (state.getValue(isWaterlogged)) {
             world.getPendingFluidTicks().scheduleUpdate(blockPos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
 
-        return super.getValidBlockForFacing(state, facing, state1, world, blockPos, blockPos1);
+        return super.updatePostPlacement(state, facing, state1, world, blockPos, blockPos1);
     }
 
     @Override
-    protected void addPropertiesToBuilder(net.minecraft.state.StateContainer.Builder<Block, IBlockState> map) {
-        super.addPropertiesToBuilder(map);
+    protected void fillStateContainer(net.minecraft.state.StateContainer.Builder<Block, IBlockState> map) {
+        super.fillStateContainer(map);
         map.add(isWaterlogged);
     }
 

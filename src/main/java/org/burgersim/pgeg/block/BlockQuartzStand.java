@@ -34,7 +34,7 @@ public class BlockQuartzStand extends BlockWaterlogged implements ITileEntityPro
         VoxelShape shape1 = ShapeUtils.create(0.0, 0.0, 0.0, 1.0, 0.1, 1.0);
         VoxelShape shape2 = ShapeUtils.create(0.0, 0.8, 0.0, 1.0, 0.9, 1.0);
         VoxelShape shape3 = ShapeUtils.create(0.1, 0.0, 0.1, 0.9, 0.9, 0.9);
-        SHAPE = ShapeUtils.func_197872_a(ShapeUtils.func_197872_a(shape1, shape2), shape3);
+        SHAPE = ShapeUtils.or(ShapeUtils.or(shape1, shape2), shape3);
     }
 
     @Override

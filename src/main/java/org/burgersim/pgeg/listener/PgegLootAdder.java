@@ -11,8 +11,8 @@ import java.util.Random;
 public class PgegLootAdder implements LootAdder {
     @Override
     public void dropLoot(boolean recentlyHit, int lootingModifier, DamageSource source, EntityLiving entity) {
+        Random random = entity.world.rand;
         if (entity instanceof EntitySquid) {
-            Random random = new Random();
             if (entity.isBurning()) {
                 entity.entityDropItem(new ItemStack(PgegRegistry.SQUID_COOKED, random.nextInt(8)));
             } else {

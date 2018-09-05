@@ -12,8 +12,6 @@ import java.util.Map;
 public class PgegEntityRenderers implements EntityRendererAdder {
     @Override
     public void addEntityRenderers(Map<Class<? extends Entity>, Render<? extends Entity>> entityRenderMap, RenderManager renderManager) {
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler((state, reader, pos, tint) -> {
-            return reader != null && pos != null ? BiomeColorHelper.getWaterColorAtPos(reader, pos) : -1;
-        }, PgegRegistry.SPELL_CAULDRON);
+        Minecraft.getMinecraft().getBlockColors().register((state, reader, pos, tint) -> reader != null && pos != null ? BiomeColorHelper.getWaterColorAtPos(reader, pos) : -1, PgegRegistry.SPELL_CAULDRON);
     }
 }
