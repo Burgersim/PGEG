@@ -13,6 +13,7 @@ public class PgegEnchantments implements EnchantmentAdder {
     public static Enchantment CURSE_PAIN;
     public static Enchantment BEHEADING;
     public static Enchantment RANDOMIZATION;
+    public static Enchantment EXPANSION;
 
     @Override
     public void registerEnchantments() {
@@ -21,6 +22,7 @@ public class PgegEnchantments implements EnchantmentAdder {
         CURSE_PAIN = registerEnchantment(new ResourceLocation(MOD_ID, "curse_pain"), new EnchantmentCursePain());
         BEHEADING = registerEnchantment(new ResourceLocation(MOD_ID, "beheading"), new EnchantmentBeheading());
         RANDOMIZATION = registerEnchantment(new ResourceLocation(MOD_ID, "randomization"), new EnchantmentRandomization());
+        EXPANSION = registerEnchantment(new ResourceLocation(MOD_ID, "expansion"), new EnchantmentExpansion());
     }
 
     private Enchantment registerEnchantment(ResourceLocation location, Enchantment enchantment) {

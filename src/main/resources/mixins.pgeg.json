@@ -9,7 +9,8 @@
     "common.MixinEntityAnimal",
     "common.MixinManaHandler",
     "common.MixinLevitationEffect",
-    "common.MixinEntityLivingBase"
+    "common.MixinEntityLivingBase",
+    "common.MixinPlayerInteraction"
   ],
   "client": [
     "client.MixinManaBarOverlay",
