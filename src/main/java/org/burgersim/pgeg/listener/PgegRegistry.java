@@ -15,6 +15,7 @@ import org.burgersim.pgeg.block.tree.MagicOakTree;
 import org.burgersim.pgeg.item.*;
 import org.dimdev.rift.util.ItemTierImpl;
 
+import static net.minecraft.block.material.Material.IRON;
 import static net.minecraft.init.Blocks.DIAMOND_BLOCK;
 import static net.minecraft.init.Blocks.DIAMOND_ORE;
 
@@ -79,9 +80,19 @@ public class PgegRegistry {
 
     /*Item Tiers*/
     public final static IItemTier ORICHALCUM = new ItemTierImpl(3, 1561, 8.0F, 3.0F, 10, () -> Ingredient.fromItems(PgegRegistry.ORICHALCUM_INGOT));
+    public final static IItemTier SATURNIUM = new ItemTierImpl(5, 1561, 8.0F, 3.0F, 10, () -> Ingredient.fromItems(PgegRegistry.SATURNIUM_INGOT));
+    public final static IItemTier BRIMSTONE = new ItemTierImpl(4, 1561, 8.0F, 3.0F, 10, () -> Ingredient.fromItems(PgegRegistry.BRIMSTONE_INGOT));
+    public final static IItemTier METEORITE = new ItemTierImpl(6, 1561, 8.0F, 3.0F, 10, () -> Ingredient.fromItems(PgegRegistry.METEORITE_INGOT));
+    public final static IItemTier OBSIDIAN = new ItemTierImpl(4, 1561, 8.0F, 3.0F, 10, () -> Ingredient.fromItems(Blocks.OBSIDIAN));
+    public final static IItemTier MITHRIL = new ItemTierImpl(4, 1561, 8.0F, 3.0F, 10, () -> Ingredient.fromItems(PgegRegistry.MITHRIL_INGOT));
 
     /*Tools*/
     public final static Item ORICHALCUM_PICKAXE = new ItemModPickaxe(ORICHALCUM, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item SATURNIUM_PICKAXE = new ItemModPickaxe(SATURNIUM, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item BRIMSTONE_PICKAXE = new ItemModPickaxe(BRIMSTONE, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item METEORITE_PICKAXE = new ItemModPickaxe(METEORITE, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item MITHRIL_PICKAXE = new ItemModPickaxe(MITHRIL, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item OBSIDIAN_PICKAXE = new ItemModPickaxe(OBSIDIAN, 1, -3F, new Item.Builder().group(ItemGroup.TOOLS));
 
     /*Blocks*/
     public final static Block MANA_GRASS = new BlockGrass(Block.Builder.create(Material.GRASS, MapColor.LIGHT_BLUE)
@@ -123,7 +134,7 @@ public class PgegRegistry {
 
     /*OreBlocks*/
     public final static Block MANA_DUST_BLOCK = new Block(Block.Builder.create(Material.SAND, MapColor.LIGHT_BLUE).hardnessAndResistance(0.5F, 0.5F));
-    public final static Block ORICHALCUM_BLOCK = new Block(Block.Builder.create(Material.IRON, MapColor.PURPLE).hardnessAndResistance(2.0F, 2.0F));
+    public final static Block ORICHALCUM_BLOCK = new Block(Block.Builder.create(IRON, MapColor.PURPLE).hardnessAndResistance(2.0F, 2.0F));
     public final static Block SATURNIUM_BLOCK = new Block(Block.Builder.create(Material.ROCK, MapColor.OBSIDIAN).hardnessAndResistance(5.0F, 5.0F));
     public final static Block BRIMSTONE_BLOCK = new Block(Block.Builder.create(Material.ROCK, MapColor.NETHERRACK).hardnessAndResistance(4.0F, 4.0F));
     public final static Block METEORITE_BLOCK = new Block(Block.Builder.create(Material.ROCK, MapColor.OBSIDIAN).hardnessAndResistance(6.0F, 6.0F));
