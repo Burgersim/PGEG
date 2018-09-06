@@ -89,5 +89,12 @@
   "gui.compendium.category.runes.name": "Runic mastery",
   "gui.compendium.page.rune_pedestals.name": "Runic pedestals",
   "gui.compendium.category.runes.title.ingredients": "Required materials: ",
-  "gui.compendium.category.runes.button.set_rune": "Set rune"
+  "gui.compendium.category.runes.button.set_rune": "Set rune",
+  "gui.compendium.category.introducion.name": "Introduction",
+  "enchantment.pgeg.vampirism": "Vampirism",
+  "enchantment.pgeg.randomization": "Randomness",
+  "enchantment.pgeg.poisonous": "Poison",
+  "enchantment.pgeg.expansion": "Expansion",
+  "enchantment.pgeg.cursepain": "Curse of Pain",
+  "enchantment.pgeg.beheading": "Beheading"
 }
