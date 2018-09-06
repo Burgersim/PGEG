@@ -2,6 +2,8 @@ package org.burgersim.pgeg.block.flower;
 
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReaderBase;
 
 public class BlockGlowshroom extends BlockFlower {
     public BlockGlowshroom(Builder p_i48396_1_) {
@@ -11,5 +13,10 @@ public class BlockGlowshroom extends BlockFlower {
     @Override
     public int getLightValue(IBlockState p_getLightValue_1_) {
         return 15;
+    }
+
+    @Override
+    public boolean isValidPosition(IBlockState state, IWorldReaderBase worldReaderBase, BlockPos blockPos) {
+        return  state.isTopSolid();
     }
 }

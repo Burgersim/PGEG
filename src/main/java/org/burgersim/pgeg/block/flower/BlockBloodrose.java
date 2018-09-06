@@ -3,15 +3,14 @@ package org.burgersim.pgeg.block.flower;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Particles;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReaderBase;
 import net.minecraft.world.World;
 import org.burgersim.pgeg.tileentity.flower.TileEntityBloodrose;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 public class BlockBloodrose extends BlockFlower implements ITileEntityProvider {
     public BlockBloodrose(Builder p_i48396_1_) {
@@ -29,5 +28,9 @@ public class BlockBloodrose extends BlockFlower implements ITileEntityProvider {
             world.removeTileEntity(pos);
         }
         super.onReplaced(state, world, pos, newState, p_beforeReplacingBlock_5_);
+    }
+    @Override
+    public boolean isValidPosition(IBlockState state, IWorldReaderBase worldReaderBase, BlockPos blockPos) {
+        return  state.isTopSolid();
     }
 }

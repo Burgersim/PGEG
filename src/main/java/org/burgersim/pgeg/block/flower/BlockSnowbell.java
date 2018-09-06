@@ -9,6 +9,7 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReaderBase;
 import net.minecraft.world.World;
 import org.burgersim.pgeg.tileentity.flower.TileEntitySnowbell;
 
@@ -44,5 +45,9 @@ public class BlockSnowbell extends BlockFlower implements ITileEntityProvider {
             world.removeTileEntity(pos);
         }
         super.onReplaced(state, world, pos, newState, p_beforeReplacingBlock_5_);
+    }
+    @Override
+    public boolean isValidPosition(IBlockState state, IWorldReaderBase worldReaderBase, BlockPos blockPos) {
+        return  state.isTopSolid();
     }
 }
