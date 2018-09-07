@@ -3,6 +3,7 @@ package org.burgersim.pgeg.block.flower;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReaderBase;
 
 public class BlockGlowshroom extends BlockFlower {
@@ -17,6 +18,11 @@ public class BlockGlowshroom extends BlockFlower {
 
     @Override
     public boolean isValidPosition(IBlockState state, IWorldReaderBase worldReaderBase, BlockPos blockPos) {
-        return  state.isTopSolid();
+        return worldReaderBase.getBlockState(blockPos.down()).isTopSolid();
+    }
+
+    @Override
+    protected boolean isValidGround(IBlockState state, IBlockReader blockReader, BlockPos blockPos) {
+        return state.isTopSolid();
     }
 }

@@ -1,8 +1,17 @@
 {
-    "variants": {
-        "facing=north": { "model": "block/furnace" },
-        "facing=south": { "model": "block/furnace", "y": 180 },
-        "facing=west":  { "model": "block/furnace", "y": 270 },
-        "facing=east":  { "model": "block/furnace", "y": 90 }
+  "multipart": [
+    {
+      "apply": {
+        "model": "pgeg:block/snowbell"
+      }
+    },
+    {
+      "when": {
+        "snowy": "true"
+      },
+      "apply": {
+        "model": "block/snow_height2"
+      }
     }
+  ]
 }
