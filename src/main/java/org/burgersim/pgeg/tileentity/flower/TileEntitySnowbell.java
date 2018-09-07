@@ -29,7 +29,7 @@ public class TileEntitySnowbell extends TileEntity implements ITickable {
             time++;
             if (time == WORK_SPEED) {
                 time = 0;
-                BlockPos.getAllInBox(this.pos.add(WORK_RADIUS, 0, WORK_RADIUS),
+                BlockPos.getAllInBox(this.pos.add(WORK_RADIUS, -1, WORK_RADIUS),
                         this.pos.add(-WORK_RADIUS, 2, -WORK_RADIUS))
                         .forEach(this::processBlock);
             }

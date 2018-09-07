@@ -29,8 +29,9 @@ public class BlockBloodrose extends BlockFlower implements ITileEntityProvider {
         }
         super.onReplaced(state, world, pos, newState, p_beforeReplacingBlock_5_);
     }
+
     @Override
-    public boolean isValidPosition(IBlockState state, IWorldReaderBase worldReaderBase, BlockPos blockPos) {
-        return  state.isTopSolid();
+    protected boolean isValidGround(IBlockState state, IBlockReader blockReader, BlockPos blockPos) {
+        return state.isTopSolid();
     }
 }
