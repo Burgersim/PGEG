@@ -1,70 +1,94 @@
 {
-  "block.pgeg.oak_bark_slab": "橡木台阶",
-  "block.pgeg.spruce_bark_slab": "云杉台阶",
-  "block.pgeg.birch_bark_slab": "桦树台阶",
-  "block.pgeg.jungle_bark_slab": "丛林木台阶",
-  "block.pgeg.acacia_bark_slab": "金合欢台阶",
-  "block.pgeg.dark_oak_bark_slab": "黑橡木台阶",
-  "block.pgeg.stripped_oak_bark_slab": "剥皮橡木台阶",
-  "block.pgeg.stripped_spruce_bark_slab": "剥皮云杉台阶",
-  "block.pgeg.stripped_birch_bark_slab": "剥皮桦树台阶",
-  "block.pgeg.stripped_jungle_bark_slab": "剥皮丛林木台阶",
-  "block.pgeg.stripped_acacia_bark_slab": "剥皮金合欢台阶",
-  "block.pgeg.stripped_dark_oak_bark_slab": "剥皮黑橡木台阶",
-  "block.pgeg.mana_crystal_ore": "魔法水晶矿",
-  "block.pgeg.mana_grass_block": "魔法草方块",
-  "block.pgeg.magic_oak_log": "魔法橡木",
-  "block.pgeg.magic_oak_leaves": "魔法橡树叶",
-  "block.pgeg.magic_oak_planks": "魔法橡木板",
-  "block.pgeg.magic_oak_button": "魔法橡木按钮",
-  "block.pgeg.magic_oak_pressure_plate": "魔法橡木压力板",
-  "block.pgeg.magic_oak_sapling": "魔法橡树树苗",
-  "block.pgeg.magic_oak_slab": "魔法橡木台阶",
-  "block.pgeg.magic_oak_stairs": "魔法橡木楼梯",
-  "block.pgeg.magic_oak_trapdoor": "魔法橡木活板门",
-  "block.pgeg.magic_oak_door": "魔法橡木门",
-  "block.pgeg.magic_oak_bark_slab": "魔法橡木",
-  "block.pgeg.magic_oak_fence": "魔法橡木栅栏",
-  "block.pgeg.magic_oak_fence_gate": "魔法橡木栅栏门",
-  "block.pgeg.quartz_stand": "石英支架",
-  "block.pgeg.mana_fern": "魔法蕨",
-  "block.pgeg.mana_tallgrass": "魔法草",
-  "item.pgeg.mana_crystal_dust": "魔法水晶尘",
-  "item.pgeg.mana_cake": "魔力蛋糕",
-  "item.pgeg.wand": "魔杖",
-  "item.pgeg.rice": "米饭",
-  "item.pgeg.tomato_seeds": "番茄种子",
-  "item.pgeg.plant_treat": "催熟剂",
-  "item.pgeg.brownie": "巧克力蛋糕",
-  "item.pgeg.burrito_beef": "牛肉玉米煎饼",
-  "item.pgeg.burrito_fish": "鱼肉玉米煎饼",
-  "item.pgeg.burrito_veggie": "蔬菜玉米煎饼",
-  "item.pgeg.caramel": "焦糖",
-  "item.pgeg.caramel_apple": "焦糖苹果",
-  "item.pgeg.cookie_cat": "猫猫饼干",
-  "item.pgeg.cream_cookie": "奥利奥",
-  "item.pgeg.caramel_donut": "焦糖炸面圈",
-  "item.pgeg.sugar_donut": "糖面圈",
-  "item.pgeg.cheese": "奶酪",
-  "item.pgeg.cheese_fries": "奶酪薯条",
-  "item.pgeg.berry_jelly": "浆果冻",
-  "item.pgeg.lion_licker": "棒棒糖",
-  "item.pgeg.berry": "浆果",
-  "item.pgeg.nigiri_cod": "鳕鱼寿司",
-  "item.pgeg.nigiri_salmon": "鲑鱼寿司",
-  "item.pgeg.nigiri_squid": "墨鱼寿司",
-  "item.pgeg.onigiri": "饭团",
-  "item.pgeg.apple_pie": "奶酪",
-  "item.pgeg.chocolate_pie": "巧克力派",
-  "item.pgeg.berry_pie": "浆果派",
-  "item.pgeg.slime_pie": "粘液派",
-  "item.pgeg.squid_raw": "鱿鱼肉",
-  "item.pgeg.squid_cooked": "熟鱿鱼肉",
-  "item.pgeg.tomato": "西红柿",
-  "item.pgeg.dough": "生面团",
-  "item.pgeg.nigiri_tropical": "热带鱼寿司",
-  "item.pgeg.roll_sea_pickle": "海泡菜卷",
-  "item.pgeg.spell_book": "魔导书",
-  "tile.pgeg.quartz_stand":"石英台座",
-  "biome.pgeg.magic_forest": "魔法森林"
+  “block.pgeg.oak_​​bark_slab”：“橡木台阶”，
+  “block.pgeg.spruce_bark_slab”：“云杉台阶”，
+  “block.pgeg.birch_bark_slab”：“桦树台阶”，
+  “block.pgeg.jungle_bark_slab”：“丛林木台阶”，
+  “block.pgeg.acacia_bark_slab”：“金合欢台阶”，
+  “block.pgeg.dark_oak_bark_slab”：“黑橡木台阶”，
+  “block.pgeg.stripped_oak_bark_slab”：“剥皮橡木台阶”，
+  “block.pgeg.stripped_spruce_bark_slab”：“剥皮云杉台阶”，
+  “block.pgeg.stripped_birch_bark_slab”：“剥皮桦树台阶”，
+  “block.pgeg.stripped_jungle_bark_slab”：“剥皮丛林木台阶”，
+  “block.pgeg.stripped_acacia_bark_slab”：“剥皮金合欢台阶”，
+  “block.pgeg.stripped_dark_oak_bark_slab”：“剥皮黑橡木台阶”，
+  “block.pgeg.mana_crystal_ore”：“魔法水晶矿”，
+  “block.pgeg.mana_grass_block”：“魔法草方块”，
+  “block.pgeg.magic_oak_log”：“魔法橡木”，
+  “block.pgeg.magic_oak_leaves”：“魔法橡树叶”，
+  “block.pgeg.magic_oak_planks”：“魔法橡木板”，
+  “block.pgeg.magic_oak_button”：“魔法橡木按钮”，
+  “block.pgeg.magic_oak_pressure_plate”：“魔法橡木压力板”，
+  “block.pgeg.magic_oak_sapling”：“魔法橡树树苗”，
+  “block.pgeg.magic_oak_slab”：“魔法橡木台阶”，
+  “block.pgeg.magic_oak_stairs”：“魔法橡木楼梯”，
+  “block.pgeg.magic_oak_trapdoor”：“魔法橡木活板门”，
+  “block.pgeg.magic_oak_door”：“魔法橡木门”，
+  “block.pgeg.magic_oak_bark_slab”：“魔法橡木”，
+  “block.pgeg.magic_oak_fence”：“魔法橡木栅栏”，
+  “block.pgeg.magic_oak_fence_gate”：“魔法橡木栅栏门”，
+  “block.pgeg.quartz_stand”：“石英支架”，
+  “block.pgeg.mana_fern”：“魔法蕨”，
+  “block.pgeg.mana_tallgrass”：“魔法草”，
+  “item.pgeg.mana_crystal_dust”：“魔法水晶尘”，
+  “item.pgeg.mana_cake”：“魔力蛋糕”，
+  “item.pgeg.wand”：“魔杖”，
+  “item.pgeg.rice”：“米饭”，
+  “item.pgeg.tomato_seeds”：“番茄种子”，
+  “item.pgeg.plant_treat”：“催熟剂”，
+  “item.pgeg.brownie”：“巧克力蛋糕”，
+  “item.pgeg.burrito_beef”：“牛肉玉米煎饼”，
+  “item.pgeg.burrito_fish”：“鱼肉玉米煎饼”，
+  “item.pgeg.burrito_veggie”：“蔬菜玉米煎饼”，
+  “item.pgeg.caramel”：“焦糖”，
+  “item.pgeg.caramel_apple”：“焦糖苹果”，
+  “item.pgeg.cookie_cat”：“猫猫饼干”，
+  “item.pgeg.cream_cookie”：“奥利奥”，
+  “item.pgeg.caramel_donut”：“焦糖炸面圈”，
+  “item.pgeg.sugar_donut”：“糖面圈”，
+  “item.pgeg.cheese”：“奶酪”，
+  “item.pgeg.cheese_fries”：“奶酪薯条”，
+  “item.pgeg.berry_jelly”：“浆果冻”，
+  “item.pgeg.lion_licker”：“棒棒糖”，
+  “item.pgeg.berry”：“浆果”，
+  “item.pgeg.nigiri_cod”：“鳕鱼寿司”，
+  “item.pgeg.nigiri_salmon”：“鲑鱼寿司”，
+  “item.pgeg.nigiri_squid”：“墨鱼寿司”，
+  “item.pgeg.onigiri”：“饭团”，
+  “item.pgeg.apple_pie”：“奶酪”，
+  “item.pgeg.chocolate_pie”：“巧克力派”，
+  “item.pgeg.berry_pie”：“浆果派”，
+  “item.pgeg.slime_pie”：“粘液派”，
+  “item.pgeg.squid_raw”：“鱿鱼肉”，
+  “item.pgeg.squid_cooked”：“熟鱿鱼肉”，
+  “item.pgeg.tomato”：“西红柿”，
+  “item.pgeg.dough”：“生面团”，
+  “item.pgeg.nigiri_tropical”：“热带鱼寿司”，
+  “item.pgeg.roll_sea_pickle”：“海泡菜卷”，
+  “item.pgeg.spell_book”：“魔导书”，
+  “tile.pgeg.quartz_stand”： “石英台座”
+  “biome.pgeg.magic_forest”：“魔法森林”
+  “item.pgeg.squid_cooked”：“烤熟的鱿鱼肉”，
+  “item.pgeg.tomato”：“西红柿”，
+  “item.pgeg.rice”：“米饭”，
+  “item.pgeg.dough”：“面团”，
+  “item.pgeg.nigiri_tropical”：“生鱼片寿司”，
+  “item.pgeg.roll_sea_pickle”：“海泡菜卷”，
+  “item.pgeg.tomato_seeds”：“番茄种子”，
+  “item.pgeg.plant_treat”：“治疗植物”，
+  “item.pgeg.compendium”：“魔法与神秘纲要”，
+  “item.compendium.rune.tooltip”：“当前符文：％s”，
+  “tile.pgeg.quartz_stand”：“石英支架”，
+  “biome.pgeg.magic_forest”：“魔法森林”，
+  “effect.pgeg.hover”：“悬停”，
+  “rune.butchery.name”：“屠宰符文”，
+  “rune.growth.name”：“生长符文”，
+  “rune.air.name”：“空气符文”，
+  “rune.magnetizm.name”：“磁力符文”，
+  “rune.harvest.name”：“收获符文”，
+  “rune.fertility.name”：“生育符咒”，
+  “gui.compendium.name”：“纲要”，
+  “gui.compendium.category.runes.name”：“符文精通”，
+  “gui.compendium.page.rune_pedestals.name”：“符文支座”，
+  “gui.compendium.category.runes.title.ingredients”：“所需材料：”，
+  “gui.compendium.category.runes.button.set_rune”：“设置符文
 }
