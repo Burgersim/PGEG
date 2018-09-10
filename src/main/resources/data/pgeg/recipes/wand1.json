@@ -1,0 +1,20 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    " MS",
+    " SM",
+    "S  "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "M": {
+      "item": "pgeg:mana_crystal_dust"
+    }
+  },
+  "result": {
+    "item": "pgeg:wand",
+    "count": 1
+  }
+}
