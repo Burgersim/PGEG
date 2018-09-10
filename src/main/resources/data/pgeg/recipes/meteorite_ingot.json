@@ -1,0 +1,9 @@
+{
+  "type": "smelting",
+  "ingredient": {
+    "item": "pgeg:meteorite_ore"
+  },
+  "result": "pgeg:meteorite_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -15,6 +15,8 @@ import org.burgersim.pgeg.tileentity.TileEntitySpellCauldron;
 
 import java.util.Iterator;
 
+import static org.burgersim.pgeg.utils.Reference.MOD_ID;
+
 public class RecipesSpellCauldron implements IRecipe {
 
     private final ResourceLocation id;
@@ -62,7 +64,7 @@ public class RecipesSpellCauldron implements IRecipe {
 
     @Override
     public boolean canFit(int i, int i1) {
-        return i * i1 >= recipeItems.size();
+        return false;
     }
     public boolean isRightWand(ItemStack stack){
         for(Ingredient ingredient : wandItems){
@@ -122,7 +124,7 @@ public class RecipesSpellCauldron implements IRecipe {
         }
 
         public String getId() {
-            return "spell_cauldron";
+            return MOD_ID + ":spell_cauldron";
         }
 
         public RecipesSpellCauldron read(ResourceLocation resourceLocation, PacketBuffer buffer) {

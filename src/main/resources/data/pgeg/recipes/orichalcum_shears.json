@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    " X",
+    "X "
+  ],
+  "key": {
+    "X": {
+      "item": "pgeg:orichalcum_ingot"
+    }
+  },
+  "result": {
+    "item": "pgeg:orichalcum_shears",
+    "count": 1
+  }
+}

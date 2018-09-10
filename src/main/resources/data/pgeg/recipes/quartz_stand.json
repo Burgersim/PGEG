@@ -1,5 +1,5 @@
 {
-  "type": "crafting_wand",
+  "type": "pgeg:crafting_wand",
   "group": "enchanting",
   "input": "minecraft:quartz_pillar",
   "result": "pgeg:quartz_stand",
