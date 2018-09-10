@@ -104,6 +104,10 @@ public class PgegItems implements ItemAdder {
 
         /*Tools*/
         Item.register(new ResourceLocation(MOD_ID, "orichalcum_pickaxe"), ORICHALCUM_PICKAXE);
+        Item.register(new ResourceLocation(MOD_ID, "mithril_pickaxe"), ORICHALCUM_PICKAXE);
+        Item.register(new ResourceLocation(MOD_ID, "brimstone_pickaxe"), ORICHALCUM_PICKAXE);
+        Item.register(new ResourceLocation(MOD_ID, "saturnium_pickaxe"), ORICHALCUM_PICKAXE);
+        Item.register(new ResourceLocation(MOD_ID, "meteorite_pickaxe"), ORICHALCUM_PICKAXE);
 
         /*Weapons*/
 
