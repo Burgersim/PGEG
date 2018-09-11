@@ -68,6 +68,13 @@ public class TileEntitySpellCauldron extends TileEntityInventory implements ITic
         }
     }
 
+    @Override
+    public void clear() {
+        super.clear();
+        cachedRecipe = null;
+        cachedContent = null;
+    }
+
     public int getTime() {
         return time;
     }
