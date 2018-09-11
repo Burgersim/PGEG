@@ -22,6 +22,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import static org.burgersim.pgeg.utils.Reference.MOD_ID;
+
 public class RecipesRune implements IRecipe {
     private final ResourceLocation id;
     private final String group;
@@ -50,7 +52,7 @@ public class RecipesRune implements IRecipe {
 
     @Override
     public boolean canFit(int i, int i1) {
-        return true;
+        return false;
     }
 
     @Override
@@ -153,7 +155,7 @@ public class RecipesRune implements IRecipe {
 
         @Override
         public String getId() {
-            return "rune";
+            return MOD_ID + ":rune";
         }
     }
 

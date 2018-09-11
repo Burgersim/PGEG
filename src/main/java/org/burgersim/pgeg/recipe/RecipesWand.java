@@ -15,6 +15,8 @@ import net.minecraft.world.World;
 
 import java.util.Iterator;
 
+import static org.burgersim.pgeg.utils.Reference.MOD_ID;
+
 public class RecipesWand implements IRecipe {
     private final ResourceLocation id;
     private final String group;
@@ -47,7 +49,7 @@ public class RecipesWand implements IRecipe {
 
     @Override
     public boolean canFit(int i, int i1) {
-        return true;
+        return false;
     }
 
     @Override
@@ -146,7 +148,7 @@ public class RecipesWand implements IRecipe {
 
         @Override
         public String getId() {
-            return "crafting_wand";
+            return MOD_ID + ":crafting_wand";
         }
     }
 }

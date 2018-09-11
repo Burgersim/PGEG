@@ -1,0 +1,9 @@
+{
+  "type": "smelting",
+  "ingredient": {
+    "item": "pgeg:orichalcum_ore"
+  },
+  "result": "pgeg:orichalcum_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}

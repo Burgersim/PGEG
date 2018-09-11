@@ -85,12 +85,37 @@ public class PgegRegistry {
     public final static IItemTier METEORITE = new ItemTierImpl(6, 1561, 8.0F, 3.0F, 10, () -> Ingredient.fromItems(PgegRegistry.METEORITE_INGOT));
     public final static IItemTier MITHRIL = new ItemTierImpl(4, 1561, 8.0F, 3.0F, 10, () -> Ingredient.fromItems(PgegRegistry.MITHRIL_INGOT));
 
+
     /*Tools*/
     public final static Item ORICHALCUM_PICKAXE = new ItemModPickaxe(ORICHALCUM, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
-    public final static Item SATURNIUM_PICKAXE = new ItemModPickaxe(SATURNIUM, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item SATURNIUM_PICKAXE = new SaturniumPickaxe(SATURNIUM, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
     public final static Item BRIMSTONE_PICKAXE = new ItemModPickaxe(BRIMSTONE, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
     public final static Item METEORITE_PICKAXE = new ItemModPickaxe(METEORITE, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
     public final static Item MITHRIL_PICKAXE = new ItemModPickaxe(MITHRIL, 1, -2.8F, new Item.Builder().group(ItemGroup.TOOLS));
+
+    public final static Item ORICHALCUM_SHOVEL = new ItemModShovel(ORICHALCUM, 1.5f, -3F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item SATURNIUM_SHOVEL = new SaturniumShovel(SATURNIUM, 1.5f, -3F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item BRIMSTONE_SHOVEL = new ItemModShovel(BRIMSTONE, 1.5f, -3F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item METEORITE_SHOVEL = new ItemModShovel(METEORITE, 1.5f, -3F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item MITHRIL_SHOVEL = new ItemModShovel(MITHRIL, 1.5f, -3F, new Item.Builder().group(ItemGroup.TOOLS));
+
+    public final static Item ORICHALCUM_HOE = new ItemModHoe(ORICHALCUM, 0f, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item SATURNIUM_HOE = new SaturniumHoe(SATURNIUM, 2f, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item BRIMSTONE_HOE = new ItemModHoe(BRIMSTONE, 1f, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item METEORITE_HOE = new ItemModHoe(METEORITE, 3f, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item MITHRIL_HOE = new ItemModHoe(MITHRIL, 1f, new Item.Builder().group(ItemGroup.TOOLS));
+
+    public final static Item ORICHALCUM_AXE = new ItemModAxe(ORICHALCUM, 5.0f, -3F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item SATURNIUM_AXE = new SaturniumAxe(SATURNIUM, 6.0f, -3F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item BRIMSTONE_AXE = new ItemModAxe(BRIMSTONE, 5.5f, -3F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item METEORITE_AXE = new ItemModAxe(METEORITE, 6.5f, -3F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item MITHRIL_AXE = new ItemModAxe(MITHRIL, 5.5f, -3F, new Item.Builder().group(ItemGroup.TOOLS));
+
+    public final static Item ORICHALCUM_SHEARS = new ItemModShears(new Item.Builder().maxDamage(357).group(ItemGroup.TOOLS));
+    public final static Item SATURNIUM_SHEARS = new SaturniumShears(new Item.Builder().maxDamage(595).group(ItemGroup.TOOLS));
+    public final static Item BRIMSTONE_SHEARS = new ItemModShears(new Item.Builder().maxDamage(476).group(ItemGroup.TOOLS));
+    public final static Item METEORITE_SHEARS = new ItemModShears(new Item.Builder().maxDamage(714).group(ItemGroup.TOOLS));
+    public final static Item MITHRIL_SHEARS = new ItemModShears(new Item.Builder().maxDamage(595).group(ItemGroup.TOOLS));
 
     /*Blocks*/
     public final static Block MANA_GRASS = new BlockGrass(Block.Builder.create(Material.GRASS, MapColor.LIGHT_BLUE)

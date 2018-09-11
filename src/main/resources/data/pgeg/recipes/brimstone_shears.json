@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    " X",
+    "X "
+  ],
+  "key": {
+    "X": {
+      "item": "pgeg:brimstone_ingot"
+    }
+  },
+  "result": {
+    "item": "pgeg:brimstone_shears",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "smelting",
+  "ingredient": {
+    "item": "pgeg:mithril_ore"
+  },
+  "result": "pgeg:mithril_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}

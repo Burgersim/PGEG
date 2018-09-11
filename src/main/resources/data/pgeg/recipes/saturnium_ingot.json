@@ -1,0 +1,9 @@
+{
+  "type": "smelting",
+  "ingredient": {
+    "item": "pgeg:saturnium_ore"
+  },
+  "result": "pgeg:saturnium_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}

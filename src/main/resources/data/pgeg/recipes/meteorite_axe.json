@@ -1,0 +1,20 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "XX",
+    "XS",
+    " S"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "pgeg:meteorite_ingot"
+    }
+  },
+  "result": {
+    "item": "pgeg:meteorite_axe",
+    "count": 1
+  }
+}

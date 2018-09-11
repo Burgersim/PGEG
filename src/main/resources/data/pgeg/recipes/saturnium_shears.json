@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    " X",
+    "X "
+  ],
+  "key": {
+    "X": {
+      "item": "pgeg:saturnium_ingot"
+    }
+  },
+  "result": {
+    "item": "pgeg:saturnium_shears",
+    "count": 1
+  }
+}

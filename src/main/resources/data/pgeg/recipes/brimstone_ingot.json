@@ -1,0 +1,9 @@
+{
+  "type": "smelting",
+  "ingredient": {
+    "item": "pgeg:brimstone_ore"
+  },
+  "result": "pgeg:brimstone_ingot",
+  "experience": 1.0,
+  "cookingtime": 200
+}

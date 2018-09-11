@@ -1,0 +1,20 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "XXX",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "pgeg:orichalcum_ingot"
+    }
+  },
+  "result": {
+    "item": "pgeg:orichalcum_pickaxe",
+    "count": 1
+  }
+}

@@ -104,10 +104,34 @@ public class PgegItems implements ItemAdder {
 
         /*Tools*/
         Item.register(new ResourceLocation(MOD_ID, "orichalcum_pickaxe"), ORICHALCUM_PICKAXE);
-        Item.register(new ResourceLocation(MOD_ID, "mithril_pickaxe"), ORICHALCUM_PICKAXE);
-        Item.register(new ResourceLocation(MOD_ID, "brimstone_pickaxe"), ORICHALCUM_PICKAXE);
-        Item.register(new ResourceLocation(MOD_ID, "saturnium_pickaxe"), ORICHALCUM_PICKAXE);
-        Item.register(new ResourceLocation(MOD_ID, "meteorite_pickaxe"), ORICHALCUM_PICKAXE);
+        Item.register(new ResourceLocation(MOD_ID, "mithril_pickaxe"), MITHRIL_PICKAXE);
+        Item.register(new ResourceLocation(MOD_ID, "brimstone_pickaxe"), BRIMSTONE_PICKAXE);
+        Item.register(new ResourceLocation(MOD_ID, "saturnium_pickaxe"), SATURNIUM_PICKAXE);
+        Item.register(new ResourceLocation(MOD_ID, "meteorite_pickaxe"), METEORITE_PICKAXE);
+
+        Item.register(new ResourceLocation(MOD_ID, "orichalcum_shovel"), ORICHALCUM_SHOVEL);
+        Item.register(new ResourceLocation(MOD_ID, "mithril_shovel"), MITHRIL_SHOVEL);
+        Item.register(new ResourceLocation(MOD_ID, "brimstone_shovel"), BRIMSTONE_SHOVEL);
+        Item.register(new ResourceLocation(MOD_ID, "saturnium_shovel"), SATURNIUM_SHOVEL);
+        Item.register(new ResourceLocation(MOD_ID, "meteorite_shovel"), METEORITE_SHOVEL);
+
+        Item.register(new ResourceLocation(MOD_ID, "orichalcum_hoe"), ORICHALCUM_HOE);
+        Item.register(new ResourceLocation(MOD_ID, "mithril_hoe"), MITHRIL_HOE);
+        Item.register(new ResourceLocation(MOD_ID, "brimstone_hoe"), BRIMSTONE_HOE);
+        Item.register(new ResourceLocation(MOD_ID, "saturnium_hoe"), SATURNIUM_HOE);
+        Item.register(new ResourceLocation(MOD_ID, "meteorite_hoe"), METEORITE_HOE);
+
+        Item.register(new ResourceLocation(MOD_ID, "orichalcum_axe"), ORICHALCUM_AXE);
+        Item.register(new ResourceLocation(MOD_ID, "mithril_axe"), MITHRIL_AXE);
+        Item.register(new ResourceLocation(MOD_ID, "brimstone_axe"), BRIMSTONE_AXE);
+        Item.register(new ResourceLocation(MOD_ID, "saturnium_axe"), SATURNIUM_AXE);
+        Item.register(new ResourceLocation(MOD_ID, "meteorite_axe"), METEORITE_AXE);
+
+        Item.register(new ResourceLocation(MOD_ID, "orichalcum_shears"), ORICHALCUM_SHEARS);
+        Item.register(new ResourceLocation(MOD_ID, "mithril_shears"), MITHRIL_SHEARS);
+        Item.register(new ResourceLocation(MOD_ID, "brimstone_shears"), BRIMSTONE_SHEARS);
+        Item.register(new ResourceLocation(MOD_ID, "saturnium_shears"), SATURNIUM_SHEARS);
+        Item.register(new ResourceLocation(MOD_ID, "meteorite_shears"), METEORITE_SHEARS);
 
         /*Weapons*/
 

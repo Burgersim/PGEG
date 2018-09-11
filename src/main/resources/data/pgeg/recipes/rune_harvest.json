@@ -1,5 +1,5 @@
 {
-  "type": "rune",
+  "type": "pgeg:rune",
   "ingredients": [
     {
       "item": "minecraft:golden_hoe"
