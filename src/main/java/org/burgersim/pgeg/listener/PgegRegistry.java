@@ -117,6 +117,12 @@ public class PgegRegistry {
     public final static Item METEORITE_SHEARS = new ItemModShears(new Item.Builder().maxDamage(714).group(ItemGroup.TOOLS));
     public final static Item MITHRIL_SHEARS = new ItemModShears(new Item.Builder().maxDamage(595).group(ItemGroup.TOOLS));
 
+    public final static Item ORICHALCUM_SWORD = new ItemModSword(ORICHALCUM, 3, -2.4F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item SATURNIUM_SWORD = new SaturniumSword(SATURNIUM, 3, -2.4F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item BRIMSTONE_SWORD = new ItemModSword(BRIMSTONE, 3, -2.4F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item METEORITE_SWORD = new ItemModSword(METEORITE, 3, -2.4F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item MITHRIL_SWORD = new ItemModSword(MITHRIL, 3, -2.4F, new Item.Builder().group(ItemGroup.TOOLS));
+
     /*Blocks*/
     public final static Block MANA_GRASS = new BlockGrass(Block.Builder.create(Material.GRASS, MapColor.LIGHT_BLUE)
             .hardnessAndResistance(0.6f, 1).sound(SoundType.GROUND).needsRandomTick());

@@ -89,6 +89,12 @@
   "item.pgeg.brimstone_shears":"Brimstone Shears",
   "item.pgeg.saturnium_shears":"Saturnium Shears",
   "item.pgeg.meteorite_shears":"Meteorite Shears",
+
+  "item.pgeg.orichalcum_sword":"Orichalcum Sword",
+  "item.pgeg.mithril_sword":"Mithril Sword",
+  "item.pgeg.brimstone_sword":"Brimstone Sword",
+  "item.pgeg.saturnium_sword":"Saturnium Sword",
+  "item.pgeg.meteorite_sword":"Meteorite Sword",
   "item.compendium.rune.tooltip": "Current rune: %s",
   "tile.pgeg.quartz_stand": "Quartz Stand",
   "biome.pgeg.magic_forest": "Magic Forest",

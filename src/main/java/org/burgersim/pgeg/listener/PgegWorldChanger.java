@@ -20,6 +20,22 @@ public class PgegWorldChanger implements WorldChanger {
                         Feature.MINABLE,
                         new MinableConfig(
                                 MinableConfig.IS_ROCK,
+                                PgegRegistry.MANA_CRYSTAL_ORE.getDefaultState(),
+                                9),
+                        COUNT_RANGE,
+                        new CountRangeConfig(
+                                10,
+                                0,
+                                0,
+                                64)
+                )
+        );
+        biome.addFeature(
+                GenerationStage.Decoration.UNDERGROUND_ORES,
+                Biome.createCompositeFeature(
+                        Feature.MINABLE,
+                        new MinableConfig(
+                                MinableConfig.IS_ROCK,
                                 PgegRegistry.MITHRIL_ORE.getDefaultState(),
                                 8),
                         COUNT_RANGE,
