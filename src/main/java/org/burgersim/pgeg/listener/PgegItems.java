@@ -134,6 +134,11 @@ public class PgegItems implements ItemAdder {
         Item.register(new ResourceLocation(MOD_ID, "meteorite_shears"), METEORITE_SHEARS);
 
         /*Weapons*/
+        Item.register(new ResourceLocation(MOD_ID, "orichalcum_sword"), ORICHALCUM_SWORD);
+        Item.register(new ResourceLocation(MOD_ID, "mithril_sword"), MITHRIL_SWORD);
+        Item.register(new ResourceLocation(MOD_ID, "brimstone_sword"), BRIMSTONE_SWORD);
+        Item.register(new ResourceLocation(MOD_ID, "saturnium_sword"), SATURNIUM_SWORD);
+        Item.register(new ResourceLocation(MOD_ID, "meteorite_sword"), METEORITE_SWORD);
 
     }
 }

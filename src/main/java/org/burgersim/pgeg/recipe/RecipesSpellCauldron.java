@@ -66,6 +66,7 @@ public class RecipesSpellCauldron implements IRecipe {
     public boolean canFit(int i, int i1) {
         return false;
     }
+
     public boolean isRightWand(ItemStack stack){
         for(Ingredient ingredient : wandItems){
             if (ingredient.test(stack)){
@@ -79,6 +80,7 @@ public class RecipesSpellCauldron implements IRecipe {
     public ItemStack getRecipeOutput() {
         return this.recipeOutput;
     }
+
 
     @Override
     public ResourceLocation getId() {
