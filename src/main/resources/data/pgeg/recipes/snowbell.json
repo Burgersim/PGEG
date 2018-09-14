@@ -1,12 +1,30 @@
 {
-  "type": "pgeg:crafting_wand",
-  "group": "enchanting",
-  "input": "minecraft:potted_azure_bluet",
-  "result": "pgeg:snowbell",
+  "type": "pgeg:spell_cauldron",
+  "group": "transmutation",
+  "ingredients":[
+    {
+      "item":"minecraft:flower_pot"
+    },
+    {
+      "item":"minecraft:azure_bluet"
+    },
+    {
+      "item": "pgeg:mana_crystal_dust"
+    },
+    {
+      "item": "pgeg:mana_crystal_dust"
+    },
+    {
+      "item":"minecraft:blue_ice"
+    }
+  ],
+  "result": {
+    "item": "pgeg:snowbell",
+    "count": 1
+  },
   "wands": [
     {
       "tag": "pgeg:wand_level_1"
     }
-  ],
-  "mana_cost": 5.0
+  ]
 }

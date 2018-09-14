@@ -1,7 +1,9 @@
 {
   "type": "pgeg:crafting_wand",
   "group": "enchanting",
-  "input": "minecraft:bookshelf",
+  "input": {
+    "item": "minecraft:bookshelf"
+  },
   "result": "pgeg:compendium",
   "wands": [
     {

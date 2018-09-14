@@ -1,7 +1,9 @@
 {
   "type": "pgeg:crafting_wand",
   "group": "enchanting",
-  "input":  "minecraft:cauldron",
+  "input": {
+    "item": "minecraft:cauldron"
+  },
   "result": "pgeg:spell_cauldron",
   "wands": [
     {

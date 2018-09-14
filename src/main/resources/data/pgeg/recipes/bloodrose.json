@@ -1,12 +1,30 @@
 {
-  "type": "pgeg:crafting_wand",
-  "group": "enchanting",
-  "input": "minecraft:potted_poppy",
-  "result": "pgeg:bloodrose",
+  "type": "pgeg:spell_cauldron",
+  "group": "transmutation",
+  "ingredients":[
+    {
+      "item":"minecraft:flower_pot"
+    },
+    {
+      "item":"minecraft:poppy"
+    },
+    {
+      "item": "pgeg:mana_crystal_dust"
+    },
+    {
+      "item": "pgeg:mana_crystal_dust"
+    },
+    {
+      "item":"minecraft:enchanted_golden_apple"
+    }
+  ],
+  "result": {
+    "item": "pgeg:bloodrose",
+    "count": 1
+  },
   "wands": [
     {
       "tag": "pgeg:wand_level_1"
     }
-  ],
-  "mana_cost": 5.0
+  ]
 }

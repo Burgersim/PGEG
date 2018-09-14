@@ -1,12 +1,30 @@
 {
-  "type": "pgeg:crafting_wand",
-  "group": "enchanting",
-  "input": "minecraft:potted_brown_mushroom",
-  "result": "pgeg:glowshroom",
+  "type": "pgeg:spell_cauldron",
+  "group": "transmutation",
+  "ingredients":[
+    {
+      "item":"minecraft:flower_pot"
+    },
+    {
+      "item":"minecraft:brown_mushroom"
+    },
+    {
+      "item": "pgeg:mana_crystal_dust"
+    },
+    {
+      "item": "pgeg:mana_crystal_dust"
+    },
+    {
+      "item":"minecraft:glowstone"
+    }
+  ],
+  "result": {
+    "item": "pgeg:glowshroom",
+    "count": 1
+  },
   "wands": [
     {
       "tag": "pgeg:wand_level_1"
     }
-  ],
-  "mana_cost": 5.0
+  ]
 }
