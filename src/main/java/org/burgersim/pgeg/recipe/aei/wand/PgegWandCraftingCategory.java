@@ -3,10 +3,12 @@ package org.burgersim.pgeg.recipe.aei.wand;
 import com.gmail.zendarva.aei.api.IDisplayCategory;
 import com.gmail.zendarva.aei.gui.widget.AEISlot;
 import com.gmail.zendarva.aei.gui.widget.Control;
+import net.minecraft.util.text.TextComponentTranslation;
 
 import java.util.LinkedList;
 import java.util.List;
 
+@SuppressWarnings("NoTranslation")
 public class PgegWandCraftingCategory implements IDisplayCategory<PgegWandRecipe> {
     private PgegWandRecipe recipe;
 
@@ -17,7 +19,7 @@ public class PgegWandCraftingCategory implements IDisplayCategory<PgegWandRecipe
 
     @Override
     public String getDisplayName() {
-        return "Wand crafting";
+        return new TextComponentTranslation("pgeg.aei.wand").getString();
     }
 
     @Override

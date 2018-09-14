@@ -116,5 +116,8 @@
   "enchantment.pgeg.poisonous": "Poison",
   "enchantment.pgeg.expansion": "Expansion",
   "enchantment.pgeg.cursepain": "Curse of Pain",
-  "enchantment.pgeg.beheading": "Beheading"
+  "enchantment.pgeg.beheading": "Beheading",
+
+  "pgeg.aei.spell_cauldron":"Spell Cauldron",
+  "pgeg.aei.wand":"Wand crafting"
 }
