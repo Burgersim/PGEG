@@ -21,11 +21,11 @@ public class RecipesWand implements IRecipe {
     private final ResourceLocation id;
     private final String group;
     private final ItemStack recipeOutput;
-    private final ResourceLocation recipeInput;
+    private final Ingredient recipeInput;
     private final NonNullList<Ingredient> wandItems;
     private final float manaCost;
 
-    public RecipesWand(ResourceLocation id, String group, ItemStack recipeOutput, ResourceLocation recipeInput, NonNullList<Ingredient> wandItems, float manaCost) {
+    public RecipesWand(ResourceLocation id, String group, ItemStack recipeOutput, Ingredient recipeInput, NonNullList<Ingredient> wandItems, float manaCost) {
         this.id = id;
         this.group = group;
         this.recipeOutput = recipeOutput;
@@ -37,9 +37,16 @@ public class RecipesWand implements IRecipe {
     @Override
     public boolean matches(IInventory iInventory, World world) {
         if (iInventory instanceof InWorldCrafting) {
-            return recipeInput.equals(Block.REGISTRY.getKey(((InWorldCrafting) iInventory).input));
+            return recipeInput.test(((InWorldCrafting) iInventory).input);
         }
         return false;
+    }
+
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        NonNullList<Ingredient> ingredients = NonNullList.create();
+        ingredients.add(0, recipeInput);
+        return ingredients;
     }
 
     @Override
@@ -55,6 +62,10 @@ public class RecipesWand implements IRecipe {
     @Override
     public ItemStack getRecipeOutput() {
         return this.recipeOutput;
+    }
+
+    public NonNullList<Ingredient> getWandItems() {
+        return wandItems;
     }
 
     @Override
@@ -89,7 +100,7 @@ public class RecipesWand implements IRecipe {
         @Override
         public RecipesWand read(ResourceLocation resourceLocation, JsonObject jsonObject) {
             String recipeGroup = JsonUtils.getString(jsonObject, "group", "");
-            ResourceLocation input = new ResourceLocation(JsonUtils.getString(jsonObject, "input"));
+            Ingredient input = Ingredient.fromJson(JsonUtils.getJsonObject(jsonObject, "input"));
             String registryName = JsonUtils.getString(jsonObject, "result");
             NonNullList<Ingredient> wandItems = getIngredients(JsonUtils.getJsonArray(jsonObject, "wands"));
             float manaCost = JsonUtils.getFloat(jsonObject, "mana_cost");
@@ -120,7 +131,7 @@ public class RecipesWand implements IRecipe {
         @Override
         public RecipesWand read(ResourceLocation resourceLocation, PacketBuffer buffer) {
             String recipeGroup = buffer.readString(32767);
-            ResourceLocation input = new ResourceLocation(buffer.readString(32767));
+            Ingredient input = Ingredient.fromBuffer(buffer);
             int wandsSize = buffer.readVarInt();
             NonNullList<Ingredient> wandItems = NonNullList.withSize(wandsSize, Ingredient.EMPTY);
             for (int i = 0; i < wandItems.size(); ++i) {
@@ -134,7 +145,7 @@ public class RecipesWand implements IRecipe {
         @Override
         public void write(PacketBuffer buffer, RecipesWand recipesWand) {
             buffer.writeString(recipesWand.group);
-            buffer.writeString(recipesWand.recipeInput.toString());
+            recipesWand.recipeInput.writeToBuffer(buffer);
             buffer.writeVarInt(recipesWand.wandItems.size());
             Iterator it = recipesWand.wandItems.iterator();
 

@@ -30,6 +30,10 @@
     {
       "class": "org.burgersim.pgeg.listener.PgegGui",
       "side": "client"
+    },
+    {
+      "class": "org.burgersim.pgeg.recipe.aei.PgegPlugin",
+      "side": "client"
     }
   ]
 }

@@ -45,7 +45,7 @@ public class RecipesSpellCauldron implements IRecipe {
         } else {
             RecipeItemHelper helper = new RecipeItemHelper();
             int inputCount = 0;
-            for (int i = 0; i < 9; i++) {
+            for (int i = 0; i < 10; i++) {
                 ItemStack stack = iInventory.getStackInSlot(i);
                 if (!stack.isEmpty()) {
                     inputCount++;
@@ -74,6 +74,9 @@ public class RecipesSpellCauldron implements IRecipe {
             }
         }
         return false;
+    }
+    public NonNullList<Ingredient> getWandItems() {
+        return wandItems;
     }
 
     @Override
@@ -104,7 +107,7 @@ public class RecipesSpellCauldron implements IRecipe {
             NonNullList<Ingredient> wandItems = getIngredients(JsonUtils.getJsonArray(jsonObject, "wands"));
             if (ingredients.isEmpty()) {
                 throw new JsonParseException("No ingredients for spell cauldron recipe");
-            } else if (ingredients.size() > 9) {
+            } else if (ingredients.size() > 10) {
                 throw new JsonParseException("Too many ingredients for spell cauldron recipe");
             } else {
                 ItemStack stack = ShapedRecipe.deserializeItem(JsonUtils.getJsonObject(jsonObject, "result"));

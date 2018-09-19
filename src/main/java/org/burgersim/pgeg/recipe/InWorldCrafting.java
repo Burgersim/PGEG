@@ -1,6 +1,5 @@
 package org.burgersim.pgeg.recipe;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -10,9 +9,9 @@ import javax.annotation.Nullable;
 
 public class InWorldCrafting implements IInventory {
 
-    public final Block input;
+    public final ItemStack input;
 
-    public InWorldCrafting(Block input) {
+    public InWorldCrafting(ItemStack input) {
         this.input = input;
     }
 

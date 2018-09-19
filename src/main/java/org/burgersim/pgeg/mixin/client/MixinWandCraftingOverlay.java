@@ -39,8 +39,10 @@ public abstract class MixinWandCraftingOverlay extends Gui {
     @Final
     private ItemRenderer itemRenderer;
 
-    @Shadow private int scaledWidth;
-    @Shadow private int scaledHeight;
+    @Shadow
+    private int scaledWidth;
+    @Shadow
+    private int scaledHeight;
     private Block lastBlock;
     private IRecipe lastRecipe;
 
@@ -50,52 +52,50 @@ public abstract class MixinWandCraftingOverlay extends Gui {
         EntityPlayer player = (EntityPlayer) this.mc.getRenderViewEntity();
         Item mainhand = player.getHeldItemMainhand().getItem();
         Item offhand = player.getHeldItemOffhand().getItem();
-        if (player != null) {
-            if (mainhand instanceof ItemWand
-                    || offhand instanceof ItemWand) {
-                World world = player.world;
+        if (mainhand instanceof ItemWand
+                || offhand instanceof ItemWand) {
+            World world = player.world;
 
-                RayTraceResult traceResult = player.rayTrace(20.0D, 0.0F, RayTraceFluidMode.NEVER);
-                Block block = world.getBlockState(traceResult.getBlockPos()).getBlock();
-                if (block == lastBlock) {
-                    if (lastRecipe != null) {
-                        RecipesWand recipe = (RecipesWand) lastRecipe;
-                        float manaCost = recipe.getManaCost();
-                        this.itemRenderer.renderItemIntoGUI(lastRecipe.getRecipeOutput(),
-                                this.scaledWidth / 2 - 25,
-                                this.scaledHeight / 2 - 7);
-                        GlStateManager.disableDepth();
-                        if (mainhand.isIn(PgegBootstrap.wands) || offhand.isIn(PgegBootstrap.wands)) {
-                            if (!recipe.isRightWand(player.getHeldItemMainhand()) && !recipe.isRightWand(player.getHeldItemOffhand())) {
-                                this.itemRenderer.renderItemIntoGUI(
-                                        new ItemStack(Item.BLOCK_TO_ITEM.get(Blocks.BARRIER)),
-                                        this.scaledWidth / 2 - 25,
-                                        this.scaledHeight / 2 - 7);
-                            }
-                        }
-                        if (manaCost > 0 && !player.capabilities.isCreativeMode) {
-                            IManaHandler handler = (IManaHandler) player;
-                            String starsCost = String.format("%.2f",
-                                    manaCost / (handler.getMaxMana() / 10));
-                            int stringWidth = this.mc.fontRenderer.getStringWidth(starsCost);
-                            this.mc.fontRenderer.drawStringWithShadow(starsCost,
-                                    this.scaledWidth / 2 - 25 - (stringWidth + 1) / 2,
-                                    this.scaledHeight / 2 + 10,
-                                    manaCost > handler.getMana() ? 0xff0000 : 0xffffff);
-                            this.mc.getTextureManager().bindTexture(MANA_ICONS);
-                            this.drawTexturedModalRect(
-                                    this.scaledWidth / 2 - 25 - (stringWidth + 1) / 2 + stringWidth,
-                                    this.scaledHeight / 2 + 9,
-                                    9,
-                                    0,
-                                    9,
-                                    9);
+            RayTraceResult traceResult = player.rayTrace(20.0D, 0.0F, RayTraceFluidMode.NEVER);
+            Block block = world.getBlockState(traceResult.getBlockPos()).getBlock();
+            if (block == lastBlock) {
+                if (lastRecipe != null) {
+                    RecipesWand recipe = (RecipesWand) lastRecipe;
+                    float manaCost = recipe.getManaCost();
+                    this.itemRenderer.renderItemIntoGUI(lastRecipe.getRecipeOutput(),
+                            this.scaledWidth / 2 - 25,
+                            this.scaledHeight / 2 - 7);
+                    GlStateManager.disableDepth();
+                    if (mainhand.isIn(PgegBootstrap.wands) || offhand.isIn(PgegBootstrap.wands)) {
+                        if (!recipe.isRightWand(player.getHeldItemMainhand()) && !recipe.isRightWand(player.getHeldItemOffhand())) {
+                            this.itemRenderer.renderItemIntoGUI(
+                                    new ItemStack(Item.BLOCK_TO_ITEM.get(Blocks.BARRIER)),
+                                    this.scaledWidth / 2 - 25,
+                                    this.scaledHeight / 2 - 7);
                         }
                     }
-                } else {
-                    lastBlock = block;
-                    lastRecipe = world.getRecipeManager().getRecipe(new InWorldCrafting(block), world);
+                    if (manaCost > 0 && !player.capabilities.isCreativeMode) {
+                        IManaHandler handler = (IManaHandler) player;
+                        String starsCost = String.format("%.2f",
+                                manaCost / (handler.getMaxMana() / 10));
+                        int stringWidth = this.mc.fontRenderer.getStringWidth(starsCost);
+                        this.mc.fontRenderer.drawStringWithShadow(starsCost,
+                                this.scaledWidth / 2 - 25 - (stringWidth + 1) / 2,
+                                this.scaledHeight / 2 + 10,
+                                manaCost > handler.getMana() ? 0xff0000 : 0xffffff);
+                        this.mc.getTextureManager().bindTexture(MANA_ICONS);
+                        this.drawTexturedModalRect(
+                                this.scaledWidth / 2 - 25 - (stringWidth + 1) / 2 + stringWidth,
+                                this.scaledHeight / 2 + 9,
+                                9,
+                                0,
+                                9,
+                                9);
+                    }
                 }
+            } else {
+                lastBlock = block;
+                lastRecipe = world.getRecipeManager().getRecipe(new InWorldCrafting(new ItemStack(block.asItem())), world);
             }
         }
         GlStateManager.enableDepth();

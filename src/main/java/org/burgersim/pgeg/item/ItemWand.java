@@ -7,10 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Particles;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.EnumRarity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemUseContext;
+import net.minecraft.item.*;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -32,8 +29,8 @@ public class ItemWand extends Item {
         EntityPlayer player = context.getPlayer();
         IManaHandler handler = (IManaHandler) player;
         RecipesWand recipe = (RecipesWand) world.getRecipeManager().getRecipe(
-                new InWorldCrafting(world.getBlockState(blockPos).getBlock()), world);
-        if (recipe != null && recipe.isRightWand(context.getItem()) && recipe.getManaCost() <= handler.getMana()) {
+                new InWorldCrafting(new ItemStack(world.getBlockState(blockPos).getBlock().asItem())), world);
+        if (handler != null && recipe != null && recipe.isRightWand(context.getItem()) && recipe.getManaCost() <= handler.getMana()) {
             if (!world.isRemote()) {
                 if (handler.getMaxMana() <= 0) {
                     handler.setMaxMana(20);
