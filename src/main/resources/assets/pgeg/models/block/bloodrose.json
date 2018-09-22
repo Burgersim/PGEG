@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "pgeg:block/red_terracotta",
+		"0": "minecraft:block/red_terracotta",
 		"1": "minecraft:block/dirt",
 		"5": "pgeg:block/bloodrose_light",
 		"6": "pgeg:block/bloodrose",
