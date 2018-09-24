@@ -35,7 +35,7 @@ public class TileEntitySpellCauldron extends TileEntityInventory implements ITic
     private IRecipe cachedRecipe;
 
     public TileEntitySpellCauldron() {
-        super(SPELL_CAULDRON, 9, "tile.pgeg.spell_cauldron");
+        super(SPELL_CAULDRON, 10, "tile.pgeg.spell_cauldron");
     }
 
     @Override
