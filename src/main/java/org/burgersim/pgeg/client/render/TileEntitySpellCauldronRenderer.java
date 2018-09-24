@@ -24,7 +24,7 @@ public class TileEntitySpellCauldronRenderer extends TileEntityRenderer<TileEnti
 
             float offsetPerItem = 360 / (cauldron.itemCount());
             float time = (1 - partialTicks) * cauldron.getPrevTime() + partialTicks * cauldron.getTime();
-            for (int i = 0; i < 9; i++) {
+            for (int i = 0; i < 10; i++) {
                 ItemStack stack = cauldron.getStackInSlot(i);
                 if (!stack.isEmpty()) {
                     float offset = offsetPerItem * i;
