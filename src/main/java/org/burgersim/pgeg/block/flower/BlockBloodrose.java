@@ -1,20 +1,20 @@
 package org.burgersim.pgeg.block.flower;
 
-import net.minecraft.block.BlockFlower;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockFlowerPot;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorldReaderBase;
 import net.minecraft.world.World;
 import org.burgersim.pgeg.tileentity.flower.TileEntityBloodrose;
 
 import javax.annotation.Nullable;
 
-public class BlockBloodrose extends BlockFlower implements ITileEntityProvider {
-    public BlockBloodrose(Builder p_i48396_1_) {
-        super(p_i48396_1_);
+public class BlockBloodrose extends BlockFlowerPot implements ITileEntityProvider {
+    public BlockBloodrose(Block p_i48395_1_, Builder p_i48395_2_) {
+        super (p_i48395_1_, p_i48395_2_);
     }
 
     @Nullable
@@ -30,8 +30,10 @@ public class BlockBloodrose extends BlockFlower implements ITileEntityProvider {
         super.onReplaced(state, world, pos, newState, p_beforeReplacingBlock_5_);
     }
 
-    @Override
+/*    @Override
     protected boolean isValidGround(IBlockState state, IBlockReader blockReader, BlockPos blockPos) {
         return state.isTopSolid();
     }
+*/
+
 }

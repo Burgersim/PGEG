@@ -16,8 +16,7 @@ import org.burgersim.pgeg.item.*;
 import org.dimdev.rift.util.ItemTierImpl;
 
 import static net.minecraft.block.material.Material.IRON;
-import static net.minecraft.init.Blocks.DIAMOND_BLOCK;
-import static net.minecraft.init.Blocks.DIAMOND_ORE;
+import static net.minecraft.init.Blocks.*;
 
 public class PgegRegistry {
 
@@ -175,9 +174,9 @@ public class PgegRegistry {
     public final static Block MANA_TALLGRASS = new BlockModTallGrass(Block.Builder.from(Blocks.TALL_GRASS));
     public final static Block MANA_DUST_WIRE = new BlockManaDustWire(Block.Builder.from(Blocks.REDSTONE_WIRE));
 
-    public final static Block GLOWSHROOM = new BlockGlowshroom(Block.Builder.from(Blocks.BROWN_MUSHROOM));
-    public final static Block SNOWBELL = new BlockSnowbell(Block.Builder.from(Blocks.POPPY));
-    public final static Block BLOODROSE = new BlockBloodrose(Block.Builder.from(Blocks.POPPY));
+    public final static Block GLOWSHROOM = new BlockGlowshroom(FLOWER_POT ,Block.Builder.create(Material.CIRCUITS).zeroHardnessAndResistance());
+    public final static Block SNOWBELL = new BlockSnowbell(FLOWER_POT ,Block.Builder.create(Material.CIRCUITS).zeroHardnessAndResistance());
+    public final static Block BLOODROSE = new BlockBloodrose(FLOWER_POT ,Block.Builder.create(Material.CIRCUITS).zeroHardnessAndResistance());
 
     public final static Block RUNE_PEDESTAL_STONE = new BlockRunePedestal(Block.Builder.from(Blocks.STONE_SLAB).doesNotBlockMovement(), 1);
     public final static Block RUNE_PEDESTAL_QUARTZ = new BlockRunePedestal(Block.Builder.from(Blocks.QUARTZ_SLAB).doesNotBlockMovement(), 2);
