@@ -16,8 +16,7 @@ import org.burgersim.pgeg.item.*;
 import org.dimdev.rift.util.ItemTierImpl;
 
 import static net.minecraft.block.material.Material.IRON;
-import static net.minecraft.init.Blocks.DIAMOND_BLOCK;
-import static net.minecraft.init.Blocks.DIAMOND_ORE;
+import static net.minecraft.init.Blocks.*;
 
 public class PgegRegistry {
 
@@ -117,11 +116,11 @@ public class PgegRegistry {
     public final static Item METEORITE_SHEARS = new ItemModShears(new Item.Builder().maxDamage(714).group(ItemGroup.TOOLS));
     public final static Item MITHRIL_SHEARS = new ItemModShears(new Item.Builder().maxDamage(595).group(ItemGroup.TOOLS));
 
-    public final static Item ORICHALCUM_SWORD = new ItemModSword(ORICHALCUM, 3, -2.4F, new Item.Builder().group(ItemGroup.TOOLS));
-    public final static Item SATURNIUM_SWORD = new SaturniumSword(SATURNIUM, 3, -2.4F, new Item.Builder().group(ItemGroup.TOOLS));
-    public final static Item BRIMSTONE_SWORD = new ItemModSword(BRIMSTONE, 3, -2.4F, new Item.Builder().group(ItemGroup.TOOLS));
-    public final static Item METEORITE_SWORD = new ItemModSword(METEORITE, 3, -2.4F, new Item.Builder().group(ItemGroup.TOOLS));
-    public final static Item MITHRIL_SWORD = new ItemModSword(MITHRIL, 3, -2.4F, new Item.Builder().group(ItemGroup.TOOLS));
+    public final static Item ORICHALCUM_SWORD = new ItemModSword(ORICHALCUM, 3, -2.4F, new Item.Builder().group(ItemGroup.COMBAT));
+    public final static Item SATURNIUM_SWORD = new SaturniumSword(SATURNIUM, 3, -2.4F, new Item.Builder().group(ItemGroup.COMBAT));
+    public final static Item BRIMSTONE_SWORD = new ItemModSword(BRIMSTONE, 3, -2.4F, new Item.Builder().group(ItemGroup.COMBAT));
+    public final static Item METEORITE_SWORD = new ItemModSword(METEORITE, 3, -2.4F, new Item.Builder().group(ItemGroup.COMBAT));
+    public final static Item MITHRIL_SWORD = new ItemModSword(MITHRIL, 3, -2.4F, new Item.Builder().group(ItemGroup.COMBAT));
 
     /*Blocks*/
     public final static Block MANA_GRASS = new BlockGrass(Block.Builder.create(Material.GRASS, MapColor.LIGHT_BLUE)
@@ -175,9 +174,9 @@ public class PgegRegistry {
     public final static Block MANA_TALLGRASS = new BlockModTallGrass(Block.Builder.from(Blocks.TALL_GRASS));
     public final static Block MANA_DUST_WIRE = new BlockManaDustWire(Block.Builder.from(Blocks.REDSTONE_WIRE));
 
-    public final static Block GLOWSHROOM = new BlockGlowshroom(Block.Builder.from(Blocks.BROWN_MUSHROOM));
-    public final static Block SNOWBELL = new BlockSnowbell(Block.Builder.from(Blocks.POPPY));
-    public final static Block BLOODROSE = new BlockBloodrose(Block.Builder.from(Blocks.POPPY));
+    public final static Block GLOWSHROOM = new BlockGlowshroom(FLOWER_POT ,Block.Builder.create(Material.CIRCUITS).zeroHardnessAndResistance());
+    public final static Block SNOWBELL = new BlockSnowbell(FLOWER_POT ,Block.Builder.create(Material.CIRCUITS).zeroHardnessAndResistance());
+    public final static Block BLOODROSE = new BlockBloodrose(FLOWER_POT ,Block.Builder.create(Material.CIRCUITS).zeroHardnessAndResistance());
 
     public final static Block RUNE_PEDESTAL_STONE = new BlockRunePedestal(Block.Builder.from(Blocks.STONE_SLAB).doesNotBlockMovement(), 1);
     public final static Block RUNE_PEDESTAL_QUARTZ = new BlockRunePedestal(Block.Builder.from(Blocks.QUARTZ_SLAB).doesNotBlockMovement(), 2);
