@@ -23,7 +23,7 @@ public class MagicOakTreeFeature extends TreeFeature {
     }
 
     @Override
-    public boolean func_208519_a(Set<BlockPos> p_208519_1_, IWorld world, Random random, BlockPos pos) {
+    public boolean place(Set<BlockPos> p_208519_1_, IWorld world, Random random, BlockPos pos) {
         int height = this.func_208534_a(random);
         boolean lvt_6_1_ = true;
         if (pos.getY() >= 1 && pos.getY() + height + 1 <= 256) {

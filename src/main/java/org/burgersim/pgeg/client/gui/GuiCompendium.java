@@ -36,7 +36,7 @@ public class GuiCompendium extends GuiScreen {
     protected void initGui() {
         backButton = this.addButton(new ButtonNavigation(2, getTopLeftX() + 6, getTopLeftY() + 156, false) {
             @Override
-            public void mousePressed(double p_mousePressed_1_, double p_mousePressed_3_) {
+            public void onClick(double x, double y) {
                 setPage(history.get(history.size() - 1), false);
                 history.remove(history.size() - 1);
                 if (history.size() == 0) {
@@ -50,12 +50,14 @@ public class GuiCompendium extends GuiScreen {
 
         forwardButton = this.addButton(new ButtonNavigation(3, getTopLeftX() + 112, getTopLeftY() + 156, true) {
             @Override
-            public void mousePressed(double x, double y) {
+            public void onClick(double x, double y) {
                 setPage(page.nextPage(), true);
                 if (!page.hasNextPage()) {
                     forwardButton.visible = false;
                 }
             }
+
+
         });
         if (!page.hasNextPage()) {
             forwardButton.visible = false;
@@ -68,12 +70,12 @@ public class GuiCompendium extends GuiScreen {
     }
 
     @Override
-    public void drawScreen(int mouseX, int mouseY, float p_drawScreen_3_) {
-        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+    public void render(int mouseX, int mouseY, float p_drawScreen_3_) {
+        GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         this.mc.getTextureManager().bindTexture(COMPENDIUM_TEXTURES);
         Gui.drawModalRectWithCustomSizedTexture(getTopLeftX(), getTopLeftY(), 0, 0, 165, 179, 256, 256);
         page.draw(mouseX, mouseY);
-        super.drawScreen(mouseX, mouseY, p_drawScreen_3_);
+        super.render(mouseX, mouseY, p_drawScreen_3_);
     }
 
 
@@ -92,7 +94,7 @@ public class GuiCompendium extends GuiScreen {
     }
 
     public void setRune(String name) {
-        Minecraft.getMinecraft().getConnection().sendPacket(new CPacketSetLexiconRune(interactionObject.isMainHand(), name));
+        Minecraft.getInstance().getConnection().sendPacket(new CPacketSetLexiconRune(interactionObject.isMainHand(), name));
     }
 
     public int getTopLeftX() {
@@ -113,11 +115,11 @@ public class GuiCompendium extends GuiScreen {
 
 
         @Override
-        public void drawButton(int mouseX, int mouseY, float p_drawButton_3_) {
+        public void render(int mouseX, int mouseY, float p_drawButton_3_) {
             if (this.visible) {
                 this.hovered = mouseX >= this.x && mouseY >= this.y && mouseX < this.x + this.width && mouseY < this.y + this.height;
-                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-                Minecraft.getMinecraft().getTextureManager().bindTexture(COMPENDIUM_TEXTURES);
+                GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+                Minecraft.getInstance().getTextureManager().bindTexture(COMPENDIUM_TEXTURES);
                 int y = 193;
                 if (isForward) {
                     y -= 13;

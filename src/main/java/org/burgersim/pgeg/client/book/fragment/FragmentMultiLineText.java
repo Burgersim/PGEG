@@ -10,7 +10,7 @@ public class FragmentMultiLineText implements IPageFragment {
     private final int maxWidth;
     private final String text;
     private final int color;
-    private final FontRenderer fontRenderer = Minecraft.getMinecraft().fontRenderer;
+    private final FontRenderer fontRenderer = Minecraft.getInstance().fontRenderer;
 
     public FragmentMultiLineText(int offsetX, int offsetY, int maxWidth, String text, int color) {
         this.offsetX = offsetX;

@@ -14,7 +14,7 @@ public class IconTexture extends IconAbstract {
 
     @Override
     public void draw(GuiCompendium gui, int x, int y) {
-        Minecraft.getMinecraft().getTextureManager().bindTexture(iconPath);
+        Minecraft.getInstance().getTextureManager().bindTexture(iconPath);
         Gui.drawModalRectWithCustomSizedTexture(x, y, 0, 0, 16, 16, 16, 16);
     }
 }

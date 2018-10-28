@@ -15,23 +15,23 @@ public class TileEntityRunePedestalRenderer extends TileEntityRenderer<TileEntit
     @Override
     public void render(TileEntityRunePedestal pedestal, double x, double y, double z, float partialTicks, int destroyStage) {
         if (pedestal.getRune() != null) {
-            Minecraft.getMinecraft().profiler.startSection("rune_pedestal");
-            GlStateManager.pushAttrib();
+            Minecraft.getInstance().profiler.startSection("rune_pedestal");
+            GlStateManager.pushLightingAttrib();
             GlStateManager.pushMatrix();
-            GlStateManager.translate(x + .5, y - .8, z + .5);
-            GlStateManager.color(1f, 1f, 1f);
+            GlStateManager.translated(x + .5, y - .8, z + .5);
+            GlStateManager.color3f(1f, 1f, 1f);
             cube.renderCubes(4, pedestal.getLevel(), pedestal.getTime(), 0.1f, pedestal.getRune().getColor());
 
             GlStateManager.popMatrix();
             GlStateManager.popAttrib();
 
-            GlStateManager.pushAttrib();
+            GlStateManager.pushLightingAttrib();
             GlStateManager.pushMatrix();
             GlStateManager.enableBlend();
             float yR = (float) (0.17f + (0.009f * Math.sin((pedestal.getTime() / 0.15f % 360F) * Math.PI / 180F)));
-            GlStateManager.translate(x + .3, y - .7 + yR, z + .3);
-            GlStateManager.scale(.4, 1f, .4);
-            GlStateManager.color(1f, 1f, 1f);
+            GlStateManager.translated(x + .3, y - .7 + yR, z + .3);
+            GlStateManager.scaled(.4, 1f, .4);
+            GlStateManager.color3f(1f, 1f, 1f);
             bindTexture(pedestal.getRune().getTextureLocation());
             Tessellator tes = Tessellator.getInstance();
             BufferBuilder bb = tes.getBuffer();
@@ -44,7 +44,7 @@ public class TileEntityRunePedestalRenderer extends TileEntityRenderer<TileEntit
             GlStateManager.disableBlend();
             GlStateManager.popMatrix();
             GlStateManager.popAttrib();
-            Minecraft.getMinecraft().profiler.endSection();
+            Minecraft.getInstance().profiler.endSection();
         }
     }
 }

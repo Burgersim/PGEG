@@ -2,7 +2,6 @@ package org.burgersim.pgeg.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.minecraft.block.Block;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -147,10 +146,8 @@ public class RecipesWand implements IRecipe {
             buffer.writeString(recipesWand.group);
             recipesWand.recipeInput.writeToBuffer(buffer);
             buffer.writeVarInt(recipesWand.wandItems.size());
-            Iterator it = recipesWand.wandItems.iterator();
 
-            while (it.hasNext()) {
-                Ingredient ingredient = (Ingredient) it.next();
+            for (Ingredient ingredient : recipesWand.wandItems) {
                 ingredient.writeToBuffer(buffer);
             }
             buffer.writeFloat(recipesWand.manaCost);

@@ -19,7 +19,7 @@ public class BlockSnowbell extends BlockFlowerPot implements ITileEntityProvider
 
     public BlockSnowbell(Block p_i48395_1_, Builder p_i48395_2_) {
         super (p_i48395_1_, p_i48395_2_);
-        this.setDefaultState(this.getDefaultState().withProperty(SNOWY, false));
+        this.setDefaultState(this.getDefaultState().with(SNOWY, false));
     }
 
     static {
@@ -45,11 +45,6 @@ public class BlockSnowbell extends BlockFlowerPot implements ITileEntityProvider
         }
         super.onReplaced(state, world, pos, newState, p_beforeReplacingBlock_5_);
     }
-/*    @Override
-    protected boolean isValidGround(IBlockState state, IBlockReader blockReader, BlockPos blockPos) {
-        return state.isTopSolid();
-    }
-*/
     @Override
     public EnumOffsetType getOffsetType() {
         return EnumOffsetType.NONE;

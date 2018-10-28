@@ -106,6 +106,6 @@ public class Rune {
     }
 
     static {
-        REGISTRY = new RegistryNamespacedDefaultedByKey(BROKEN_ID);
+        REGISTRY = new RegistryNamespacedDefaultedByKey<>(BROKEN_ID);
     }
 }

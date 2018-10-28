@@ -26,7 +26,7 @@ public class TileEntityRunePedestal extends TileEntity implements ITickable {
     }
 
     @Override
-    public void update() {
+    public void tick() {
         if (rune != null && !world.isRemote()) {
             if (cooldown <= rune.getWorkSpeed()) {
                 cooldown++;

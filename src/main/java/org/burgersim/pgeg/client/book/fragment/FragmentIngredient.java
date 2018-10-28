@@ -24,14 +24,14 @@ public class FragmentIngredient implements IPageFragment {
 
     @Override
     public void draw(int x, int y, int mouseX, int mouseY) {
-        GlStateManager.pushAttrib();
+        GlStateManager.pushLightingAttrib();
         GlStateManager.pushMatrix();
         World world = gui.getWorld();
-        GlStateManager.translate(x + offsetX, y+offsetY, 0);
-        GlStateManager.scale(5, 5, 5);
+        GlStateManager.translated(x + offsetX, y+offsetY, 0);
+        GlStateManager.scaled(5, 5, 5);
         RenderHelper.enableGUIStandardItemLighting();
         ItemStack stack = ingredient.getMatchingStacks()[(int) ((world.getWorldTime() / 40) % ingredient.getMatchingStacks().length)];
-        Minecraft.getMinecraft().getRenderItem().renderItemIntoGUI(stack, 0, 0);
+        Minecraft.getInstance().getItemRenderer().renderItemIntoGUI(stack, 0, 0);
         RenderHelper.disableStandardItemLighting();
         GlStateManager.popMatrix();
         GlStateManager.popAttrib();

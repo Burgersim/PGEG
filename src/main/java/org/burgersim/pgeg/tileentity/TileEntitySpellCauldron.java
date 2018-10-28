@@ -3,25 +3,13 @@ package org.burgersim.pgeg.tileentity;
 import com.github.ondee.snowflake.block.BlockWaterlogged;
 import com.github.ondee.snowflake.tileentity.TileEntityInventory;
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTranslation;
 import org.burgersim.pgeg.block.BlockSpellCauldron;
 import org.burgersim.pgeg.recipe.RecipesSpellCauldron;
-
-import javax.annotation.Nullable;
-import java.util.Iterator;
 
 import static org.burgersim.pgeg.listener.PgegTileEntityTypes.SPELL_CAULDRON;
 
@@ -44,15 +32,15 @@ public class TileEntitySpellCauldron extends TileEntityInventory implements ITic
     }
 
     @Override
-    public void update() {
+    public void tick() {
         if (!world.isRemote) {
-            if (!getBlockState().getValue(BlockSpellCauldron.IS_HEATED) && !getBlockState().getValue(BlockWaterlogged.isWaterlogged)) {
+            if (!getBlockState().get(BlockSpellCauldron.IS_HEATED) && !getBlockState().get(BlockWaterlogged.isWaterlogged)) {
                 Block block = world.getBlockState(pos.down()).getBlock();
-                if (getBlockState().getValue(BlockSpellCauldron.HAS_WATER) && (block == Blocks.LAVA || block == Blocks.MAGMA_BLOCK)) {
+                if (getBlockState().get(BlockSpellCauldron.HAS_WATER) && (block == Blocks.LAVA || block == Blocks.MAGMA_BLOCK)) {
                     if (heatTicks < TIME_TO_HEAT) {
                         heatTicks++;
                     } else {
-                        world.setBlockState(pos, getBlockState().withProperty(BlockSpellCauldron.IS_HEATED, true));
+                        world.setBlockState(pos, getBlockState().with(BlockSpellCauldron.IS_HEATED, true));
                         heatTicks = 0;
                     }
                 }

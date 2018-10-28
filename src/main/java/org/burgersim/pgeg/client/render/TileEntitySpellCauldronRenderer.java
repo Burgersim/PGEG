@@ -13,11 +13,11 @@ public class TileEntitySpellCauldronRenderer extends TileEntityRenderer<TileEnti
     @Override
     public void render(TileEntitySpellCauldron cauldron, double x, double y, double z, float partialTicks, int destroyStage) {
         if (!cauldron.isEmpty()) {
-            GlStateManager.pushAttrib();
+            GlStateManager.pushLightingAttrib();
             GlStateManager.pushMatrix();
 
 
-            GlStateManager.translate(x + .5, y + .5, z + .5);
+            GlStateManager.translated(x + .5, y + .5, z + .5);
 
             GlStateManager.disableRescaleNormal();
             GlStateManager.enableLighting();
@@ -35,10 +35,10 @@ public class TileEntitySpellCauldronRenderer extends TileEntityRenderer<TileEnti
                     float zR = (.2f) * sin + (.2f) * cos;
                     float yR = (float) (0.17f + (0.009f * Math.sin(x + z + offset + (time / 0.15f % 360F) * Math.PI / 180F)));
                     GlStateManager.pushMatrix();
-                    GlStateManager.translate(xR, yR + .28, zR);
-                    GlStateManager.rotate(90, 1, 0, 0);
-                    GlStateManager.scale(.3, .3, .3);
-                    Minecraft.getMinecraft().getRenderItem().renderItem(stack, ItemCameraTransforms.TransformType.GROUND);
+                    GlStateManager.translated(xR, yR + .28, zR);
+                    GlStateManager.rotatef(90, 1, 0, 0);
+                    GlStateManager.scaled(.3, .3, .3);
+                    Minecraft.getInstance().getItemRenderer().renderItem(stack, ItemCameraTransforms.TransformType.GROUND);
                     GlStateManager.popMatrix();
                 }
             }
@@ -48,12 +48,12 @@ public class TileEntitySpellCauldronRenderer extends TileEntityRenderer<TileEnti
                 GlStateManager.enableBlend();
                 GlStateManager.disableLighting();
                 GlStateManager.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE_MINUS_SRC_COLOR);
-                GlStateManager.translate(0, .7, 0);
-                GlStateManager.rotate(getWorld().getWorldTime(), 0, 1, 0);
-                IBakedModel model = Minecraft.getMinecraft().getRenderItem().getItemModelMesher().getItemModel(recipe.getRecipeOutput());
+                GlStateManager.translated(0, .7, 0);
+                GlStateManager.rotatef(getWorld().getWorldTime(), 0, 1, 0);
+                IBakedModel model = Minecraft.getInstance().getItemRenderer().getItemModelMesher().getItemModel(recipe.getRecipeOutput());
                 ItemCameraTransforms itemCameraTransforms = model.getItemCameraTransforms();
                 ItemCameraTransforms.applyTransformSide(itemCameraTransforms.ground, false);
-                Minecraft.getMinecraft().getRenderItem().renderItem(recipe.getRecipeOutput(), model);
+                Minecraft.getInstance().getItemRenderer().renderItem(recipe.getRecipeOutput(), model);
                 GlStateManager.disableBlend();
                 GlStateManager.enableLighting();
                 GlStateManager.popMatrix();

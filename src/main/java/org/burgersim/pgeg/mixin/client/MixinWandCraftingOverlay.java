@@ -65,7 +65,7 @@ public abstract class MixinWandCraftingOverlay extends Gui {
                     this.itemRenderer.renderItemIntoGUI(lastRecipe.getRecipeOutput(),
                             this.scaledWidth / 2 - 25,
                             this.scaledHeight / 2 - 7);
-                    GlStateManager.disableDepth();
+                    GlStateManager.disableDepthTest();
                     if (mainhand.isIn(PgegBootstrap.wands) || offhand.isIn(PgegBootstrap.wands)) {
                         if (!recipe.isRightWand(player.getHeldItemMainhand()) && !recipe.isRightWand(player.getHeldItemOffhand())) {
                             this.itemRenderer.renderItemIntoGUI(
@@ -98,7 +98,7 @@ public abstract class MixinWandCraftingOverlay extends Gui {
                 lastRecipe = world.getRecipeManager().getRecipe(new InWorldCrafting(new ItemStack(block.asItem())), world);
             }
         }
-        GlStateManager.enableDepth();
+        GlStateManager.enableDepthTest();
         RenderHelper.disableStandardItemLighting();
     }
 }

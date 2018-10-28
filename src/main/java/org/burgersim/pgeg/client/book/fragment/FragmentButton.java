@@ -11,7 +11,7 @@ public class FragmentButton extends GuiButton implements IPageFragment {
     private final int offsetX;
     private final int offsetY;
     private final int color;
-    private final FontRenderer fontRenderer = Minecraft.getMinecraft().fontRenderer;
+    private final FontRenderer fontRenderer = Minecraft.getInstance().fontRenderer;
     private final int textLength;
 
     public FragmentButton(int offsetX, int offsetY, int width, int height, int id, String text, int color) {
@@ -27,13 +27,13 @@ public class FragmentButton extends GuiButton implements IPageFragment {
     public void draw(int x, int y, int mouseX, int mouseY) {
         this.x = x + offsetX;
         this.y = y + offsetY;
-        drawButton(mouseX, mouseY, 0.0f);
+        render(mouseX, mouseY, 0.0f);
     }
 
     @Override
-    public void drawButton(int x, int y, float p_drawButton_3_) {
+    public void render(int x, int y, float p_drawButton_3_) {
         this.hovered = x >= this.x && y >= this.y && x < this.x + this.width && y < this.y + this.height;
-        Minecraft.getMinecraft().getTextureManager().bindTexture(Reference.COMPENDIUM_TEXTURES);
+        Minecraft.getInstance().getTextureManager().bindTexture(Reference.COMPENDIUM_TEXTURES);
         int texX = 0;
         int texY = 203;
         if (this.hovered) {

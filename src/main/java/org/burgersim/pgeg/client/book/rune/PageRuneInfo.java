@@ -1,8 +1,6 @@
 package org.burgersim.pgeg.client.book.rune;
 
 import net.minecraft.client.resources.I18n;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.ResourceLocation;
 import org.burgersim.pgeg.client.book.IBookPage;
 import org.burgersim.pgeg.client.book.IPageFragment;
 import org.burgersim.pgeg.client.book.fragment.FragmentMultiLineText;

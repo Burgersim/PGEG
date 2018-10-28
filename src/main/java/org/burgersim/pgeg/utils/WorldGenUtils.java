@@ -1,7 +1,5 @@
 package org.burgersim.pgeg.utils;
 
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;

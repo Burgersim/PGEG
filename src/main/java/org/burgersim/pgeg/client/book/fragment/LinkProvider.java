@@ -11,7 +11,7 @@ public abstract class LinkProvider {
     public abstract int getSize();
 
     public boolean onMouseClicked(FragmentLink link, double x, double y, int mode) {
-        return x > link.x && x < link.x + link.getButtonWidth() && y > link.y && y < link.y + link.getButtonHeight();
+        return x > link.x && x < link.x + link.getWidth() && y > link.y && y < link.y + link.getButtonHeight();
     }
 
     public abstract int getOffset();

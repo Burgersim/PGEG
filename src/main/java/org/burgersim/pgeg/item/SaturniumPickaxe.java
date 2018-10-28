@@ -1,6 +1,5 @@
 package org.burgersim.pgeg.item;
 
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,7 +16,7 @@ public class SaturniumPickaxe extends ItemModPickaxe {
 
     @Override
     public void onCreated(ItemStack stack, World world, EntityPlayer player) {
-        List<EnchantmentData> enchantmentList = EnchantmentHelper.buildEnchantmentList(itemRand, stack, 20, true);
+        List<EnchantmentData> enchantmentList = EnchantmentHelper.buildEnchantmentList(random, stack, 20, true);
         enchantmentList.forEach(enchantmentData -> stack.addEnchantment(enchantmentData.enchantment, enchantmentData.enchantmentLevel));
     }
 }

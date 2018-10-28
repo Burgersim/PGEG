@@ -6,6 +6,7 @@ import org.dimdev.rift.listener.BiomeAdder;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 
 import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
@@ -20,6 +21,6 @@ public class PgegBiomes implements BiomeAdder {
 
     @Override
     public Collection<Biome> getOverworldBiomes() {
-        return Arrays.asList(MAGIC_FOREST_BIOME);
+        return Collections.singletonList(MAGIC_FOREST_BIOME);
     }
 }

@@ -8,8 +8,6 @@ import net.minecraft.util.math.BlockPos;
 import org.burgersim.pgeg.block.flower.BlockSnowbell;
 import org.burgersim.pgeg.listener.PgegRegistry;
 
-import java.util.Random;
-
 import static org.burgersim.pgeg.listener.PgegTileEntityTypes.SNOWBELL;
 
 public class TileEntitySnowbell extends TileEntity implements ITickable {
@@ -24,7 +22,7 @@ public class TileEntitySnowbell extends TileEntity implements ITickable {
     private int time;
 
     @Override
-    public void update() {
+    public void tick() {
         if (!world.isRemote) {
             time++;
             if (time == WORK_SPEED) {
@@ -44,9 +42,9 @@ public class TileEntitySnowbell extends TileEntity implements ITickable {
                 world.setBlockState(blockPos, Blocks.SNOW.getDefaultState());
             }
         }
-        if (block == PgegRegistry.SNOWBELL && !world.getBlockState(blockPos).getValue(BlockSnowbell.SNOWY)) {
+        if (block == PgegRegistry.SNOWBELL && !world.getBlockState(blockPos).get(BlockSnowbell.SNOWY)) {
             if (world.rand.nextFloat() < SNOW_CHANCE) {
-                world.setBlockState(blockPos, world.getBlockState(blockPos).withProperty(BlockSnowbell.SNOWY, true));
+                world.setBlockState(blockPos, world.getBlockState(blockPos).with(BlockSnowbell.SNOWY, true));
             }
         }
         if (block == Blocks.WATER) {

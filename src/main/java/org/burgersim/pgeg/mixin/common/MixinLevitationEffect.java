@@ -4,7 +4,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EntityType;
 import net.minecraft.potion.Potion;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import org.burgersim.pgeg.listener.PgegPotions;
 import org.spongepowered.asm.mixin.Mixin;

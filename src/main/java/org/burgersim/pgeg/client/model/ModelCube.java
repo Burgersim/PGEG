@@ -1,7 +1,6 @@
 package org.burgersim.pgeg.client.model;
 
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.entity.model.ModelBase;
 import net.minecraft.client.renderer.entity.model.ModelRenderer;
 
@@ -23,7 +22,7 @@ public class ModelCube extends ModelBase {
             float offsetPerCube = 360 / (cubes * j);
             GlStateManager.pushMatrix();
             GlStateManager.disableTexture2D();
-            GlStateManager.translate(-0.025F, 0.85F, -0.025F);
+            GlStateManager.translatef(-0.025F, 0.85F, -0.025F);
             for (int i = 0; i < (cubes * j); i++) {
                 float offset = offsetPerCube * i;
                 float deg = (int) (ticks / 0.2F % 360F + offset);
@@ -34,9 +33,9 @@ public class ModelCube extends ModelBase {
                 float z = (radius * j) * sin + (radius * j) * cos;
                 float y = (float) (0.2f + Math.pow(-1, j) * (0.1f * Math.sin(x + z + j + (ticks / 0.5f % 360F) * Math.PI / 180F)));
                 GlStateManager.pushMatrix();
-                GlStateManager.translate(x, y, z);
+                GlStateManager.translatef(x, y, z);
                 GlStateManager.enableBlend();
-                GlStateManager.color(R, G, B, 0.7f);
+                GlStateManager.color4f(R, G, B, 0.7f);
                 cube.render(1f / 16f);
                 GlStateManager.disableBlend();
                 GlStateManager.popMatrix();

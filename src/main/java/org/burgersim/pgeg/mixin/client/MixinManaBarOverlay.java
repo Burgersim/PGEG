@@ -5,7 +5,6 @@ import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import org.burgersim.pgeg.mana.IManaHandler;
 import org.spongepowered.asm.mixin.Final;
@@ -18,7 +17,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.Random;
 
 import static org.burgersim.pgeg.utils.Reference.MANA_ICONS;
-import static org.burgersim.pgeg.utils.Reference.MOD_ID;
 
 @Mixin(GuiIngame.class)
 public abstract class MixinManaBarOverlay extends Gui {
@@ -45,7 +43,7 @@ public abstract class MixinManaBarOverlay extends Gui {
                 int barX = this.scaledWidth / 2 - 91;
                 int barY = this.scaledHeight - 39;
                 int manaPerStar = (int) handler.getMaxMana() / 10;
-                int maxHealth = MathHelper.ceil((player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getAttributeValue()
+                int maxHealth = MathHelper.ceil((player.getAttribute(SharedMonsterAttributes.MAX_HEALTH).getAttributeValue()
                         + player.getAbsorptionAmount()) / 2.0F / 10.0F);
                 this.mc.getTextureManager().bindTexture(MANA_ICONS);
                 int x;
