@@ -18,16 +18,16 @@ public class BlockManaDustWire extends BlockWaterlogged {
     public final static BooleanProperty WEST;
     public final static BooleanProperty NORTH;
     public final static BooleanProperty SOUTH;
-    protected final static VoxelShape[] SHAPES;
+    private final static VoxelShape[] SHAPES;
 
     public BlockManaDustWire(Builder builder) {
         super(builder);
         this.setDefaultState(
                 this.getDefaultState()
-                        .withProperty(EAST, false)
-                        .withProperty(WEST, false)
-                        .withProperty(NORTH, false)
-                        .withProperty(SOUTH, false));
+                        .with(EAST, false)
+                        .with(WEST, false)
+                        .with(NORTH, false)
+                        .with(SOUTH, false));
     }
 
     public VoxelShape getShape(IBlockState p_getShape_1_, IBlockReader p_getShape_2_, BlockPos p_getShape_3_) {
@@ -36,10 +36,10 @@ public class BlockManaDustWire extends BlockWaterlogged {
 
     private static int getAABBIndex(IBlockState state) {
         int index = 0;
-        boolean north = state.getValue(NORTH);
-        boolean east = state.getValue(EAST);
-        boolean south = state.getValue(SOUTH);
-        boolean west = state.getValue(WEST);
+        boolean north = state.get(NORTH);
+        boolean east = state.get(EAST);
+        boolean south = state.get(SOUTH);
+        boolean west = state.get(WEST);
         if (north || south && !north && !east && !west) {
             index |= 1 << EnumFacing.NORTH.getHorizontalIndex();
         }
@@ -81,10 +81,10 @@ public class BlockManaDustWire extends BlockWaterlogged {
 
     private IBlockState calculateState(IBlockState state, World world, BlockPos pos) {
         return state
-                .withProperty(EAST, world.getBlockState(pos.east()).getBlock() == this)
-                .withProperty(WEST, world.getBlockState(pos.west()).getBlock() == this)
-                .withProperty(NORTH, world.getBlockState(pos.north()).getBlock() == this)
-                .withProperty(SOUTH, world.getBlockState(pos.south()).getBlock() == this);
+                .with(EAST, world.getBlockState(pos.east()).getBlock() == this)
+                .with(WEST, world.getBlockState(pos.west()).getBlock() == this)
+                .with(NORTH, world.getBlockState(pos.north()).getBlock() == this)
+                .with(SOUTH, world.getBlockState(pos.south()).getBlock() == this);
     }
 
     @Override

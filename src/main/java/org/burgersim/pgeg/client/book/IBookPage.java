@@ -1,7 +1,5 @@
 package org.burgersim.pgeg.client.book;
 
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.util.ResourceLocation;
 import org.burgersim.pgeg.client.book.fragment.icon.IconAbstract;
 import org.burgersim.pgeg.client.gui.GuiCompendium;
 

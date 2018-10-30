@@ -1,9 +1,6 @@
 package org.burgersim.pgeg.block.base;
 
 import net.minecraft.block.BlockOre;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
@@ -25,7 +22,7 @@ public class BlockModOre extends BlockOre {
     @Override
     public void dropBlockAsItemWithChance(IBlockState state, World world, BlockPos blockPos, float p_dropBlockAsItemWithChance_4_, int p_dropBlockAsItemWithChance_5_) {
         super.dropBlockAsItemWithChance(state, world, blockPos, p_dropBlockAsItemWithChance_4_, p_dropBlockAsItemWithChance_5_);
-        int xp = MathHelper.getInt(world.rand, xpMin, xpMax);
+        int xp = MathHelper.nextInt(world.rand, xpMin, xpMax);
         this.dropXpOnBlockBreak(world, blockPos, xp);
     }
 

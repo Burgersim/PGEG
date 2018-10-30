@@ -19,7 +19,7 @@ public class IconIngredient extends IconAbstract {
         World world = gui.getWorld();
         RenderHelper.enableGUIStandardItemLighting();
         ItemStack stack = icon.getMatchingStacks()[(int) ((world.getWorldTime() / 40) % icon.getMatchingStacks().length)];
-        Minecraft.getMinecraft().getRenderItem().renderItemIntoGUI(stack, x, y);
+        Minecraft.getInstance().getItemRenderer().renderItemIntoGUI(stack, x, y);
         RenderHelper.disableStandardItemLighting();
     }
 }

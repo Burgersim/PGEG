@@ -41,14 +41,14 @@ public class FragmentRecipeIngredientsRow implements IPageFragment {
     @Override
     public void draw(int x, int y, int mouseX, int mouseY) {
         GlStateManager.pushMatrix();
-        GlStateManager.pushAttrib();
+        GlStateManager.pushLightingAttrib();
         if (recipe != null) {
             for (int i = 0; i < ingredients.size(); i++) {
                 int itemX = x + offsetX + offsetPerColumn * (i % columns);
                 int itemY = y + offsetY + (i / columns) * offsetPerRow;
                 RenderHelper.enableGUIStandardItemLighting();
                 ItemStack stack = ingredients.get(i).getMatchingStacks()[(int) ((world.getWorldTime() / 40) % ingredients.get(i).getMatchingStacks().length)];
-                Minecraft.getMinecraft().getRenderItem().renderItemIntoGUI(stack, itemX, itemY);
+                Minecraft.getInstance().getItemRenderer().renderItemIntoGUI(stack, itemX, itemY);
                 RenderHelper.disableStandardItemLighting();
             }
             for (int i = 0; i < ingredients.size(); i++) {
@@ -57,7 +57,7 @@ public class FragmentRecipeIngredientsRow implements IPageFragment {
 
                 if (mouseX > itemX && mouseY > itemY && mouseX < itemX + 16 && mouseY < itemY + 16) {
                     ItemStack stack = ingredients.get(i).getMatchingStacks()[(int) ((world.getWorldTime() / 40) % ingredients.get(i).getMatchingStacks().length)];
-                    List<ITextComponent> tooltips = stack.getTooltip(Minecraft.getMinecraft().player, ITooltipFlag.TooltipFlags.NORMAL);
+                    List<ITextComponent> tooltips = stack.getTooltip(Minecraft.getInstance().player, ITooltipFlag.TooltipFlags.NORMAL);
                     List<String> tooltip = new ArrayList<>();
                     tooltips.forEach(iTextComponent -> tooltip.add(iTextComponent.getFormattedText()));
                     guiScreen.drawHoveringText(tooltip, mouseX, mouseY);

@@ -37,7 +37,7 @@ public abstract class MixinEntityLivingBase extends Entity {
         if (source.getTrueSource() instanceof EntityLivingBase) {
             EntityLivingBase trueSource = (EntityLivingBase) source.getTrueSource();
             ItemStack stack = trueSource.getHeldItemMainhand();
-            if (stack.isItemEnchanted()) {
+            if (stack.isEnchanted()) {
                 NBTTagList enchantments = stack.getEnchantmentTagList();
                 int vampirismLevel = 0;
                 int poisonousLevel = 0;
@@ -79,7 +79,7 @@ public abstract class MixinEntityLivingBase extends Entity {
         if (source.getTrueSource() instanceof EntityLivingBase) {
             EntityLivingBase trueSource = (EntityLivingBase) source.getTrueSource();
             ItemStack stack = trueSource.getHeldItemMainhand();
-            if (stack.isItemEnchanted()) {
+            if (stack.isEnchanted()) {
                 NBTTagList enchantments = stack.getEnchantmentTagList();
                 int beheadingLevel = 0;
                 for (int i = 0; i < enchantments.size(); i++) {

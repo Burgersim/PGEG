@@ -15,7 +15,7 @@ public class PgegGui implements GameGuiAdder {
     public void displayGui(EntityPlayerSP player, String id, IInteractionObject interactionObject) {
         if (id.equals(MOD_ID + ":rune")) {
             if (interactionObject instanceof ItemCompendium.LexiconInteractionObject) {
-                Minecraft.getMinecraft().displayGuiScreen(new GuiCompendium((ItemCompendium.LexiconInteractionObject) interactionObject, player));
+                Minecraft.getInstance().displayGuiScreen(new GuiCompendium((ItemCompendium.LexiconInteractionObject) interactionObject, player));
             }
         }
     }

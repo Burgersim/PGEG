@@ -57,14 +57,14 @@ public abstract class MixinManaHandler extends EntityLivingBase implements IMana
         return this.dataManager.get(MAX_MANA);
     }
 
-    @Inject(method = "onLivingUpdate", at = @At("RETURN"))
+    @Inject(method = "livingTick", at = @At("RETURN"))
     private void onPlayerUpdate(CallbackInfo ci) {
         if (this.getMana() < this.getMaxMana() && this.ticksExisted % REGEN_SPEED == 0) {
             regenMana(REGEN_AMOUNT);
         }
     }
 
-    @Inject(method = "entityInit", at = @At("TAIL"))
+    @Inject(method = "registerData", at = @At("TAIL"))
     private void manaInit(CallbackInfo ci) {
         this.dataManager.register(MAX_MANA, 0.0F);
         this.dataManager.register(MANA, 0.0F);

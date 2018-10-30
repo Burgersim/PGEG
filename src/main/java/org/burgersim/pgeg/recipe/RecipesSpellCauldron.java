@@ -151,17 +151,13 @@ public class RecipesSpellCauldron implements IRecipe {
         public void write(PacketBuffer buffer, RecipesSpellCauldron recipesSpellCauldron) {
             buffer.writeString(recipesSpellCauldron.group);
             buffer.writeVarInt(recipesSpellCauldron.recipeItems.size());
-            Iterator var3 = recipesSpellCauldron.recipeItems.iterator();
 
-            while (var3.hasNext()) {
-                Ingredient ingredient = (Ingredient) var3.next();
+            for (Ingredient ingredient : recipesSpellCauldron.recipeItems) {
                 ingredient.writeToBuffer(buffer);
             }
             buffer.writeVarInt(recipesSpellCauldron.wandItems.size());
-            Iterator it = recipesSpellCauldron.wandItems.iterator();
 
-            while (it.hasNext()) {
-                Ingredient ingredient = (Ingredient) it.next();
+            for (Ingredient ingredient : recipesSpellCauldron.wandItems) {
                 ingredient.writeToBuffer(buffer);
             }
 

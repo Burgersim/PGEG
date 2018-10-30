@@ -35,7 +35,7 @@ public class BlockRunePedestal extends BlockWaterlogged implements ITileEntityPr
     public boolean onBlockActivated(IBlockState state, World world, BlockPos blockPos, EntityPlayer player, EnumHand hand, EnumFacing facing, float p_onBlockActivated_7_, float p_onBlockActivated_8_, float p_onBlockActivated_9_) {
         if (player.getHeldItem(hand).getItem() instanceof ItemCompendium) {
             ItemStack lexicon = player.getHeldItem(hand);
-            NBTTagCompound compound = lexicon.getTagCompound();
+            NBTTagCompound compound = lexicon.getTag();
             if (compound != null && compound.hasKey("rune")) {
                 TileEntity tileEntity = world.getTileEntity(blockPos);
                 if (tileEntity instanceof TileEntityRunePedestal) {

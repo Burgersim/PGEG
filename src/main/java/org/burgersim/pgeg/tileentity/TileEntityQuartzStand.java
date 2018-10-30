@@ -1,21 +1,8 @@
 package org.burgersim.pgeg.tileentity;
 
 import com.github.ondee.snowflake.tileentity.TileEntityInventory;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTranslation;
-
-import javax.annotation.Nullable;
-import java.util.Iterator;
 
 import static org.burgersim.pgeg.listener.PgegTileEntityTypes.QUARTZ_STAND;
 
@@ -40,7 +27,7 @@ public class TileEntityQuartzStand extends TileEntityInventory implements ITicka
     }
 
     @Override
-    public void update() {
+    public void tick() {
         if (world.isRemote) {
             prevTime = time;
             time++;

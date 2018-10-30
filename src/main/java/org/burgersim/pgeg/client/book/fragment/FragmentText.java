@@ -9,7 +9,7 @@ public class FragmentText implements IPageFragment {
     private final int offsetY;
     private final String text;
     private final int color;
-    private final FontRenderer fontRenderer = Minecraft.getMinecraft().fontRenderer;
+    private final FontRenderer fontRenderer = Minecraft.getInstance().fontRenderer;
 
     public FragmentText(int offsetX, int offsetY, String text, int color) {
         this.offsetX = offsetX;

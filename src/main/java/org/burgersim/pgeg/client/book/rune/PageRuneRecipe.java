@@ -15,15 +15,14 @@ import org.burgersim.pgeg.rune.Rune;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("NoTranslation")
 public class PageRuneRecipe implements IBookPage {
     private final GuiCompendium gui;
-    private final Rune rune;
     private List<Ingredient> ingredients;
     private List<IPageFragment> fragments = new ArrayList<>();
 
     public PageRuneRecipe(GuiCompendium gui, Rune rune) {
         this.gui = gui;
-        this.rune = rune;
         RecipesRune recipe = (RecipesRune) gui.getWorld().getRecipeManager().getRecipe(new RecipesRune.RuneCrafting(new ResourceLocation(rune.getName())), gui.getWorld());
         if (recipe != null) {
             ingredients = recipe.getIngredients();
@@ -32,7 +31,7 @@ public class PageRuneRecipe implements IBookPage {
         fragments.add(new FragmentRecipeIngredientsRow(16, 26, 16, 16, 7, recipe, ingredients, gui.getWorld(), gui));
         fragments.add(new FragmentButton(16, 130, 108, 19, 0, I18n.format("gui.compendium.category.runes.button.set_rune"), 0xffffff) {
             @Override
-            public void mousePressed(double x, double y) {
+            public void onClick(double x, double y) {
                 gui.setRune(rune.getName());
                 gui.close();
             }

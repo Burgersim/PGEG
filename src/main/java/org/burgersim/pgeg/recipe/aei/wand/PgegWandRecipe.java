@@ -1,7 +1,6 @@
 package org.burgersim.pgeg.recipe.aei.wand;
 
 import com.gmail.zendarva.aei.api.IRecipe;
-import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import org.burgersim.pgeg.recipe.RecipesWand;

@@ -13,7 +13,7 @@ public class FragmentLink extends GuiButton implements IPageFragment {
     private final int color;
     private final GuiCompendium gui;
     private final IconAbstract icon;
-    private final FontRenderer fontRenderer = Minecraft.getMinecraft().fontRenderer;
+    private final FontRenderer fontRenderer = Minecraft.getInstance().fontRenderer;
 
     public FragmentLink(GuiCompendium gui, int offsetX, int offsetY, int id, int width, int color, IconAbstract icon, String text) {
         super(id, offsetX, offsetY, width, 16, text);

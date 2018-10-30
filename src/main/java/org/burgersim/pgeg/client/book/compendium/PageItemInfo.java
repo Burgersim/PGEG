@@ -24,7 +24,7 @@ public class PageItemInfo implements IBookPage {
         this.gui = gui;
         this.ingredient = ingredient;
         this.name = name;
-        nextPage = new PageItemDescription(gui, this.name, ingredient);
+        nextPage = new PageItemDescription(gui, this.name);
         fragments.add(new FragmentTitle(0, 16, 146, I18n.format("gui.compendium.page." + name + ".name"), 4210752));
         fragments.add(new FragmentIngredient(32, 32, gui, ingredient));
     }

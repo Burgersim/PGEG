@@ -13,7 +13,6 @@ import net.minecraft.init.Fluids;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IItemProvider;
@@ -22,8 +21,6 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReaderBase;
 import org.burgersim.pgeg.listener.PgegRegistry;
-
-import javax.annotation.Nullable;
 
 public class BlockRice extends BlockCrops implements IBucketPickupHandler, ILiquidContainer {
     public final static BooleanProperty isWaterlogged;
@@ -49,13 +46,13 @@ public class BlockRice extends BlockCrops implements IBucketPickupHandler, ILiqu
     @Override
     public boolean isValidPosition(IBlockState state, IWorldReaderBase worldReaderBase, BlockPos blockPos) {
         return (worldReaderBase.getLightSubtracted(blockPos, 0) >= 8 || worldReaderBase.canSeeSky(blockPos)) &&
-                state.getValue(isWaterlogged) && worldReaderBase.isAirBlock(blockPos.up());
+                state.get(isWaterlogged) && worldReaderBase.isAirBlock(blockPos.up());
     }
 
     @Override
     public Fluid pickupFluid(IWorld iWorld, BlockPos blockPos, IBlockState iBlockState) {
-        if (iBlockState.getValue(isWaterlogged)) {
-            iWorld.setBlockState(blockPos, iBlockState.withProperty(isWaterlogged, false), 3);
+        if (iBlockState.get(isWaterlogged)) {
+            iWorld.setBlockState(blockPos, iBlockState.with(isWaterlogged, false), 3);
             return Fluids.WATER;
         } else {
             return Fluids.EMPTY;
@@ -64,20 +61,20 @@ public class BlockRice extends BlockCrops implements IBucketPickupHandler, ILiqu
 
     public IBlockState getStateForPlacement(BlockItemUseContext useContext) {
         IFluidState fluidState = useContext.getWorld().getFluidState(useContext.getPos());
-        return this.getDefaultState().withProperty(isWaterlogged, fluidState.getFluid() == Fluids.WATER);
+        return this.getDefaultState().with(isWaterlogged, fluidState.getFluid() == Fluids.WATER);
     }
 
     @Override
     public boolean canContainFluid(IBlockReader iBlockReader, BlockPos blockPos, IBlockState iBlockState, Fluid fluid) {
-        return !iBlockState.getValue(isWaterlogged) && fluid == Fluids.WATER;
+        return !iBlockState.get(isWaterlogged) && fluid == Fluids.WATER;
     }
 
     @Override
     public boolean receiveFluid(IWorld iWorld, BlockPos blockPos, IBlockState iBlockState, IFluidState iFluidState) {
-        if (!iBlockState.getValue(isWaterlogged) && iFluidState.getFluid() == Fluids.WATER) {
+        if (!iBlockState.get(isWaterlogged) && iFluidState.getFluid() == Fluids.WATER) {
             if (!iWorld.isRemote()) {
-                iWorld.setBlockState(blockPos, iBlockState.withProperty(isWaterlogged, true), 3);
-                iWorld.getPendingFluidTicks().scheduleUpdate(blockPos, iFluidState.getFluid(), iFluidState.getFluid().getTickRate(iWorld));
+                iWorld.setBlockState(blockPos, iBlockState.with(isWaterlogged, true), 3);
+                iWorld.getPendingFluidTicks().scheduleTick(blockPos, iFluidState.getFluid(), iFluidState.getFluid().getTickRate(iWorld));
             }
             return true;
         }
@@ -86,8 +83,8 @@ public class BlockRice extends BlockCrops implements IBucketPickupHandler, ILiqu
 
 
     public IBlockState updatePostPlacement(IBlockState state, EnumFacing facing, IBlockState state1, IWorld world, BlockPos blockPos, BlockPos blockPos1) {
-        if (state.getValue(isWaterlogged)) {
-            world.getPendingFluidTicks().scheduleUpdate(blockPos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+        if (state.get(isWaterlogged)) {
+            world.getPendingFluidTicks().scheduleTick(blockPos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
 
         return super.updatePostPlacement(state, facing, state1, world, blockPos, blockPos1);
@@ -111,7 +108,7 @@ public class BlockRice extends BlockCrops implements IBucketPickupHandler, ILiqu
 
     @Override
     public IFluidState getFluidState(IBlockState blockState) {
-        return blockState.getValue(isWaterlogged) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(blockState);
+        return blockState.get(isWaterlogged) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(blockState);
     }
 
     @Override

@@ -37,7 +37,7 @@ public class ItemCompendium extends Item {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<ITextComponent> iTextComponents, ITooltipFlag flag) {
-        NBTTagCompound tagCompound = stack.getTagCompound();
+        NBTTagCompound tagCompound = stack.getTag();
         if (tagCompound != null && tagCompound.hasKey("rune")) {
             String rune = tagCompound.getString("rune");
             iTextComponents.add(new TextComponentString(I18n.format("item.compendium.rune.tooltip", I18n.format(Rune.getRune(new ResourceLocation(rune)).getNameKey()))));

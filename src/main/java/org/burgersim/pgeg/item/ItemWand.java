@@ -1,7 +1,6 @@
 package org.burgersim.pgeg.item;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -60,9 +59,9 @@ public class ItemWand extends Item {
 
     private void spawnEnchantParticle(World world, BlockPos blockPos) {
         for (int i = 0; i < 20; i++) {
-            double xOffset = (double) (itemRand.nextFloat() * 0.5F) + 0.25D;
-            double yOffset = (double) (itemRand.nextFloat() * 0.5F) + 0.25D;
-            double zOffset = (double) (itemRand.nextFloat() * 0.5F) + 0.25D;
+            double xOffset = (double) (random.nextFloat() * 0.5F) + 0.25D;
+            double yOffset = (double) (random.nextFloat() * 0.5F) + 0.25D;
+            double zOffset = (double) (random.nextFloat() * 0.5F) + 0.25D;
             world.addParticle(Particles.ENCHANT, true,
                     blockPos.getX() + xOffset,
                     blockPos.getY() + yOffset,

@@ -24,10 +24,10 @@ public abstract class MixinPlayerInteraction {
     @Shadow
     public abstract boolean tryHarvestBlock(BlockPos p_tryHarvestBlock_1_);
 
-    @Inject(method = "blockRemoving", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/management/PlayerInteractionManager;tryHarvestBlock(Lnet/minecraft/util/math/BlockPos;)Z"))
+    @Inject(method = "stopDestroyBlock", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/management/PlayerInteractionManager;tryHarvestBlock(Lnet/minecraft/util/math/BlockPos;)Z"))
     private void onBlockBreak(BlockPos blockPos, CallbackInfo ci) {
         ItemStack stack = player.getHeldItemMainhand();
-        if (stack.isItemEnchanted()) {
+        if (stack.isEnchanted()) {
             NBTTagList enchantments = stack.getEnchantmentTagList();
             boolean isExpanded = false;
             for (int i = 0; i < enchantments.size(); i++) {

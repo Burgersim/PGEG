@@ -44,7 +44,7 @@ public class BlockSpellCauldron extends BlockWaterlogged implements ITileEntityP
 
     public BlockSpellCauldron(Builder builder) {
         super(builder);
-        this.setDefaultState(this.getDefaultState().withProperty(HAS_WATER, false).withProperty(IS_HEATED, false));
+        this.setDefaultState(this.getDefaultState().with(HAS_WATER, false).with(IS_HEATED, false));
     }
 
     @Override
@@ -66,7 +66,7 @@ public class BlockSpellCauldron extends BlockWaterlogged implements ITileEntityP
         if (world.isRemote) {
             return;
         }
-        if (entity instanceof EntityItem && state.getValue(HAS_WATER)) {
+        if (entity instanceof EntityItem && state.get(HAS_WATER)) {
             EntityItem item = (EntityItem) entity;
 
             TileEntity te = world.getTileEntity(blockPos);
@@ -118,17 +118,17 @@ public class BlockSpellCauldron extends BlockWaterlogged implements ITileEntityP
         } else {
             Item item = stack.getItem();
             if (item == Items.WATER_BUCKET) {
-                if (!state.getValue(HAS_WATER) && !world.isRemote()) {
+                if (!state.get(HAS_WATER) && !world.isRemote()) {
                     if (!player.capabilities.isCreativeMode) {
                         player.setHeldItem(hand, new ItemStack(Items.BUCKET));
                     }
                     player.addStat(StatList.FILL_CAULDRON);
-                    world.setBlockState(blockPos, state.withProperty(IS_HEATED, false).withProperty(HAS_WATER, true));
+                    world.setBlockState(blockPos, state.with(IS_HEATED, false).with(HAS_WATER, true));
                     world.playSound(null, blockPos, SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
                 }
             }
             if (item == Items.BUCKET) {
-                if (state.getValue(HAS_WATER) && !world.isRemote()) {
+                if (state.get(HAS_WATER) && !world.isRemote()) {
                     if (!player.capabilities.isCreativeMode) {
                         stack.shrink(1);
                         if (stack.isEmpty()) {
@@ -138,7 +138,7 @@ public class BlockSpellCauldron extends BlockWaterlogged implements ITileEntityP
                         }
                     }
                     player.addStat(StatList.USE_CAULDRON);
-                    world.setBlockState(blockPos, state.withProperty(IS_HEATED, false).withProperty(HAS_WATER, false));
+                    world.setBlockState(blockPos, state.with(IS_HEATED, false).with(HAS_WATER, false));
                     TileEntity tileEntity = world.getTileEntity(blockPos);
                     if (tileEntity instanceof IInventory) {
                         InventoryHelper.dropInventoryItems(world, blockPos, (IInventory) tileEntity);
@@ -146,7 +146,7 @@ public class BlockSpellCauldron extends BlockWaterlogged implements ITileEntityP
                     world.playSound(null, blockPos, SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
                 }
             }
-            if (state.getValue(IS_HEATED)) {
+            if (state.get(IS_HEATED)) {
                 TileEntity te = world.getTileEntity(blockPos);
                 if (te instanceof TileEntitySpellCauldron) {
                     TileEntitySpellCauldron cauldron = (TileEntitySpellCauldron) te;
@@ -157,7 +157,7 @@ public class BlockSpellCauldron extends BlockWaterlogged implements ITileEntityP
                         }
                         cauldron.clear();
                         cauldron.markDirty();
-                        world.setBlockState(blockPos, state.withProperty(IS_HEATED, false).withProperty(HAS_WATER, false));
+                        world.setBlockState(blockPos, state.with(IS_HEATED, false).with(HAS_WATER, false));
                     }
                 }
             }
@@ -167,8 +167,8 @@ public class BlockSpellCauldron extends BlockWaterlogged implements ITileEntityP
 
 
     @Override
-    public void randomDisplayTick(IBlockState state, World world, BlockPos blockPos, Random random) {
-        if (state.getValue(IS_HEATED)) {
+    public void randomTick(IBlockState state, World world, BlockPos blockPos, Random random) {
+        if (state.get(IS_HEATED)) {
             for (int i = 0; i < 5; i++)
                 world.addOptionalParticle(Particles.BUBBLE_POP, blockPos.getX() + .2 + random.nextFloat() * .6, blockPos.getY() + .9 + random.nextFloat() * .1, blockPos.getZ() + .2 + random.nextFloat() * .6, 0, 0, 0);
             world.addOptionalParticle(Particles.BUBBLE, blockPos.getX() + .2 + random.nextFloat() * .6, blockPos.getY() + .9 + random.nextFloat() * .1, blockPos.getZ() + .2 + random.nextFloat() * .6, 0, 0, 0);

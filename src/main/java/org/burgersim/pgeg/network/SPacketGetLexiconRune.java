@@ -1,14 +1,11 @@
 package org.burgersim.pgeg.network;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetHandlerPlayServer;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.INetHandlerPlayClient;
-import net.minecraft.network.play.INetHandlerPlayServer;
 import net.minecraft.util.EnumHand;
 
 import java.io.IOException;
@@ -26,25 +23,25 @@ public class SPacketGetLexiconRune implements Packet<INetHandlerPlayClient> {
     }
 
     @Override
-    public void readPacketData(PacketBuffer packetBuffer) throws IOException {
+    public void readPacketData(PacketBuffer packetBuffer){
         this.isMainHand = packetBuffer.readBoolean();
         this.rune = packetBuffer.readString(32767);
     }
 
     @Override
-    public void writePacketData(PacketBuffer packetBuffer) throws IOException {
+    public void writePacketData(PacketBuffer packetBuffer){
         packetBuffer.writeBoolean(isMainHand);
         packetBuffer.writeString(rune);
     }
 
     @Override
     public void processPacket(INetHandlerPlayClient iNetHandlerPlayClient) {
-        ItemStack stack = Minecraft.getMinecraft().player.getHeldItem(isMainHand ? EnumHand.MAIN_HAND : EnumHand.OFF_HAND);
-        NBTTagCompound compound = stack.getTagCompound();
+        ItemStack stack = Minecraft.getInstance().player.getHeldItem(isMainHand ? EnumHand.MAIN_HAND : EnumHand.OFF_HAND);
+        NBTTagCompound compound = stack.getTag();
         if (compound == null) {
             compound = new NBTTagCompound();
         }
         compound.setString("rune", rune);
-        stack.setTagCompound(compound);
+        stack.setTag(compound);
     }
 }

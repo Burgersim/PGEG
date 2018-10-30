@@ -3,7 +3,6 @@ package org.burgersim.pgeg.client.book.fragment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import org.burgersim.pgeg.client.book.IPageFragment;
-import org.burgersim.pgeg.client.gui.GuiCompendium;
 
 public class FragmentTitle implements IPageFragment {
     private final int offsetX;
@@ -12,7 +11,7 @@ public class FragmentTitle implements IPageFragment {
     private final String title;
     private final int color;
     private final int titleLenght;
-    private final FontRenderer fontRenderer = Minecraft.getMinecraft().fontRenderer;
+    private final FontRenderer fontRenderer = Minecraft.getInstance().fontRenderer;
 
     public FragmentTitle(int offsetX, int offsetY, int width, String title, int color) {
         this.offsetX = offsetX;

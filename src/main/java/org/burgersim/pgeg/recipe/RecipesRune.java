@@ -4,7 +4,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -146,9 +145,7 @@ public class RecipesRune implements IRecipe {
             packetBuffer.writeString(recipesRune.group);
             packetBuffer.writeString(recipesRune.rune.toString());
             packetBuffer.writeVarInt(recipesRune.recipeItems.size());
-            Iterator it = recipesRune.recipeItems.iterator();
-            while (it.hasNext()) {
-                Ingredient ingredient = (Ingredient) it.next();
+            for (Ingredient ingredient : recipesRune.recipeItems) {
                 ingredient.writeToBuffer(packetBuffer);
             }
         }
